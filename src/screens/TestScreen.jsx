@@ -91,6 +91,10 @@ export default function TestScreen({ studentInfo, onTestComplete }) {
   const [currentWarnings, setCurrentWarnings] = useState(session.warnings)
 
   const submittedRef = useRef(false)
+  const answersRef = useRef(session.answers)
+  answersRef.current = answers
+  const currentWarningsRef = useRef(session.warnings)
+  currentWarningsRef.current = currentWarnings
 
   // Map of all questions in this course by ID for quick lookup
   const questionsById = useMemo(() => {
@@ -113,7 +117,11 @@ export default function TestScreen({ studentInfo, onTestComplete }) {
 
       const totalAllowedSec = CONFIG.TEST_DURATION_MIN * 60
       const remainingSec = Math.max(0, Math.ceil((session.endTime - Date.now()) / 1000))
-      const timeTakenSec = Math.max(0, totalAllowedSec - remainingSec)
+      const timeTakenSec = Math.min(totalAllowedSec, Math.max(0, totalAllowedSec - remainingSec))
+
+      const latestAnswers = answersRef.current || {}
+      const answeredCount = Object.values(latestAnswers).filter(Boolean).length
+      const warningsCount = currentWarningsRef.current || 0
 
       const payload = {
         name: studentInfo.name,
@@ -121,11 +129,11 @@ export default function TestScreen({ studentInfo, onTestComplete }) {
         phone: studentInfo.phone,
         course: studentInfo.course,
         resume: studentInfo.resume || null,
-        answers, // { [questionId]: "A" | "B" | "C" | "D" }
-        answeredCount: Object.values(answers).filter(Boolean).length,
+        answers: latestAnswers, // { [questionId]: "A" | "B" | "C" | "D" }
+        answeredCount,
         timeTakenSec,
         submissionType,
-        warningsUsed: currentWarnings,
+        warningsUsed: warningsCount,
         submittedAt: new Date().toISOString(),
       }
 
@@ -144,17 +152,15 @@ export default function TestScreen({ studentInfo, onTestComplete }) {
         }
       }
 
-      onTestComplete({ submissionType, warningsUsed: currentWarnings })
+      onTestComplete({ submissionType, warningsUsed: warningsCount })
     },
-    [answers, currentWarnings, onTestComplete, session.endTime, studentInfo]
+    [onTestComplete, session.endTime, studentInfo]
   )
 
-  // Auto-submit when timer expires
+  // Auto-submit when timer expires (dispatched immediately to avoid loss on tab close)
   const handleTimeUp = useCallback(() => {
     setShowTimeUpOverlay(true)
-    setTimeout(() => {
-      handleSubmit('Auto - Time Up')
-    }, 1500)
+    handleSubmit('Auto - Time Up')
   }, [handleSubmit])
 
   // Fullscreen & Anti-Cheat Guard

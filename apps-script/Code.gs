@@ -103,21 +103,20 @@ function doPost(e) {
       return jsonResponse({ ok: false, error: "Sheet 'AnswerKey' not found." });
     }
 
-    // ONE_ATTEMPT_PER_EMAIL check
-    if (PORTAL_CONFIG.ONE_ATTEMPT_PER_EMAIL) {
-      var data = resultsSheet.getDataRange().getValues();
-      for (var r = 1; r < data.length; r++) {
-        var existingEmail  = String(data[r][2]).toLowerCase().trim();
-        var existingCourse = String(data[r][4]).trim();
-        var incomingEmail  = String(payload.email).toLowerCase().trim();
-        var incomingCourse = String(payload.course).trim();
+    // ONE_ATTEMPT_PER_EMAIL check:
+    // If student previously had an entry (e.g. refreshed, registration-only, or retry),
+    // update their row instead of failing, ensuring answers and scores are never lost!
+    var existingRowIndex = -1;
+    var data = resultsSheet.getDataRange().getValues();
+    for (var r = 1; r < data.length; r++) {
+      var existingEmail  = String(data[r][2]).toLowerCase().trim();
+      var existingCourse = String(data[r][4]).trim();
+      var incomingEmail  = String(payload.email).toLowerCase().trim();
+      var incomingCourse = String(payload.course).trim();
 
-        if (existingEmail === incomingEmail && existingCourse === incomingCourse) {
-          return jsonResponse({
-            ok: false,
-            error: 'Duplicate attempt: this email has already submitted for this course.',
-          });
-        }
+      if (existingEmail === incomingEmail && existingCourse === incomingCourse) {
+        existingRowIndex = r + 1; // 1-based row index for Sheets
+        break;
       }
     }
 
@@ -160,11 +159,13 @@ function doPost(e) {
 
     // Extract resume info (if provided)
     var resumeInfo = '';
+    var resumeName = '';
     if (payload.resume) {
       if (typeof payload.resume === 'string') {
         resumeInfo = payload.resume;
       } else if (payload.resume.name) {
-        resumeInfo = payload.resume.name;
+        resumeName = String(payload.resume.name);
+        resumeInfo = resumeName;
         if (payload.resume.base64) {
           try {
             var b64Parts = payload.resume.base64.split(',');
@@ -188,28 +189,35 @@ function doPost(e) {
             resumeInfo = '=HYPERLINK("' + fileUrl + '", "📄 View ' + resumeName + '")';
           } catch (e) {
             Logger.log('Drive save error: ' + e.toString());
-            resumeInfo = resumeName + ' (attached - authorize Drive)';
+            resumeInfo = resumeName + ' (attached)';
           }
         }
       }
     }
 
-    // Append result row to Results sheet
-    resultsSheet.appendRow([
-      new Date(payload.submittedAt),          // 1  Timestamp
-      String(payload.name).trim(),            // 2  Name
-      String(payload.email).trim(),           // 3  Email
-      String(payload.phone).trim(),           // 4  Phone
-      String(payload.course).trim(),          // 5  Course
-      score,                                  // 6  Score
-      TOTAL,                                  // 7  Total
-      Number(payload.answeredCount) || 0,     // 8  Answered
-      Number(payload.timeTakenSec)  || 0,     // 9  Time Taken (sec)
-      String(payload.submissionType),         // 10 Submission Type
-      Number(payload.warningsUsed)  || 0,     // 11 Warnings
-      JSON.stringify(payload.answers),        // 12 Answers JSON
-      resumeInfo                              // 13 Resume Link / Name
-    ]);
+    var resultRow = [
+      new Date(payload.submittedAt || Date.now()), // 1  Timestamp
+      String(payload.name).trim(),                 // 2  Name
+      String(payload.email).trim(),                // 3  Email
+      String(payload.phone).trim(),                // 4  Phone
+      String(payload.course).trim(),               // 5  Course
+      score,                                       // 6  Score
+      TOTAL,                                       // 7  Total
+      Number(payload.answeredCount) || 0,          // 8  Answered
+      Number(payload.timeTakenSec)  || 0,          // 9  Time Taken (sec)
+      String(payload.submissionType),              // 10 Submission Type
+      Number(payload.warningsUsed)  || 0,          // 11 Warnings
+      JSON.stringify(payload.answers || {}),       // 12 Answers JSON
+      resumeInfo                                   // 13 Resume Link / Name
+    ];
+
+    // If student previously had a row (e.g. timeout retry or re-entry), update that row!
+    // Otherwise append a new row.
+    if (existingRowIndex > 0) {
+      resultsSheet.getRange(existingRowIndex, 1, 1, resultRow.length).setValues([resultRow]);
+    } else {
+      resultsSheet.appendRow(resultRow);
+    }
 
     // Also record in dedicated Resumes tab for easy HR access
     if (payload.resume) {

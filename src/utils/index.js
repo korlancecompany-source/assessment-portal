@@ -148,6 +148,20 @@ export async function submitWithRetry(payload, maxRetries = 3) {
     }
   }
 
+  console.warn('[STP] Standard submit attempts failed. Dispatching fallback no-cors submission...', lastError?.message)
+  try {
+    await fetch(url, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload),
+    })
+    console.info('[STP] Fallback submission dispatched successfully to Apps Script.')
+    return { ok: true, fallback: true }
+  } catch (fallbackErr) {
+    console.error('[STP] Fallback no-cors dispatch failed:', fallbackErr)
+  }
+
   console.error('[STP] All submit attempts failed. Queuing payload.', lastError)
   enqueueOffline(payload)
   return { queued: true }

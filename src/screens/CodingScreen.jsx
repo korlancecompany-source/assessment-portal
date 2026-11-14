@@ -353,12 +353,10 @@ export default function CodingScreen({
     [codeDrafts, onCodingComplete, selectedLanguage, studentInfo, token]
   )
 
-  // Timer expire -> auto-submit
+  // Timer expire -> auto-submit immediately
   const handleTimeUp = useCallback(() => {
     setShowTimeUpOverlay(true)
-    setTimeout(() => {
-      handleSubmit('Auto - Time Up')
-    }, 1500)
+    handleSubmit('Auto - Time Up')
   }, [handleSubmit])
 
   // Screen width guard UI (Mobile friendly fallback)
