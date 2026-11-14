@@ -137,6 +137,29 @@ export async function submitWithRetry(payload, maxRetries = 3) {
         return { ok: true }
       }
 
+      // If server returned ok: false and payload contains heavy resume base64,
+      // retry immediately with lightweight metadata so candidate answers and score are never lost!
+      if (payload.resume && payload.resume.base64) {
+        console.warn(
+          '[STP] Server rejected payload with resume base64 (' +
+            (json?.error || '') +
+            '). Retrying with lightweight metadata to preserve answers!'
+        )
+        const safePayload = {
+          ...payload,
+          resume: payload.resume.name
+            ? {
+                name: payload.resume.name,
+                size: payload.resume.size,
+                type: payload.resume.type,
+              }
+            : typeof payload.resume === 'string'
+            ? payload.resume
+            : null,
+        }
+        return await submitWithRetry(safePayload, 2)
+      }
+
       // Server returned { ok: false, error: '...' } — do NOT retry (business logic error)
       throw new Error(json?.error || 'Server returned ok:false')
     } catch (err) {
