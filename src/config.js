@@ -4,7 +4,9 @@ export const CONFIG = {
   QUESTIONS_PER_TEST: 20,
   MAX_WARNINGS: 3,
   COUNT_TAB_SWITCH_AS_VIOLATION: false,
-  APPS_SCRIPT_URL: import.meta.env.VITE_APPS_SCRIPT_URL || '',
+  APPS_SCRIPT_URL:
+    (typeof import.meta !== 'undefined' && import.meta.env?.VITE_APPS_SCRIPT_URL) ||
+    'https://script.google.com/macros/s/AKfycbyC3vg56fRnynDPro1X-bvu4oAEL2BHgQ24zWkKlzWPysVtVDSvPcU6xuZ8KIunI48ZzA/exec',
 
   // --- CODING ROUND CONFIGURATION ---
   CODING_ROUND_COURSES: [
