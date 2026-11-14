@@ -171,12 +171,24 @@ function doPost(e) {
             var rawB64 = b64Parts.length > 1 ? b64Parts[1] : b64Parts[0];
             var decoded = Utilities.base64Decode(rawB64);
             var mime = payload.resume.type || 'application/pdf';
-            var safeName = String(payload.name).replace(/[^a-zA-Z0-9_\s-]/g, '') + ' - ' + payload.resume.name;
+            var safeName = String(payload.name).replace(/[^a-zA-Z0-9_\s-]/g, '').trim() + ' - ' + resumeName;
+
+            // Get or create "Student Resumes" folder in Google Drive
+            var folders = DriveApp.getFoldersByName('Student Resumes');
+            var folder = folders.hasNext() ? folders.next() : DriveApp.createFolder('Student Resumes');
+
             var blob = Utilities.newBlob(decoded, mime, safeName);
-            var file = DriveApp.createFile(blob);
-            resumeInfo = file.getUrl();
+            var file = folder.createFile(blob);
+
+            try {
+              file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+            } catch (shareErr) {}
+
+            var fileUrl = file.getUrl();
+            resumeInfo = '=HYPERLINK("' + fileUrl + '", "📄 View ' + resumeName + '")';
           } catch (e) {
-            resumeInfo = payload.resume.name + ' (attached)';
+            Logger.log('Drive save error: ' + e.toString());
+            resumeInfo = resumeName + ' (attached - authorize Drive)';
           }
         }
       }
@@ -409,9 +421,26 @@ function jsonResponse(obj) {
 }
 
 // ------------------------------------------------------------
-// Admin helper: auto-creates all 5 sheet tabs with headers
+// Admin helper: authorizes Google Drive & auto-creates all 6 tabs
 // ------------------------------------------------------------
+function authorizeDrive() {
+  var folders = DriveApp.getFoldersByName('Student Resumes');
+  var folder = folders.hasNext() ? folders.next() : DriveApp.createFolder('Student Resumes');
+  Logger.log('SUCCESS: Google Drive authorized! "Student Resumes" folder URL: ' + folder.getUrl());
+}
+
 function setupSheets() {
+  // 0. Trigger Drive authorization & create folder
+  try {
+    var folders = DriveApp.getFoldersByName('Student Resumes');
+    if (!folders.hasNext()) {
+      DriveApp.createFolder('Student Resumes');
+    }
+    Logger.log('Google Drive folder "Student Resumes" verified.');
+  } catch (dErr) {
+    Logger.log('Notice: ' + dErr.toString());
+  }
+
   var ss = getSS();
 
   // 1. Results sheet
