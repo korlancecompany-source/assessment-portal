@@ -11,6 +11,12 @@
 
 var PORTAL_CONFIG = {
   /**
+   * Email address where student test completion notifications and resumes will be sent.
+   * Multiple emails can be separated by a comma (e.g. 'admin@company.com, hr@company.com').
+   */
+  NOTIFICATION_EMAIL: 'kishore31122k4@gmail.com',
+
+  /**
    * When true, the same email address cannot submit for the same course twice.
    * The check is case-insensitive.
    */
@@ -160,6 +166,8 @@ function doPost(e) {
     // Extract resume info (if provided)
     var resumeInfo = '';
     var resumeName = '';
+    var resumeBlob = null;
+    var fileUrl = '';
     if (payload.resume) {
       if (typeof payload.resume === 'string') {
         resumeInfo = payload.resume;
@@ -178,14 +186,14 @@ function doPost(e) {
             var folders = DriveApp.getFoldersByName('Student Resumes');
             var folder = folders.hasNext() ? folders.next() : DriveApp.createFolder('Student Resumes');
 
-            var blob = Utilities.newBlob(decoded, mime, safeName);
-            var file = folder.createFile(blob);
+            resumeBlob = Utilities.newBlob(decoded, mime, safeName);
+            var file = folder.createFile(resumeBlob);
 
             try {
               file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
             } catch (shareErr) {}
 
-            var fileUrl = file.getUrl();
+            fileUrl = file.getUrl();
             resumeInfo = '=HYPERLINK("' + fileUrl + '", "📄 View ' + resumeName + '")';
           } catch (e) {
             Logger.log('Drive save error: ' + e.toString());
@@ -245,6 +253,13 @@ function doPost(e) {
       } catch (rErr) {
         Logger.log('Resumes tab error: ' + rErr.toString());
       }
+    }
+
+    // Send instant email notification to admin with student details & resume
+    try {
+      sendAdminNotification(payload, score, TOTAL, resumeBlob, fileUrl);
+    } catch (mailErr) {
+      Logger.log('Admin notification email error: ' + mailErr.toString());
     }
 
     return jsonResponse({ ok: true });
@@ -429,12 +444,88 @@ function jsonResponse(obj) {
 }
 
 // ------------------------------------------------------------
+// Helper: Escapes HTML special characters for safe email display
+// ------------------------------------------------------------
+function escapeHtml(text) {
+  if (text === undefined || text === null) return '';
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+// ------------------------------------------------------------
+// Email Notification: sends student details & resume to admin
+// ------------------------------------------------------------
+function sendAdminNotification(payload, score, total, resumeBlob, fileUrl) {
+  var recipient = PORTAL_CONFIG.NOTIFICATION_EMAIL;
+  if (!recipient || String(recipient).trim() === '') return;
+
+  var candidateName = String(payload.name || 'Candidate').trim();
+  var courseName = String(payload.course || '').trim();
+  var subject = '🎓 Student Assessment Submitted: ' + candidateName + ' (' + courseName + ')';
+
+  var timeMinutes = Math.floor((Number(payload.timeTakenSec) || 0) / 60);
+  var timeSeconds = (Number(payload.timeTakenSec) || 0) % 60;
+  var timeStr = timeMinutes + ' min ' + timeSeconds + ' sec';
+
+  var resumeDisplay = 'None uploaded';
+  if (fileUrl) {
+    resumeDisplay = '<a href="' + fileUrl + '" style="color: #4f46e5; font-weight: bold; text-decoration: underline;">📄 View in Google Drive</a>';
+  } else if (payload.resume && payload.resume.name) {
+    resumeDisplay = escapeHtml(payload.resume.name);
+  } else if (typeof payload.resume === 'string' && payload.resume) {
+    resumeDisplay = escapeHtml(payload.resume);
+  }
+
+  var htmlBody = 
+    '<div style="font-family: Arial, Helvetica, sans-serif; max-width: 620px; margin: 0 auto; padding: 24px; border: 1px solid #e5e7eb; border-radius: 12px; background-color: #ffffff; color: #1f2937;">' +
+      '<div style="border-bottom: 2px solid #4f46e5; padding-bottom: 12px; margin-bottom: 20px;">' +
+        '<h2 style="color: #4f46e5; margin: 0; font-size: 20px;">🎓 Student Test Portal — New Submission</h2>' +
+        '<p style="color: #6b7280; font-size: 13px; margin: 4px 0 0 0;">A student has completed their test. Full details are recorded below:</p>' +
+      '</div>' +
+
+      '<table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 20px;">' +
+        '<tr style="background-color: #f9fafb;"><td style="padding: 10px 12px; font-weight: bold; width: 35%; color: #4b5563;">Candidate Name</td><td style="padding: 10px 12px; font-weight: bold; color: #111827;">' + escapeHtml(payload.name) + '</td></tr>' +
+        '<tr><td style="padding: 10px 12px; font-weight: bold; color: #4b5563;">Email Address</td><td style="padding: 10px 12px;"><a href="mailto:' + escapeHtml(payload.email) + '" style="color: #2563eb; text-decoration: none;">' + escapeHtml(payload.email) + '</a></td></tr>' +
+        '<tr style="background-color: #f9fafb;"><td style="padding: 10px 12px; font-weight: bold; color: #4b5563;">Phone Number</td><td style="padding: 10px 12px;"><a href="tel:' + escapeHtml(payload.phone) + '" style="color: #2563eb; text-decoration: none;">' + escapeHtml(payload.phone) + '</a></td></tr>' +
+        '<tr><td style="padding: 10px 12px; font-weight: bold; color: #4b5563;">Course</td><td style="padding: 10px 12px; font-weight: bold; color: #4f46e5;">' + escapeHtml(payload.course) + '</td></tr>' +
+        '<tr style="background-color: #f9fafb;"><td style="padding: 10px 12px; font-weight: bold; color: #4b5563;">Score</td><td style="padding: 10px 12px; font-size: 16px; font-weight: bold; color: #059669;">' + score + ' / ' + total + ' (' + (payload.answeredCount || 0) + ' questions answered)</td></tr>' +
+        '<tr><td style="padding: 10px 12px; font-weight: bold; color: #4b5563;">Time Taken</td><td style="padding: 10px 12px;">' + timeStr + '</td></tr>' +
+        '<tr style="background-color: #f9fafb;"><td style="padding: 10px 12px; font-weight: bold; color: #4b5563;">Submission Type</td><td style="padding: 10px 12px;">' + escapeHtml(payload.submissionType) + '</td></tr>' +
+        '<tr><td style="padding: 10px 12px; font-weight: bold; color: #4b5563;">Warnings Used</td><td style="padding: 10px 12px; color: #d97706;">' + (payload.warningsUsed || 0) + '</td></tr>' +
+        '<tr style="background-color: #f9fafb;"><td style="padding: 10px 12px; font-weight: bold; color: #4b5563;">Resume</td><td style="padding: 10px 12px;">' + resumeDisplay + '</td></tr>' +
+      '</table>' +
+
+      (resumeBlob ? '<div style="background-color: #ecfdf5; border-left: 4px solid #10b981; padding: 12px; margin-bottom: 20px; font-size: 13px; color: #065f46;">📎 <strong>Resume is attached to this email</strong> for instant download and review.</div>' : '') +
+
+      '<p style="font-size: 12px; color: #9ca3af; text-align: center; margin: 20px 0 0 0;">This email was sent automatically by Student Test Portal via Google Apps Script.</p>' +
+    '</div>';
+
+  var mailOptions = {
+    to: recipient,
+    subject: subject,
+    htmlBody: htmlBody,
+    name: 'Student Test Portal'
+  };
+
+  if (resumeBlob) {
+    mailOptions.attachments = [resumeBlob];
+  }
+
+  MailApp.sendEmail(mailOptions);
+}
+
+// ------------------------------------------------------------
 // Admin helper: authorizes Google Drive & auto-creates all 6 tabs
 // ------------------------------------------------------------
 function authorizeDrive() {
   var folders = DriveApp.getFoldersByName('Student Resumes');
   var folder = folders.hasNext() ? folders.next() : DriveApp.createFolder('Student Resumes');
   Logger.log('SUCCESS: Google Drive authorized! "Student Resumes" folder URL: ' + folder.getUrl());
+  Logger.log('MailApp daily remaining quota: ' + MailApp.getRemainingDailyQuota());
 }
 
 function setupSheets() {
