@@ -43,6 +43,7 @@ export default function CodingScreen({
   const [showSubmitModal, setShowSubmitModal] = useState(false)
   const [showTimeUpOverlay, setShowTimeUpOverlay] = useState(false)
   const [currentWarnings, setCurrentWarnings] = useState(initialWarnings)
+  const [showMobileEditor, setShowMobileEditor] = useState(false)
 
   const editorRef = useRef(null)
   const submittedRef = useRef(false)
@@ -360,19 +361,88 @@ export default function CodingScreen({
     }, 1500)
   }, [handleSubmit])
 
-  // Screen width guard UI
+  // Screen width guard UI (Mobile friendly fallback)
   if (isTooNarrow) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6 text-center">
-        <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md border border-gray-200">
-          <div className="text-5xl mb-4">💻</div>
-          <h2 className="text-xl font-bold text-gray-900 mb-2">Screen Too Small</h2>
-          <p className="text-gray-600 text-sm leading-relaxed">
-            The coding environment requires a desktop or laptop computer with a display width of at least 1024 pixels.
-          </p>
-          <p className="text-xs text-gray-400 mt-4">
-            Please maximize your browser window or switch to a desktop device to proceed.
-          </p>
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+        <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 max-w-lg w-full border border-gray-200 screen-enter">
+          <div className="text-center">
+            <div className="text-4xl mb-3">📱</div>
+            <h2 className="text-xl font-bold text-gray-900 mb-1">Mobile Device Detected</h2>
+            <p className="text-xs text-indigo-600 font-semibold mb-3 uppercase tracking-wider">
+              {studentInfo?.course} • Coding Assessment
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              The full split-pane IDE is optimized for desktop screens (width ≥ 1024px). Since you attended on mobile, you can submit your assessment now, or write your code directly below.
+            </p>
+          </div>
+
+          {/* Optional Mobile Code Input */}
+          {question && (
+            <div className="mb-4">
+              <button
+                type="button"
+                onClick={() => setShowMobileEditor(!showMobileEditor)}
+                className="w-full text-left text-xs font-semibold text-indigo-600 hover:text-indigo-700 bg-indigo-50/70 hover:bg-indigo-50 border border-indigo-200 rounded-lg p-3 flex items-center justify-between transition"
+              >
+                <span>{showMobileEditor ? '▲ Hide Coding Problem & Input' : '▼ View Problem & Type Code on Mobile (Optional)'}</span>
+                <span className="text-xs text-gray-400">{selectedLanguage}</span>
+              </button>
+
+              {showMobileEditor && (
+                <div className="mt-3 p-3 bg-gray-50 border border-gray-200 rounded-xl space-y-3 text-left">
+                  <div>
+                    <h3 className="text-xs font-bold text-gray-900">{question.title}</h3>
+                    <p className="text-xs text-gray-600 mt-1 leading-relaxed">{question.scenario}</p>
+                  </div>
+
+                  <div className="flex items-center justify-between">
+                    <label className="text-xs font-semibold text-gray-700">Language:</label>
+                    <select
+                      value={selectedLanguage}
+                      onChange={(e) => handleLanguageChange(e.target.value)}
+                      className="text-xs border border-gray-300 rounded px-2 py-1 bg-white focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                    >
+                      {CONFIG.LANGUAGES.map((lang) => (
+                        <option key={lang} value={lang}>{lang}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1">Your Code:</label>
+                    <textarea
+                      rows={8}
+                      value={codeDrafts[selectedLanguage] || ''}
+                      onChange={(e) => handleCodeChange(e.target.value)}
+                      placeholder="Write or paste your code here..."
+                      className="w-full font-mono text-xs p-2.5 bg-gray-900 text-gray-100 rounded-lg border border-gray-700 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                      spellCheck="false"
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Action Buttons */}
+          <div className="space-y-2.5 pt-2">
+            <Button
+              variant="primary"
+              className="w-full justify-center text-sm py-3 font-semibold shadow-md"
+              disabled={isSubmitting}
+              onClick={() => {
+                const hasCode = !!(codeDrafts[selectedLanguage] && codeDrafts[selectedLanguage].trim())
+                handleSubmit(hasCode ? 'Mobile - Code Submitted' : 'Mobile - Submitted Without Code')
+              }}
+            >
+              {isSubmitting ? 'Submitting...' : '✓ Submit & Complete Assessment'}
+            </Button>
+
+            <p className="text-[11px] text-gray-400 text-center leading-normal">
+              Clicking submit will finalize your test and record your application with management. You will see the completion confirmation next.
+            </p>
+          </div>
         </div>
       </div>
     )
