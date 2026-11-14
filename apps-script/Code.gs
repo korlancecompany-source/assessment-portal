@@ -199,6 +199,34 @@ function doPost(e) {
       resumeInfo                              // 13 Resume Link / Name
     ]);
 
+    // Also record in dedicated Resumes tab for easy HR access
+    if (payload.resume) {
+      try {
+        var resumeSheet = ss.getSheetByName('Resumes');
+        if (!resumeSheet) {
+          resumeSheet = ss.insertSheet('Resumes');
+          resumeSheet.appendRow([
+            'Timestamp', 'Candidate Name', 'Email', 'Phone', 'Course',
+            'Resume File Name', 'File Size', 'Drive Link / View'
+          ]);
+          resumeSheet.setFrozenRows(1);
+        }
+        var fileSizeStr = payload.resume.size ? (Math.round(payload.resume.size / 1024) + ' KB') : '';
+        resumeSheet.appendRow([
+          new Date(payload.submittedAt || Date.now()),
+          String(payload.name).trim(),
+          String(payload.email).trim(),
+          String(payload.phone).trim(),
+          String(payload.course).trim(),
+          payload.resume.name || 'Resume',
+          fileSizeStr,
+          resumeInfo || 'Attached'
+        ]);
+      } catch (rErr) {
+        Logger.log('Resumes tab error: ' + rErr.toString());
+      }
+    }
+
     return jsonResponse({ ok: true });
 
   } catch (err) {
@@ -436,5 +464,16 @@ function setupSheets() {
     cp.setFrozenRows(1);
   }
 
-  Logger.log('All 5 sheets set up successfully.');
+  // 6. Resumes sheet
+  var rs = ss.getSheetByName('Resumes');
+  if (!rs) rs = ss.insertSheet('Resumes');
+  if (rs.getLastRow() === 0) {
+    rs.appendRow([
+      'Timestamp', 'Candidate Name', 'Email', 'Phone', 'Course',
+      'Resume File Name', 'File Size', 'Drive Link / View'
+    ]);
+    rs.setFrozenRows(1);
+  }
+
+  Logger.log('All 6 sheets set up successfully.');
 }
