@@ -1,0 +1,3840 @@
+{
+  "Full Stack Web Development": [
+    {
+      "id": "FSWD-01",
+      "question": "Which HTML5 semantic element is most appropriate for containing the primary site navigation links?",
+      "options": {
+        "A": "<nav>",
+        "B": "<header>",
+        "C": "<menu>",
+        "D": "<section>"
+      }
+    },
+    {
+      "id": "FSWD-02",
+      "question": "What does the HTTP status code 404 indicate to a client?",
+      "options": {
+        "A": "The client lacks valid authentication credentials",
+        "B": "The requested resource could not be found on the server",
+        "C": "The server encountered an unhandled internal exception",
+        "D": "The request method is not supported for this endpoint"
+      }
+    },
+    {
+      "id": "FSWD-03",
+      "question": "In JavaScript ES6, how does Promise.all() behave when one of the promises rejects?",
+      "options": {
+        "A": "It waits for all other promises to resolve and ignores the rejection",
+        "B": "It retries the rejected promise up to three times automatically",
+        "C": "It rejects immediately with the reason of the first rejected promise",
+        "D": "It resolves with an array containing the rejection error object"
+      }
+    },
+    {
+      "id": "FSWD-04",
+      "question": "Which CSS Flexbox property controls the alignment of items along the main axis?",
+      "options": {
+        "A": "align-items",
+        "B": "align-content",
+        "C": "flex-flow",
+        "D": "justify-content"
+      }
+    },
+    {
+      "id": "FSWD-05",
+      "question": "What is the primary role of the package-lock.json file in a Node.js project?",
+      "options": {
+        "A": "To lock the exact dependency versions and dependency tree for reproducible installs",
+        "B": "To encrypt production credentials before deploying to a hosting provider",
+        "C": "To list only optional packages that are excluded during production build",
+        "D": "To define executable shell scripts and shortcuts for the npm CLI"
+      }
+    },
+    {
+      "id": "FSWD-06",
+      "question": "Which React hook is designed for memoizing an expensive calculation between component renders?",
+      "options": {
+        "A": "useCallback",
+        "B": "useMemo",
+        "C": "useRef",
+        "D": "useReducer"
+      }
+    },
+    {
+      "id": "FSWD-07",
+      "question": "In JavaScript, what characterizes a closure?",
+      "options": {
+        "A": "An object method that cannot access the 'this' keyword",
+        "B": "An immediately invoked function expression used to declare global constants",
+        "C": "A syntax construct that prevents asynchronous code from executing concurrently",
+        "D": "A function bundled together with references to its surrounding lexical scope"
+      }
+    },
+    {
+      "id": "FSWD-08",
+      "question": "Which HTTP request method is semantically intended for partial updates to an existing resource?",
+      "options": {
+        "A": "PUT",
+        "B": "POST",
+        "C": "PATCH",
+        "D": "UPDATE"
+      }
+    },
+    {
+      "id": "FSWD-09",
+      "question": "What is the key functional difference between relational SQL and document-based NoSQL databases?",
+      "options": {
+        "A": "SQL databases strictly prohibit ACID transaction compliance",
+        "B": "NoSQL databases require predefined static schemas before any record insertion",
+        "C": "SQL uses structured tables with schemas, while document NoSQL stores schema-flexible JSON-like documents",
+        "D": "NoSQL systems run exclusively in memory and cannot write data to persistent disk"
+      }
+    },
+    {
+      "id": "FSWD-10",
+      "question": "In Express.js, what is the purpose of the third parameter 'next' in a middleware function?",
+      "options": {
+        "A": "To terminate the Node.js server process when an error occurs",
+        "B": "To pass control to the next middleware function in the request-response stack",
+        "C": "To jump directly to the browser and close the network socket",
+        "D": "To restart the route handler with initial request headers"
+      }
+    },
+    {
+      "id": "FSWD-11",
+      "question": "Which Git command creates a new branch named 'feature' and immediately switches your working directory to it?",
+      "options": {
+        "A": "git branch -d feature",
+        "B": "git merge feature --new",
+        "C": "git commit -b feature",
+        "D": "git switch -c feature"
+      }
+    },
+    {
+      "id": "FSWD-12",
+      "question": "What happens when you pass an empty dependency array to React's useEffect hook?",
+      "options": {
+        "A": "The effect runs on every single render of the component",
+        "B": "The effect runs only once after the initial component mount",
+        "C": "The effect is permanently skipped and will never run",
+        "D": "The effect causes an immediate infinite re-render loop"
+      }
+    },
+    {
+      "id": "FSWD-13",
+      "question": "In web security, what vulnerability occurs when an attacker injects malicious client-side scripts into viewed pages?",
+      "options": {
+        "A": "Cross-Site Scripting (XSS)",
+        "B": "Structured Query Injection (SQLi)",
+        "C": "Denial of Service (DoS)",
+        "D": "Insecure Direct Object Reference (IDOR)"
+      }
+    },
+    {
+      "id": "FSWD-14",
+      "question": "In CSS Grid, which property is used to define the explicit track sizes for columns?",
+      "options": {
+        "A": "grid-column-gap",
+        "B": "grid-auto-columns",
+        "C": "grid-template-columns",
+        "D": "grid-direction"
+      }
+    },
+    {
+      "id": "FSWD-15",
+      "question": "What does the Node.js Event Loop do when executing JavaScript code?",
+      "options": {
+        "A": "Spawns an independent OS thread for every single arithmetic calculation",
+        "B": "Continuously checks call stacks and task queues to handle asynchronous operations on a single thread",
+        "C": "Translates high-level JavaScript code into C++ source files before execution",
+        "D": "Pauses all operating system background tasks until the web page loads"
+      }
+    },
+    {
+      "id": "FSWD-16",
+      "question": "Which HTTP status code is most appropriate when a resource is successfully created via a POST request?",
+      "options": {
+        "A": "200 OK",
+        "B": "202 Accepted",
+        "C": "204 No Content",
+        "D": "201 Created"
+      }
+    },
+    {
+      "id": "FSWD-17",
+      "question": "What is the primary purpose of the CORS protocol in modern web browsers?",
+      "options": {
+        "A": "To compress incoming image assets before rendering them on the canvas",
+        "B": "To allow or restrict resources requested from another domain outside the origin domain",
+        "C": "To cache static stylesheets inside the local browser storage indefinitely",
+        "D": "To automatically generate SSL certificates for frontend applications"
+      }
+    },
+    {
+      "id": "FSWD-18",
+      "question": "Which keyword in modern JavaScript allows declaring block-scoped variables that can be reassigned?",
+      "options": {
+        "A": "let",
+        "B": "const",
+        "C": "var",
+        "D": "static"
+      }
+    },
+    {
+      "id": "FSWD-19",
+      "question": "In RESTful API design, what does idempotency mean for an HTTP method?",
+      "options": {
+        "A": "The method can only be executed when the user has administrator privileges",
+        "B": "Making multiple identical requests produces the same server state as making a single request",
+        "C": "The endpoint returns responses exclusively in binary protocol format",
+        "D": "The client must establish a persistent WebSocket connection prior to sending"
+      }
+    },
+    {
+      "id": "FSWD-20",
+      "question": "In React, how should state updates that depend on the previous state value be handled?",
+      "options": {
+        "A": "By directly mutating the component's state property",
+        "B": "By reading from window.localStorage synchronously",
+        "C": "By passing an updater callback function to the state setter",
+        "D": "By wrapping the state variable in a global JavaScript closure"
+      }
+    }
+  ],
+  "Python with Data Science": [
+    {
+      "id": "PYDS-01",
+      "question": "Which Pandas function is used to load tabular data from a comma-separated values file into a DataFrame?",
+      "options": {
+        "A": "pd.read_csv()",
+        "B": "pd.load_csv()",
+        "C": "pd.parse_csv()",
+        "D": "pd.open_table()"
+      }
+    },
+    {
+      "id": "PYDS-02",
+      "question": "In NumPy, what is broadcasting?",
+      "options": {
+        "A": "Transmitting array data over socket networks to worker clusters",
+        "B": "A mechanism that allows arithmetic operations on arrays of different shapes",
+        "C": "Writing matrix values directly to disk without loading into RAM",
+        "D": "Converting floating-point values into 8-bit integers automatically"
+      }
+    },
+    {
+      "id": "PYDS-03",
+      "question": "Which Python structure provides concise syntax to create a list based on an existing iterable?",
+      "options": {
+        "A": "Lambda pipeline",
+        "B": "Generator closure",
+        "C": "List comprehension",
+        "D": "Tuple generator"
+      }
+    },
+    {
+      "id": "PYDS-04",
+      "question": "In Pandas, which method groups DataFrame rows sharing identical column values to compute aggregate statistics?",
+      "options": {
+        "A": "df.pivot()",
+        "B": "df.aggregate_by()",
+        "C": "df.cluster()",
+        "D": "df.groupby()"
+      }
+    },
+    {
+      "id": "PYDS-05",
+      "question": "In scikit-learn, which module function splits dataset arrays into random train and test subsets?",
+      "options": {
+        "A": "train_test_split",
+        "B": "partition_dataset",
+        "C": "cross_validation_split",
+        "D": "sample_train_test"
+      }
+    },
+    {
+      "id": "PYDS-06",
+      "question": "What differentiates a Python generator function from a conventional function?",
+      "options": {
+        "A": "Generators always execute within dedicated multi-core worker threads",
+        "B": "Generators yield values lazily one at a time using the yield statement",
+        "C": "Generators cannot accept input arguments or parameter defaults",
+        "D": "Generators are strictly compiled into machine assembly ahead of runtime"
+      }
+    },
+    {
+      "id": "PYDS-07",
+      "question": "Which Pandas DataFrame method replaces NaN and missing values with a designated scalar value or strategy?",
+      "options": {
+        "A": "df.dropna()",
+        "B": "df.impute()",
+        "C": "df.fillna()",
+        "D": "df.clean()"
+      }
+    },
+    {
+      "id": "PYDS-08",
+      "question": "In NumPy, what values are extracted when slicing an array of integers 0 through 9 using start 2, stop 8, and step 2?",
+      "options": {
+        "A": "Values 2, 4, 6, and 8",
+        "B": "Values 2, 3, 4, 5, 6, and 7",
+        "C": "Values 3, 5, and 7",
+        "D": "Values 2, 4, and 6"
+      }
+    },
+    {
+      "id": "PYDS-09",
+      "question": "Which Matplotlib Pyplot command renders and displays active figure windows on screen?",
+      "options": {
+        "A": "plt.show()",
+        "B": "plt.render()",
+        "C": "plt.display()",
+        "D": "plt.draw_all()"
+      }
+    },
+    {
+      "id": "PYDS-10",
+      "question": "In scikit-learn, what method is called on a trained estimator to generate predicted labels for unseen features?",
+      "options": {
+        "A": "estimator.transform()",
+        "B": "estimator.predict()",
+        "C": "estimator.evaluate()",
+        "D": "estimator.score()"
+      }
+    },
+    {
+      "id": "PYDS-11",
+      "question": "What is a decorator in Python?",
+      "options": {
+        "A": "A special class variable used solely to format terminal log colors",
+        "B": "A syntax keyword that forces garbage collection of unused variables",
+        "C": "A callable that takes another function as input and extends its behavior without modifying it",
+        "D": "A compiler flag that turns dynamic type checking off for performance"
+      }
+    },
+    {
+      "id": "PYDS-12",
+      "question": "Which statistical measure of central tendency is least sensitive to extreme outlier values in a distribution?",
+      "options": {
+        "A": "Arithmetic Mean",
+        "B": "Variance",
+        "C": "Standard Deviation",
+        "D": "Median"
+      }
+    },
+    {
+      "id": "PYDS-13",
+      "question": "Which Pandas function combines two DataFrames along a designated key column, similar to a database join?",
+      "options": {
+        "A": "pd.merge()",
+        "B": "pd.concat()",
+        "C": "pd.append()",
+        "D": "pd.stack()"
+      }
+    },
+    {
+      "id": "PYDS-14",
+      "question": "In scikit-learn preprocessing, which transformer scales feature values to zero mean and unit variance?",
+      "options": {
+        "A": "MinMaxScaler",
+        "B": "StandardScaler",
+        "C": "RobustScaler",
+        "D": "Normalizer"
+      }
+    },
+    {
+      "id": "PYDS-15",
+      "question": "In a Python dictionary, what is returned by dict.get(key, default) if the specified key is absent?",
+      "options": {
+        "A": "It raises an uncaught KeyError",
+        "B": "It returns an empty string always",
+        "C": "It returns the supplied default value",
+        "D": "It creates the key with a null value"
+      }
+    },
+    {
+      "id": "PYDS-16",
+      "question": "Which Matplotlib function is designed specifically to visualize the distribution of continuous numerical data using bins?",
+      "options": {
+        "A": "plt.scatter()",
+        "B": "plt.bar()",
+        "C": "plt.pie()",
+        "D": "plt.hist()"
+      }
+    },
+    {
+      "id": "PYDS-17",
+      "question": "In NumPy, what operation is computed by the matrix multiplication operator '@' between two conformable 2D arrays?",
+      "options": {
+        "A": "Matrix dot product",
+        "B": "Element-wise multiplication",
+        "C": "Outer cross product",
+        "D": "Kronecker summation"
+      }
+    },
+    {
+      "id": "PYDS-18",
+      "question": "Which method in Pandas reorganizes and summarizes data across rows and columns with aggregation?",
+      "options": {
+        "A": "df.melt()",
+        "B": "df.pivot_table()",
+        "C": "df.transpose()",
+        "D": "df.flatten()"
+      }
+    },
+    {
+      "id": "PYDS-19",
+      "question": "Which supervised machine learning algorithm classifies data points based on the majority class among nearest neighbors?",
+      "options": {
+        "A": "Linear Regression",
+        "B": "K-Means",
+        "C": "K-Nearest Neighbors",
+        "D": "Principal Component Analysis"
+      }
+    },
+    {
+      "id": "PYDS-20",
+      "question": "In Python, which built-in function returns both the index and value while iterating over a sequence?",
+      "options": {
+        "A": "range()",
+        "B": "zip()",
+        "C": "map()",
+        "D": "enumerate()"
+      }
+    }
+  ],
+  "Data Science": [
+    {
+      "id": "DS-01",
+      "question": "What is the primary difference between supervised and unsupervised machine learning?",
+      "options": {
+        "A": "Supervised learning uses labeled training targets, while unsupervised learning discovers patterns from unlabeled data",
+        "B": "Supervised learning runs only on CPU, while unsupervised learning requires GPUs",
+        "C": "Supervised learning cannot be applied to numerical data",
+        "D": "Unsupervised learning requires ground truth labels for loss computation"
+      }
+    },
+    {
+      "id": "DS-02",
+      "question": "In predictive modeling, what does high variance in a model typically indicate?",
+      "options": {
+        "A": "The model is underfitting the training data due to high simplicity",
+        "B": "The model is overfitting the training data and capturing noise",
+        "C": "The model has zero prediction error on unseen test data",
+        "D": "The learning rate is too small for gradient descent convergence"
+      }
+    },
+    {
+      "id": "DS-03",
+      "question": "Which evaluation metric represents the proportion of true positives among all instances predicted as positive?",
+      "options": {
+        "A": "Recall",
+        "B": "Accuracy",
+        "C": "Precision",
+        "D": "Specificity"
+      }
+    },
+    {
+      "id": "DS-04",
+      "question": "What is the purpose of cross-validation in a machine learning workflow?",
+      "options": {
+        "A": "To encrypt model weights for secure cloud deployment",
+        "B": "To eliminate the need for hyperparameter tuning",
+        "C": "To compress large training datasets into smaller formats",
+        "D": "To evaluate model generalizability by training and testing on multiple data partitions"
+      }
+    },
+    {
+      "id": "DS-05",
+      "question": "Which technique is commonly used to reduce the dimensionality of a feature space while preserving maximum variance?",
+      "options": {
+        "A": "Principal Component Analysis (PCA)",
+        "B": "One-Hot Encoding",
+        "C": "Polynomial Feature Expansion",
+        "D": "Min-Max Normalization"
+      }
+    },
+    {
+      "id": "DS-06",
+      "question": "What problem occurs during gradient descent when gradients become exponentially small as they propagate backward?",
+      "options": {
+        "A": "Exploding gradients problem",
+        "B": "Vanishing gradients problem",
+        "C": "Deadlock synchronization failure",
+        "D": "Memory allocation overflow"
+      }
+    },
+    {
+      "id": "DS-07",
+      "question": "In binary classification with extreme class imbalance, which metric is generally preferred over standard accuracy?",
+      "options": {
+        "A": "Mean Squared Error",
+        "B": "R-Squared Score",
+        "C": "Area Under the ROC Curve (AUC-ROC)",
+        "D": "Sum of Squared Residuals"
+      }
+    },
+    {
+      "id": "DS-08",
+      "question": "What is the primary effect of adding L1 regularization (Lasso) to a linear regression model?",
+      "options": {
+        "A": "It enforces that all coefficients remain strictly positive",
+        "B": "It scales feature values between zero and one",
+        "C": "It squares every prediction residual before loss calculation",
+        "D": "It drives less important feature coefficients to exactly zero, enabling feature selection"
+      }
+    },
+    {
+      "id": "DS-09",
+      "question": "Which metric measures the linear relationship between two continuous variables, ranging from -1 to +1?",
+      "options": {
+        "A": "Pearson correlation coefficient",
+        "B": "Euclidean distance",
+        "C": "Gini impurity index",
+        "D": "Chi-square contingency value"
+      }
+    },
+    {
+      "id": "DS-10",
+      "question": "In decision trees, what criterion measures the probability of a randomly chosen element being incorrectly labeled?",
+      "options": {
+        "A": "Cosine similarity",
+        "B": "Gini Impurity",
+        "C": "F1 Score",
+        "D": "Root Mean Squared Error"
+      }
+    },
+    {
+      "id": "DS-11",
+      "question": "What is the primary role of an activation function in an artificial neural network?",
+      "options": {
+        "A": "To normalize inputs to have unit variance",
+        "B": "To prevent gradient backpropagation across epochs",
+        "C": "To introduce non-linearity, allowing the network to learn complex patterns",
+        "D": "To automatically split the dataset into mini-batches"
+      }
+    },
+    {
+      "id": "DS-12",
+      "question": "Which clustering algorithm identifies dense clusters separated by regions of low density and handles noise points?",
+      "options": {
+        "A": "K-Means Clustering",
+        "B": "Hierarchical Agglomerative Clustering",
+        "C": "Linear Discriminant Analysis",
+        "D": "DBSCAN"
+      }
+    },
+    {
+      "id": "DS-13",
+      "question": "In hypothesis testing, what does a p-value less than the chosen significance level alpha signify?",
+      "options": {
+        "A": "Reject the null hypothesis in favor of the alternative hypothesis",
+        "B": "Accept the null hypothesis as definitively proven true",
+        "C": "The test statistic is invalid and data must be re-collected",
+        "D": "The sample size is too large for valid parametric inference"
+      }
+    },
+    {
+      "id": "DS-14",
+      "question": "What is data leakage in machine learning modeling?",
+      "options": {
+        "A": "Loss of precision when converting float64 arrays to float32",
+        "B": "When information from outside the training dataset is inadvertently used to train the model",
+        "C": "Physical exfiltration of database files over unsecured connections",
+        "D": "Dropping rows containing missing values during data cleaning"
+      }
+    },
+    {
+      "id": "DS-15",
+      "question": "Which ensemble technique combines predictions from multiple independently trained decision trees via majority voting or averaging?",
+      "options": {
+        "A": "Support Vector Classification",
+        "B": "Naive Bayes Classifier",
+        "C": "Random Forest",
+        "D": "K-Nearest Neighbors"
+      }
+    },
+    {
+      "id": "DS-16",
+      "question": "What does the Central Limit Theorem state regarding the sampling distribution of the sample mean?",
+      "options": {
+        "A": "All underlying populations must follow a normal distribution",
+        "B": "Sample variance is always equal to population standard deviation",
+        "C": "The mean of any sample is identical to the median of that sample",
+        "D": "The distribution of sample means approaches normality as sample size increases, regardless of population shape"
+      }
+    },
+    {
+      "id": "DS-17",
+      "question": "Which encoding method is most appropriate for a nominal categorical feature with no intrinsic ordering?",
+      "options": {
+        "A": "One-Hot Encoding",
+        "B": "Ordinal Integer Encoding",
+        "C": "Min-Max Scaling",
+        "D": "Logarithmic Power Transformation"
+      }
+    },
+    {
+      "id": "DS-18",
+      "question": "In regression modeling, what does an R-squared value of 0.85 indicate?",
+      "options": {
+        "A": "The model produces 85 false positives per 100 samples",
+        "B": "85% of the variance in the dependent variable is explained by the independent variables",
+        "C": "The regression slope has a p-value equal to 0.85",
+        "D": "The dataset has an 85% probability of containing outliers"
+      }
+    },
+    {
+      "id": "DS-19",
+      "question": "What is the primary purpose of the elbow method in K-Means clustering analysis?",
+      "options": {
+        "A": "To measure the accuracy of class labels on test data",
+        "B": "To determine the optimal learning rate for stochastic gradient descent",
+        "C": "To help determine the optimal number of clusters K by plotting inertia",
+        "D": "To identify collinear features before training"
+      }
+    },
+    {
+      "id": "DS-20",
+      "question": "Which sampling strategy is designed to balance class distributions by creating synthetic minority class instances?",
+      "options": {
+        "A": "Random Majority Undersampling",
+        "B": "Stratified K-Fold Split",
+        "C": "Bootstrap Aggregation",
+        "D": "SMOTE (Synthetic Minority Over-sampling Technique)"
+      }
+    }
+  ],
+  "Cloud Computing": [
+    {
+      "id": "CC-01",
+      "question": "Which cloud service model provides virtualized computing resources, storage, and networking where the consumer manages the operating system and applications?",
+      "options": {
+        "A": "Infrastructure as a Service (IaaS)",
+        "B": "Platform as a Service (PaaS)",
+        "C": "Software as a Service (SaaS)",
+        "D": "Function as a Service (FaaS)"
+      }
+    },
+    {
+      "id": "CC-02",
+      "question": "In cloud disaster recovery planning, what does Recovery Time Objective (RTO) measure?",
+      "options": {
+        "A": "The financial cost incurred per gigabyte of lost production data",
+        "B": "The maximum acceptable duration of system downtime before service is restored",
+        "C": "The age of files that must be recovered from backup storage for normal operation",
+        "D": "The physical distance required between primary and secondary data centers"
+      }
+    },
+    {
+      "id": "CC-03",
+      "question": "Which storage architecture treats data as discrete units with metadata and unique identifiers, making it ideal for storing unstructured web assets?",
+      "options": {
+        "A": "Block Storage",
+        "B": "File Storage",
+        "C": "Object Storage",
+        "D": "Tape Drive Storage"
+      }
+    },
+    {
+      "id": "CC-04",
+      "question": "What is the primary benefit of deploying applications across multiple cloud Availability Zones (AZs)?",
+      "options": {
+        "A": "Elimination of all public internet egress transfer charges",
+        "B": "Automatic conversion of SQL queries into microservice APIs",
+        "C": "Ensuring container images compile without dependencies",
+        "D": "High availability and fault tolerance against isolated data center outages"
+      }
+    },
+    {
+      "id": "CC-05",
+      "question": "In cloud networking, what is the role of a Virtual Private Cloud (VPC)?",
+      "options": {
+        "A": "To provide a logically isolated virtual network dedicated to a specific cloud tenant",
+        "B": "To store database backups indefinitely at zero storage cost",
+        "C": "To convert client HTTP traffic into hardware serial signals",
+        "D": "To automatically purchase spot server instances during price drops"
+      }
+    },
+    {
+      "id": "CC-06",
+      "question": "What is serverless computing (Function as a Service)?",
+      "options": {
+        "A": "Running software applications on personal desktop hardware without internet connection",
+        "B": "An execution model where the cloud provider manages infrastructure and bills only for runtime consumed",
+        "C": "Hosting monolithic enterprise applications on dedicated bare-metal servers",
+        "D": "A database system that does not store any structured or relational data"
+      }
+    },
+    {
+      "id": "CC-07",
+      "question": "Which mechanism automatically increases or decreases the number of compute instances based on live workload demand?",
+      "options": {
+        "A": "Static Provisioning",
+        "B": "Manual Overclocking",
+        "C": "Auto-Scaling",
+        "D": "DNS Forwarding"
+      }
+    },
+    {
+      "id": "CC-08",
+      "question": "Under the Cloud Shared Responsibility Model, which component is typically the responsibility of the customer in IaaS?",
+      "options": {
+        "A": "Physical data center perimeter security and facility cooling",
+        "B": "Hypervisor hardware maintenance and host OS patching",
+        "C": "Power supply redundancy for physical rack servers",
+        "D": "Guest operating system patching and application security configurations"
+      }
+    },
+    {
+      "id": "CC-09",
+      "question": "What technology delivers content to users from cache servers deployed near their geographic location to reduce latency?",
+      "options": {
+        "A": "Content Delivery Network (CDN)",
+        "B": "Network Address Translator (NAT)",
+        "C": "Dynamic Host Configuration Protocol (DHCP)",
+        "D": "Virtual Tape Library (VTL)"
+      }
+    },
+    {
+      "id": "CC-10",
+      "question": "In Identity and Access Management (IAM), what does the Principle of Least Privilege dictate?",
+      "options": {
+        "A": "Granting root administrative credentials to all developers on team onboarding",
+        "B": "Granting users only the minimal permissions necessary to perform their assigned tasks",
+        "C": "Allowing anonymous read and write access to all cloud storage buckets",
+        "D": "Rotating passwords only when an active breach is confirmed by security"
+      }
+    },
+    {
+      "id": "CC-11",
+      "question": "How does OS-level containerization differ from traditional hardware virtualization?",
+      "options": {
+        "A": "Containers require a dedicated hypervisor and full guest operating system per instance",
+        "B": "Containers cannot run on Linux operating systems",
+        "C": "Containers share the host operating system kernel, making them lighter and faster to start",
+        "D": "Virtual machines share RAM directly without memory isolation"
+      }
+    },
+    {
+      "id": "CC-12",
+      "question": "What cloud migration strategy, commonly called 'Lift and Shift', moves an application to the cloud with zero code modifications?",
+      "options": {
+        "A": "Refactoring",
+        "B": "Repurchasing",
+        "C": "Retiring",
+        "D": "Rehosting"
+      }
+    },
+    {
+      "id": "CC-13",
+      "question": "What is the primary role of a Cloud Load Balancer?",
+      "options": {
+        "A": "Distributing incoming network traffic across multiple healthy target instances to optimize throughput",
+        "B": "Converting static HTML web pages into containerized microservices",
+        "C": "Compressing hard drive images to reduce cloud storage billing",
+        "D": "Scanning source code repositories for syntax and formatting errors"
+      }
+    },
+    {
+      "id": "CC-14",
+      "question": "In cloud operations, what does Recovery Point Objective (RPO) measure?",
+      "options": {
+        "A": "The maximum acceptable age of data lost due to a major system disruption",
+        "B": "The total number of minutes required to reboot a physical server rack",
+        "C": "The bandwidth speed between user browsers and the edge location",
+        "D": "The percentage of CPU utilization needed to trigger auto-scaling"
+      }
+    },
+    {
+      "id": "CC-15",
+      "question": "Which cloud computing model combines private cloud infrastructure with one or more public cloud services?",
+      "options": {
+        "A": "Monolithic Cloud",
+        "B": "Hybrid Cloud",
+        "C": "Standalone Cloud",
+        "D": "Local Edge Grid"
+      }
+    },
+    {
+      "id": "CC-16",
+      "question": "What is multi-tenancy in cloud computing architecture?",
+      "options": {
+        "A": "Requiring each employee to possess multiple company email addresses",
+        "B": "Deploying a separate physical server cluster for every single end user",
+        "C": "An architecture where a single instance of software serves multiple distinct customer organizations with data isolation",
+        "D": "Connecting to a cloud database through multiple wireless routers simultaneously"
+      }
+    },
+    {
+      "id": "CC-17",
+      "question": "Which cloud service allows automated provisioning of infrastructure using declarative configuration files instead of manual console clicks?",
+      "options": {
+        "A": "Infrastructure as Code (IaC)",
+        "B": "Software as a Service (SaaS)",
+        "C": "Network Attached Storage (NAS)",
+        "D": "Domain Name System (DNS)"
+      }
+    },
+    {
+      "id": "CC-18",
+      "question": "What is an Elastic IP address in cloud networking?",
+      "options": {
+        "A": "An IP address that changes automatically every 60 seconds",
+        "B": "A static IPv4 address designed for dynamic cloud computing that can be rapidly remapped to instances",
+        "C": "An IP address reserved exclusively for database query caching",
+        "D": "A private MAC address assigned to local wireless printers"
+      }
+    },
+    {
+      "id": "CC-19",
+      "question": "In cloud databases, what is database sharding?",
+      "options": {
+        "A": "Encrypting database table columns using public-key cryptography",
+        "B": "Deleting rows older than 30 days to save disk space",
+        "C": "Horizontally partitioning database records across multiple independent database servers",
+        "D": "Combining all relational tables into a single unindexed spreadsheet file"
+      }
+    },
+    {
+      "id": "CC-20",
+      "question": "What metric is formally specified in a Cloud Service Level Agreement (SLA) to guarantee system reliability?",
+      "options": {
+        "A": "Total lines of server source code written",
+        "B": "Number of engineers on duty during holidays",
+        "C": "Color calibration accuracy of monitoring dashboards",
+        "D": "Service uptime percentage commitment (such as 99.99%)"
+      }
+    }
+  ],
+  "Artificial Intelligence & Machine Learning (AIML)": [
+    {
+      "id": "AIML-01",
+      "question": "What is the primary optimization objective of the Gradient Descent algorithm in model training?",
+      "options": {
+        "A": "To iteratively adjust model parameters to minimize the loss or cost function",
+        "B": "To maximize the total number of hidden layers in a neural network",
+        "C": "To convert all text input tokens into one-hot binary matrices",
+        "D": "To eliminate all training samples that have negative numerical values"
+      }
+    },
+    {
+      "id": "AIML-02",
+      "question": "In machine learning evaluation, what does the Recall metric quantify?",
+      "options": {
+        "A": "The proportion of predicted positives that were truly positive",
+        "B": "The proportion of actual positive instances correctly identified by the model",
+        "C": "The arithmetic average of model execution runtime per batch",
+        "D": "The ratio of training samples to testing samples in a dataset"
+      }
+    },
+    {
+      "id": "AIML-03",
+      "question": "What neural network architecture incorporates convolutional filters and pooling layers, making it ideal for visual image processing?",
+      "options": {
+        "A": "Recurrent Neural Network (RNN)",
+        "B": "Multilayer Perceptron (MLP)",
+        "C": "Convolutional Neural Network (CNN)",
+        "D": "Radial Basis Function Network (RBFN)"
+      }
+    },
+    {
+      "id": "AIML-04",
+      "question": "What phenomenon occurs when an artificial intelligence model performs exceptionally on training data but fails to generalize to test data?",
+      "options": {
+        "A": "Underfitting",
+        "B": "High Bias",
+        "C": "Gradient Saturation",
+        "D": "Overfitting"
+      }
+    },
+    {
+      "id": "AIML-05",
+      "question": "Which activation function outputs values strictly in the range between 0 and 1, making it well-suited for binary probability estimation?",
+      "options": {
+        "A": "Sigmoid",
+        "B": "ReLU (Rectified Linear Unit)",
+        "C": "Leaky ReLU",
+        "D": "Linear Activation"
+      }
+    },
+    {
+      "id": "AIML-06",
+      "question": "In reinforcement learning, what component balances exploration of new actions with exploitation of known high-reward actions?",
+      "options": {
+        "A": "Support Vector Margin",
+        "B": "Epsilon-Greedy Strategy",
+        "C": "K-Means Centroid Initializer",
+        "D": "Batch Normalization Layer"
+      }
+    },
+    {
+      "id": "AIML-07",
+      "question": "What mathematical technique enables neural networks to calculate gradients of the loss with respect to all weights using the chain rule?",
+      "options": {
+        "A": "Heuristic Search",
+        "B": "Monte Carlo Sampling",
+        "C": "Backpropagation",
+        "D": "Singular Value Decomposition"
+      }
+    },
+    {
+      "id": "AIML-08",
+      "question": "What type of learning uses an agent interacting with an environment through states, actions, and reward signals?",
+      "options": {
+        "A": "Supervised Learning",
+        "B": "Unsupervised Learning",
+        "C": "Self-Organizing Mapping",
+        "D": "Reinforcement Learning"
+      }
+    },
+    {
+      "id": "AIML-09",
+      "question": "Which natural language processing technique maps vocabulary words to dense continuous vectors capturing semantic relationships?",
+      "options": {
+        "A": "Word Embeddings (such as Word2Vec)",
+        "B": "Stop Word Removal",
+        "C": "Lemmatization Prefixing",
+        "D": "One-Hot Matrix Stacking"
+      }
+    },
+    {
+      "id": "AIML-10",
+      "question": "What is the primary function of a pooling layer (such as MaxPooling) in a Convolutional Neural Network?",
+      "options": {
+        "A": "To double the spatial dimensions of incoming feature maps",
+        "B": "To reduce spatial dimensions, parameter count, and computational burden while retaining dominant features",
+        "C": "To calculate classification probabilities across final output classes",
+        "D": "To normalize input pixels to follow an exponential distribution"
+      }
+    },
+    {
+      "id": "AIML-11",
+      "question": "What metric is defined as the harmonic mean of precision and recall?",
+      "options": {
+        "A": "Mean Absolute Error",
+        "B": "R-Squared",
+        "C": "F1 Score",
+        "D": "Log-Loss"
+      }
+    },
+    {
+      "id": "AIML-12",
+      "question": "What learning strategy reuses weights from a model trained on a massive generic dataset for a specialized target task with limited data?",
+      "options": {
+        "A": "Unsupervised Clustering",
+        "B": "Grid Hyperparameter Search",
+        "C": "Bootstrap Sampling",
+        "D": "Transfer Learning"
+      }
+    },
+    {
+      "id": "AIML-13",
+      "question": "In Transformer neural network models, what mechanism enables the network to weigh the relative importance of different words in a sequence regardless of distance?",
+      "options": {
+        "A": "Self-Attention Mechanism",
+        "B": "Max Pooling Reduction",
+        "C": "Dropout Regularization",
+        "D": "Markov Chain Transition"
+      }
+    },
+    {
+      "id": "AIML-14",
+      "question": "What is the role of dropout in deep neural network regularization?",
+      "options": {
+        "A": "Dropping rows that contain duplicate feature values before training",
+        "B": "Randomly deactivating a fraction of neurons during training passes to prevent co-adaptation",
+        "C": "Halving the numerical precision of model weights from float32 to float16",
+        "D": "Discarding testing samples that exceed one standard deviation"
+      }
+    },
+    {
+      "id": "AIML-15",
+      "question": "Which machine learning algorithm finds a hyperplane that maximizes the margin separating distinct classes of data points?",
+      "options": {
+        "A": "K-Means Clustering",
+        "B": "Decision Tree Regressor",
+        "C": "Support Vector Machine (SVM)",
+        "D": "Gaussian Mixture Model"
+      }
+    },
+    {
+      "id": "AIML-16",
+      "question": "What recurrent architecture was specifically developed to resolve the vanishing gradient problem when learning long-term dependencies in sequential data?",
+      "options": {
+        "A": "Standard Vanilla Perceptron",
+        "B": "Feedforward Neural Network",
+        "C": "Restricted Boltzmann Machine",
+        "D": "Long Short-Term Memory (LSTM) Network"
+      }
+    },
+    {
+      "id": "AIML-17",
+      "question": "What unsupervised algorithm clusters data by iteratively updating cluster centroids to minimize the within-cluster sum of squares?",
+      "options": {
+        "A": "K-Means Clustering",
+        "B": "Linear Regression",
+        "C": "Random Forest Classifier",
+        "D": "Logistic Regression"
+      }
+    },
+    {
+      "id": "AIML-18",
+      "question": "In generative modeling, what two sub-networks compete against each other in a Generative Adversarial Network (GAN)?",
+      "options": {
+        "A": "An encoder and a decoder",
+        "B": "A generator and a discriminator",
+        "C": "A classifier and a regressor",
+        "D": "A policy network and a value network"
+      }
+    },
+    {
+      "id": "AIML-19",
+      "question": "What is the Dying ReLU problem observed in neural network training?",
+      "options": {
+        "A": "Memory corruption caused by floating point division by zero",
+        "B": "Network weights becoming infinitely large during forward propagation",
+        "C": "Neurons becoming permanently inactive when inputs remain negative, yielding zero gradient",
+        "D": "The GPU cooling system failing during intensive batch training"
+      }
+    },
+    {
+      "id": "AIML-20",
+      "question": "Which loss function is standard for evaluating multi-class classification neural networks with softmax output layers?",
+      "options": {
+        "A": "Mean Squared Error",
+        "B": "Hinge Loss",
+        "C": "Mean Absolute Percentage Error",
+        "D": "Categorical Cross-Entropy Loss"
+      }
+    }
+  ],
+  "UI-UX": [
+    {
+      "id": "UIUX-01",
+      "question": "Which term describes a visual cue that hints at how an interactive interface element should be used?",
+      "options": {
+        "A": "Affordance",
+        "B": "Skeuomorphism",
+        "C": "Fitts Law",
+        "D": "Gestalt Closure"
+      }
+    },
+    {
+      "id": "UIUX-02",
+      "question": "According to WCAG 2.1 Level AA standards, what is the minimum required color contrast ratio for normal body text?",
+      "options": {
+        "A": "3 to 1",
+        "B": "4.5 to 1",
+        "C": "7 to 1",
+        "D": "10 to 1"
+      }
+    },
+    {
+      "id": "UIUX-03",
+      "question": "What is the primary deliverable of an Information Architecture (IA) design phase?",
+      "options": {
+        "A": "High-fidelity micro-interaction animations",
+        "B": "CSS stylesheet token definitions",
+        "C": "A structured sitemap and taxonomy system",
+        "D": "Final production code for responsive navigation bars"
+      }
+    },
+    {
+      "id": "UIUX-04",
+      "question": "In usability evaluation, what does Jakob Nielsen heuristic Visibility of System Status recommend?",
+      "options": {
+        "A": "Keeping users informed about what is happening through timely feedback",
+        "B": "Hiding background process indicators to reduce cognitive load",
+        "C": "Disabling error alerts so user journeys remain uninterrupted",
+        "D": "Always showing full technical exception stack traces to users"
+      }
+    },
+    {
+      "id": "UIUX-05",
+      "question": "What is the main distinction between low-fidelity and high-fidelity wireframes?",
+      "options": {
+        "A": "Low-fidelity wireframes contain production vector illustrations while high-fidelity wireframes use sketches",
+        "B": "Low-fidelity wireframes focus on structural layout without visual styling, while high-fidelity models typography, color, and UI details",
+        "C": "Low-fidelity wireframes are clickable in production while high-fidelity wireframes are static images",
+        "D": "Low-fidelity wireframes require database connections while high-fidelity wireframes do not"
+      }
+    },
+    {
+      "id": "UIUX-06",
+      "question": "Which UX research methodology involves observing users while they speak their thoughts aloud during a workflow?",
+      "options": {
+        "A": "Card sorting",
+        "B": "A/B multivariate split testing",
+        "C": "Think-aloud protocol usability testing",
+        "D": "Heatmap click analytics"
+      }
+    },
+    {
+      "id": "UIUX-07",
+      "question": "According to Fitts Law, which adjustment makes an on-screen target easiest and fastest to click?",
+      "options": {
+        "A": "Decreasing the target size and placing it in the screen center",
+        "B": "Increasing the target distance from the cursor position",
+        "C": "Hiding the target inside a nested dropdown accordion",
+        "D": "Increasing the target size and placing it near the cursor or screen edge"
+      }
+    },
+    {
+      "id": "UIUX-08",
+      "question": "Which Gestalt principle explains why elements positioned close together are perceived as belonging to the same group?",
+      "options": {
+        "A": "Law of Proximity",
+        "B": "Law of Continuity",
+        "C": "Law of Symmetry",
+        "D": "Law of Common Fate"
+      }
+    },
+    {
+      "id": "UIUX-09",
+      "question": "What is the primary purpose of creating user personas during product discovery?",
+      "options": {
+        "A": "To compile legal compliance forms for user data collection",
+        "B": "To represent key user segment motivations, goals, and pain points to guide design decisions",
+        "C": "To determine backend database indexing strategies",
+        "D": "To create fictitious marketing employee profiles for internal hiring"
+      }
+    },
+    {
+      "id": "UIUX-10",
+      "question": "In responsive web design, what does the term mobile-first design signify?",
+      "options": {
+        "A": "Refusing to build desktop interfaces for any user group",
+        "B": "Designing native Android APKs before publishing web domains",
+        "C": "Designing for the smallest viewport first and progressively enhancing the layout for larger displays",
+        "D": "Limiting all typography to single-column monospace fonts"
+      }
+    },
+    {
+      "id": "UIUX-11",
+      "question": "Which research method is specifically used to understand how users mentally categorize information for navigation menu hierarchies?",
+      "options": {
+        "A": "First click testing",
+        "B": "Eye tracking analysis",
+        "C": "Tree testing",
+        "D": "Card sorting"
+      }
+    },
+    {
+      "id": "UIUX-12",
+      "question": "What is microcopy in UI design?",
+      "options": {
+        "A": "Short contextual text snippets such as button labels, form field hints, and tooltip descriptions",
+        "B": "Minified CSS code bundles embedded in SVG icons",
+        "C": "Legal copyright notices printed at the bottom of terms of service pages",
+        "D": "Microscopic typography used to hide unwanted tracking disclosures"
+      }
+    },
+    {
+      "id": "UIUX-13",
+      "question": "In design systems, what are design tokens?",
+      "options": {
+        "A": "Encrypted authentication cookies exchanged between Figma and browser sessions",
+        "B": "Named values for design variables like colors, spacing, and typography that sync across design and code",
+        "C": "Cryptocurrency vouchers given to usability testing participants",
+        "D": "Figma plug-in licenses required for team collaboration"
+      }
+    },
+    {
+      "id": "UIUX-14",
+      "question": "Which UX metric measures the percentage of users who drop off at each successive step in a multi-step workflow?",
+      "options": {
+        "A": "Net Promoter Score (NPS)",
+        "B": "System Usability Scale (SUS)",
+        "C": "Funnel drop-off rate",
+        "D": "Single Ease Question (SEQ)"
+      }
+    },
+    {
+      "id": "UIUX-15",
+      "question": "What does the heuristic Error Prevention suggest as the most user-friendly design approach?",
+      "options": {
+        "A": "Showing elaborate error messages after invalid inputs are submitted",
+        "B": "Preventing errors through confirmation dialogs and sensible constraints before an action occurs",
+        "C": "Automatically clearing all form inputs whenever an error is encountered",
+        "D": "Silently ignoring incorrect data and replacing it with random values"
+      }
+    },
+    {
+      "id": "UIUX-16",
+      "question": "What is an empathy map primarily designed to visualize about a target user?",
+      "options": {
+        "A": "Their network latency and device operating system specifications",
+        "B": "Their financial transactions and credit card limits",
+        "C": "What they say, think, do, and feel during an experience",
+        "D": "Their daily screen time spent on third-party competitor apps"
+      }
+    },
+    {
+      "id": "UIUX-17",
+      "question": "In typographic hierarchy, which element should have the greatest visual weight to guide reading order?",
+      "options": {
+        "A": "Footer disclaimer text",
+        "B": "Form input helper text",
+        "C": "Secondary body paragraphs",
+        "D": "Primary page headers (H1)"
+      }
+    },
+    {
+      "id": "UIUX-18",
+      "question": "What is a major benefit of using an 8pt grid system in UI layouts?",
+      "options": {
+        "A": "It provides consistent visual rhythm and simplifies developer handoff across multiple display densities",
+        "B": "It reduces web page download size by 50 percent",
+        "C": "It eliminates the need for user testing on mobile screens",
+        "D": "It forces all vector graphics to render in black and white"
+      }
+    },
+    {
+      "id": "UIUX-19",
+      "question": "What does the System Usability Scale (SUS) score provide?",
+      "options": {
+        "A": "The precise millisecond rendering duration of DOM nodes",
+        "B": "A standardized composite score from 0 to 100 assessing perceived system usability",
+        "C": "The total number of bugs filed in the bug tracker during sprint reviews",
+        "D": "The percentage of code covered by automated Cypress unit tests"
+      }
+    },
+    {
+      "id": "UIUX-20",
+      "question": "What is the primary role of progressive disclosure in interface design?",
+      "options": {
+        "A": "Displaying all available options and settings on the initial landing screen",
+        "B": "Encrypting form inputs progressively as characters are typed",
+        "C": "Showing only essential information upfront and revealing advanced details on demand",
+        "D": "Disclosing user location data to advertisers gradually over time"
+      }
+    }
+  ],
+  "Auto CAD & CATIA": [
+    {
+      "id": "ACAD-01",
+      "question": "In AutoCAD 2D drafting, what coordinate format represents a relative polar point 50 units away at an angle of 45 degrees?",
+      "options": {
+        "A": "@50,45",
+        "B": "@50<45",
+        "C": "#50<45",
+        "D": "50,45"
+      }
+    },
+    {
+      "id": "ACAD-02",
+      "question": "Which AutoCAD feature enables the cursor to snap precisely to geometric points such as endpoints, midpoints, and circle centers?",
+      "options": {
+        "A": "Grid Snap (F9)",
+        "B": "Object Snap / OSNAP (F3)",
+        "C": "Ortho Mode (F8)",
+        "D": "Dynamic Input (F12)"
+      }
+    },
+    {
+      "id": "ACAD-03",
+      "question": "What is the primary difference between a Line and a Polyline in AutoCAD?",
+      "options": {
+        "A": "A line is always curved while a polyline is always straight",
+        "B": "A line can only be drawn horizontally while a polyline can be drawn vertically",
+        "C": "A polyline is a single unified object consisting of connected line or arc segments, whereas individual lines are distinct independent entities",
+        "D": "A polyline cannot have any assigned line weight or color properties"
+      }
+    },
+    {
+      "id": "ACAD-04",
+      "question": "What is the key advantage of inserting an External Reference (Xref) over embedding a standard Block in AutoCAD?",
+      "options": {
+        "A": "Xrefs increase the file size by converting all vectors into raster images",
+        "B": "Xrefs automatically delete the original source drawing upon saving",
+        "C": "Xrefs require no file path management across network drives",
+        "D": "Changes made in the source reference drawing are dynamically reflected in the host drawing whenever reloaded"
+      }
+    },
+    {
+      "id": "ACAD-05",
+      "question": "In engineering drawings, what is the main distinction between First Angle and Third Angle projection?",
+      "options": {
+        "A": "In First Angle the object is between observer and projection plane, whereas in Third Angle the projection plane is between observer and object",
+        "B": "First Angle is used exclusively for 3D perspective while Third Angle is for 2D floor plans",
+        "C": "First Angle uses imperial feet and inches while Third Angle uses metric millimeters",
+        "D": "First Angle prohibits hidden dashed lines while Third Angle allows them"
+      }
+    },
+    {
+      "id": "ACAD-06",
+      "question": "In CATIA Part Design, which feature creates a 3D solid body by extruding a 2D profile along a normal direction?",
+      "options": {
+        "A": "Shaft",
+        "B": "Pad",
+        "C": "Rib",
+        "D": "Pocket"
+      }
+    },
+    {
+      "id": "ACAD-07",
+      "question": "In the CATIA Sketcher workbench, what does a green geometric profile signify?",
+      "options": {
+        "A": "The sketch contains unresolved syntax errors",
+        "B": "The sketch is under-constrained with unconstrained degrees of freedom",
+        "C": "The sketch is fully constrained with all geometric and dimensional limits satisfied",
+        "D": "The sketch is over-constrained with redundant conflicting dimensions"
+      }
+    },
+    {
+      "id": "ACAD-08",
+      "question": "Which CATIA workbench is specialized for advanced freeform surface modeling, aerodynamic fairings, and Class A curvature styling?",
+      "options": {
+        "A": "Generative Sheetmetal Design",
+        "B": "Structural Analysis Bench",
+        "C": "Digital Mockup (DMU) Kinematics",
+        "D": "Generative Shape Design (GSD)"
+      }
+    },
+    {
+      "id": "ACAD-09",
+      "question": "In CATIA Part Design, which operation removes material by revolving a 2D profile around a central reference axis?",
+      "options": {
+        "A": "Groove",
+        "B": "Shaft",
+        "C": "Slot",
+        "D": "Pocket"
+      }
+    },
+    {
+      "id": "ACAD-10",
+      "question": "In CATIA Assembly Design, which constraint aligns the central axes of two cylindrical parts to make them concentric?",
+      "options": {
+        "A": "Offset constraint",
+        "B": "Coincidence constraint",
+        "C": "Angle constraint",
+        "D": "Contact constraint"
+      }
+    },
+    {
+      "id": "ACAD-11",
+      "question": "What does the Hatch command create in an AutoCAD section drawing?",
+      "options": {
+        "A": "Automated leader lines pointing to fastener part numbers",
+        "B": "Orthographic perspective grids for 3D walkthroughs",
+        "C": "A repeating pattern of lines or textures within an enclosed boundary to indicate cut material",
+        "D": "Title block borders with approval signatures"
+      }
+    },
+    {
+      "id": "ACAD-12",
+      "question": "In AutoCAD, what is the role of Paper Space (Layout tabs) versus Model Space?",
+      "options": {
+        "A": "Model Space is for writing LISP code and Paper Space is for compiling scripts",
+        "B": "Model Space is for 2D drafting and Paper Space is for 3D solid rendering",
+        "C": "Model Space is for plotting to PDF while Paper Space is for CNC machining exports",
+        "D": "Model Space is for drawing the full-scale 1 to 1 model, while Paper Space is for setting up printable sheets with title blocks, viewports, and specific scales"
+      }
+    },
+    {
+      "id": "ACAD-13",
+      "question": "In CATIA Part Design, what does the Stiffener feature generate?",
+      "options": {
+        "A": "A thin structural reinforcement web or rib between solid walls based on an open wireframe profile",
+        "B": "A rubber vibration damping gasket between assembly joints",
+        "C": "A high-tension coil spring around a shaft",
+        "D": "A sheetmetal bend relief cutout"
+      }
+    },
+    {
+      "id": "ACAD-14",
+      "question": "What is the primary function of Geometric Dimensioning and Tolerancing (GD and T) symbols on mechanical component drawings?",
+      "options": {
+        "A": "Calculating the retail selling price of manufactured parts",
+        "B": "Communicating allowable geometric variations for form, orientation, location, and runout to guarantee interchangeable fit",
+        "C": "Listing chemical safety warnings for toxic surface electroplating",
+        "D": "Specifying shipping container crate dimensions"
+      }
+    },
+    {
+      "id": "ACAD-15",
+      "question": "In CATIA, what is the main benefit of Parametric Modeling?",
+      "options": {
+        "A": "Drawings are stored as uneditable read-only raster images",
+        "B": "Models cannot be revised once saved to disk",
+        "C": "Modifying an underlying dimension or parameter automatically updates the entire geometry, downstream features, and associated 2D drawings",
+        "D": "It eliminates the need for 3D graphics cards on CAD workstations"
+      }
+    },
+    {
+      "id": "ACAD-16",
+      "question": "In AutoCAD, which command allows users to create a parallel copy of lines, concentric circles, or parallel curves at a specified distance?",
+      "options": {
+        "A": "Array",
+        "B": "Mirror",
+        "C": "Scale",
+        "D": "Offset"
+      }
+    },
+    {
+      "id": "ACAD-17",
+      "question": "What is a Fillet in mechanical CAD design?",
+      "options": {
+        "A": "A rounded transition corner between two intersecting surfaces or edges to reduce stress concentrations",
+        "B": "A sharp 45-degree beveled cut along a metal edge",
+        "C": "A tapped hole drilled for metric machine screws",
+        "D": "A hollow core cavity created by sand casting"
+      }
+    },
+    {
+      "id": "ACAD-18",
+      "question": "In CATIA Part Design, which feature creates a pocket (cavity) by removing material from an existing solid using a closed sketch?",
+      "options": {
+        "A": "Pad",
+        "B": "Pocket",
+        "C": "Hole",
+        "D": "Rib"
+      }
+    },
+    {
+      "id": "ACAD-19",
+      "question": "In CATIA Drafting, which view shows internal details of a part as if cut open by an imaginary cutting plane?",
+      "options": {
+        "A": "Isometric View",
+        "B": "Detail View",
+        "C": "Section View",
+        "D": "Auxiliary View"
+      }
+    },
+    {
+      "id": "ACAD-20",
+      "question": "In AutoCAD, what does the Purge command do?",
+      "options": {
+        "A": "Deletes all dimension styles and resets paper size to letter",
+        "B": "Permanently erases all geometry on the zero layer",
+        "C": "Formats the workstation hard disk to free RAM",
+        "D": "Removes unused named objects like unreferenced blocks, empty layers, and unused line types to reduce file size"
+      }
+    }
+  ],
+  "Cyber Security": [
+    {
+      "id": "CS-01",
+      "question": "What three foundational principles form the core of the information security CIA triad?",
+      "options": {
+        "A": "Confidentiality, Integrity, and Availability",
+        "B": "Control, Inspection, and Authorization",
+        "C": "Cryptography, Interception, and Authentication",
+        "D": "Compliance, Intelligence, and Auditing"
+      }
+    },
+    {
+      "id": "CS-02",
+      "question": "Which cryptographic algorithm represents a symmetric block cipher widely used for securing data at rest?",
+      "options": {
+        "A": "RSA",
+        "B": "AES (Advanced Encryption Standard)",
+        "C": "Diffie-Hellman",
+        "D": "ECC (Elliptic Curve Cryptography)"
+      }
+    },
+    {
+      "id": "CS-03",
+      "question": "What is the primary difference between symmetric and asymmetric encryption?",
+      "options": {
+        "A": "Symmetric uses hardware tokens, while asymmetric uses passwords only",
+        "B": "Symmetric encryption cannot be decrypted once applied to files",
+        "C": "Symmetric uses a single shared key, while asymmetric uses a mathematically linked public-private key pair",
+        "D": "Asymmetric encryption is obsolete and forbidden in modern security protocols"
+      }
+    },
+    {
+      "id": "CS-04",
+      "question": "What type of attack occurs when an attacker positions themselves between two communicating parties to silently intercept and alter traffic?",
+      "options": {
+        "A": "Denial of Service (DoS)",
+        "B": "Buffer Overflow",
+        "C": "Cross-Site Request Forgery",
+        "D": "Man-in-the-Middle (MitM) Attack"
+      }
+    },
+    {
+      "id": "CS-05",
+      "question": "Which web vulnerability allows attackers to manipulate backend database queries by entering malicious SQL statements into web inputs?",
+      "options": {
+        "A": "SQL Injection (SQLi)",
+        "B": "Broken Object Level Authorization",
+        "C": "XML External Entity Attack",
+        "D": "Server-Side Request Forgery"
+      }
+    },
+    {
+      "id": "CS-06",
+      "question": "What security architecture operates on the principle of 'never trust, always verify' regardless of user location?",
+      "options": {
+        "A": "Perimeter Defense Model",
+        "B": "Zero Trust Architecture",
+        "C": "Demilitarized Zone (DMZ)",
+        "D": "Open Network Architecture"
+      }
+    },
+    {
+      "id": "CS-07",
+      "question": "In authentication systems, which combination exemplifies Multi-Factor Authentication (MFA)?",
+      "options": {
+        "A": "A password and a repeated confirmation of the same password",
+        "B": "A username and an employee identification number",
+        "C": "A password (something you know) and a time-based authenticator code (something you have)",
+        "D": "An email address and a mother's maiden name security answer"
+      }
+    },
+    {
+      "id": "CS-08",
+      "question": "What malicious software encrypts victim files and demands financial payment in exchange for the decryption key?",
+      "options": {
+        "A": "Spyware",
+        "B": "Adware",
+        "C": "Keylogger",
+        "D": "Ransomware"
+      }
+    },
+    {
+      "id": "CS-09",
+      "question": "What essential mathematical property distinguishes a cryptographic hash function from encryption?",
+      "options": {
+        "A": "Hashing is a one-way function that cannot be reversed to discover the original input",
+        "B": "Hashing requires a private key to compute the output digest",
+        "C": "Hashing doubles the size of the original message file",
+        "D": "Hashing generates different outputs every time it is run on identical input"
+      }
+    },
+    {
+      "id": "CS-10",
+      "question": "What is the primary function of a stateful firewall compared to a stateless packet filter?",
+      "options": {
+        "A": "It blocks all incoming traffic unconditionally without exception",
+        "B": "It tracks active connections and evaluates packets in the context of established TCP/UDP sessions",
+        "C": "It encrypts hard drives on routers using hardware acceleration",
+        "D": "It generates digital certificates for internal intranet servers"
+      }
+    },
+    {
+      "id": "CS-11",
+      "question": "In social engineering, what term describes a targeted phishing attack directed specifically against high-profile executives?",
+      "options": {
+        "A": "Pharming",
+        "B": "Vishing",
+        "C": "Whaling",
+        "D": "Smishing"
+      }
+    },
+    {
+      "id": "CS-12",
+      "question": "What is a Denial-of-Service (DoS) attack designed to accomplish against a target organization?",
+      "options": {
+        "A": "Exfiltrating employee payroll records silently over DNS",
+        "B": "Cracking cryptographic passwords through brute-force dictionaries",
+        "C": "Modifying database records without creating an audit log entry",
+        "D": "Overwhelming system resources or network links to make services unavailable to legitimate users"
+      }
+    },
+    {
+      "id": "CS-13",
+      "question": "What central platform collects, aggregates, correlates, and analyzes security event logs across an entire enterprise network?",
+      "options": {
+        "A": "Security Information and Event Management (SIEM)",
+        "B": "Domain Name System Security Extensions (DNSSEC)",
+        "C": "Simple Network Management Protocol (SNMP)",
+        "D": "Network Address Translation Gateway (NATG)"
+      }
+    },
+    {
+      "id": "CS-14",
+      "question": "What security assessment involves authorized simulated cyberattacks to discover and validate exploitable vulnerabilities in a system?",
+      "options": {
+        "A": "Static Code Formatting",
+        "B": "Penetration Testing (Ethical Hacking)",
+        "C": "Database Normalization",
+        "D": "Unit Regression Testing"
+      }
+    },
+    {
+      "id": "CS-15",
+      "question": "Which secure network protocol encrypts web traffic using Transport Layer Security (TLS) over port 443?",
+      "options": {
+        "A": "Telnet",
+        "B": "FTP",
+        "C": "HTTPS",
+        "D": "SNMP"
+      }
+    },
+    {
+      "id": "CS-16",
+      "question": "What security mechanism protects memory by ensuring that allocated memory regions are either writable or executable, but not both?",
+      "options": {
+        "A": "Address Resolution Protocol (ARP)",
+        "B": "Symmetric Encryption Wrapping",
+        "C": "Dynamic Buffer Compression",
+        "D": "Data Execution Prevention (W^X / DEP)"
+      }
+    },
+    {
+      "id": "CS-17",
+      "question": "What is a honeypot in network defense strategy?",
+      "options": {
+        "A": "A decoy system intentionally deployed to detect, deflect, and study unauthorized attacker activity",
+        "B": "An automated password recovery portal for employees",
+        "C": "A high-speed caching server that accelerates database reads",
+        "D": "A physical lock mechanism on data center server cages"
+      }
+    },
+    {
+      "id": "CS-18",
+      "question": "Which attack exploits trust by sending forged email claiming to be from a reputable source to lure individuals into revealing credentials?",
+      "options": {
+        "A": "Cross-Site Scripting",
+        "B": "Phishing",
+        "C": "SQL Injection",
+        "D": "SYN Flooding"
+      }
+    },
+    {
+      "id": "CS-19",
+      "question": "In Public Key Infrastructure (PKI), what is the function of a Certificate Authority (CA)?",
+      "options": {
+        "A": "To manufacture motherboard hardware microchips securely",
+        "B": "To store plaintext employee passwords in a centralized directory",
+        "C": "To verify organizational identity and issue signed digital certificates validating public keys",
+        "D": "To route internet traffic across undersea optical fiber cables"
+      }
+    },
+    {
+      "id": "CS-20",
+      "question": "What is a zero-day vulnerability in cybersecurity terminology?",
+      "options": {
+        "A": "A flaw that has been patched for more than 365 calendar days",
+        "B": "A password policy requiring daily password changes",
+        "C": "A backup system with zero seconds of data retention",
+        "D": "A software flaw unknown to the vendor, leaving zero days to prepare a patch prior to potential exploitation"
+      }
+    }
+  ],
+  "VLSI": [
+    {
+      "id": "VLSI-01",
+      "question": "What is the primary advantage of CMOS (Complementary Metal-Oxide-Semiconductor) technology over NMOS-only logic?",
+      "options": {
+        "A": "Near-zero static power dissipation because NMOS and PMOS networks are never on simultaneously in steady state",
+        "B": "Higher manufacturing cost per square millimeter of silicon wafer",
+        "C": "Complete immunity to thermal noise at room temperature",
+        "D": "Ability to operate without gate oxide dielectric layers"
+      }
+    },
+    {
+      "id": "VLSI-02",
+      "question": "In digital sequential circuits, what is setup time (t_setup)?",
+      "options": {
+        "A": "The time required to manufacture a photolithography mask",
+        "B": "The minimum duration that input data must remain stable before the active clock edge arrives",
+        "C": "The time elapsed between clock trigger and output Q valid transition",
+        "D": "The duration needed to power up the internal phase-locked loop (PLL)"
+      }
+    },
+    {
+      "id": "VLSI-03",
+      "question": "In digital sequential circuits, what is hold time (t_hold)?",
+      "options": {
+        "A": "The duration the chip can be held in warehouse inventory before assembly",
+        "B": "The time needed to discharge decoupling capacitors after power-down",
+        "C": "The minimum duration that input data must remain stable after the active clock edge has arrived",
+        "D": "The delay between synthesized gate nets and pad ring buffers"
+      }
+    },
+    {
+      "id": "VLSI-04",
+      "question": "What occurs when a flip-flop experiences a setup or hold time timing violation?",
+      "options": {
+        "A": "The clock tree synthesizer permanently halts future compiles",
+        "B": "The silicon substrate develops physical electromigration cracks",
+        "C": "The supply rail voltage increases by twenty percent automatically",
+        "D": "The flip-flop output enters a metastable state, hovering between logic 0 and 1 before settling unpredictably"
+      }
+    },
+    {
+      "id": "VLSI-05",
+      "question": "In hardware description languages like Verilog, what is the fundamental difference between blocking (=) and non-blocking (<=) assignments?",
+      "options": {
+        "A": "Blocking assignments execute sequentially and immediately update variables, while non-blocking assignments evaluate concurrently and update at the end of the time step",
+        "B": "Blocking assignments are used strictly for testbench delays while non-blocking assignments are for FPGA pins",
+        "C": "Blocking assignments synthesize exclusively to flip-flops while non-blocking synthesize to wires",
+        "D": "Blocking assignments are restricted to analog SPICE simulations"
+      }
+    },
+    {
+      "id": "VLSI-06",
+      "question": "What is Static Timing Analysis (STA) in the VLSI digital design flow?",
+      "options": {
+        "A": "Simulating all input vector combinations across billions of clock cycles",
+        "B": "A simulation-free method of verifying whether all signal paths satisfy setup and hold constraints under worst-case process corners",
+        "C": "Measuring steady-state leakage current using an external multimeter",
+        "D": "Counting the number of physical bond wires connecting the die to the leadframe"
+      }
+    },
+    {
+      "id": "VLSI-07",
+      "question": "In CMOS fabrication, what is the purpose of Design Rule Checking (DRC)?",
+      "options": {
+        "A": "Verifying that the synthesized netlist matches functional behavioral RTL",
+        "B": "Checking whether employee timesheets comply with corporate labor regulations",
+        "C": "Verifying that geometric layout features satisfy foundry geometric manufacturing limits (spacing, width, enclosure)",
+        "D": "Calculating the total number of flip-flops in a scan chain"
+      }
+    },
+    {
+      "id": "VLSI-08",
+      "question": "What does Layout Versus Schematic (LVS) check verify during physical design signoff?",
+      "options": {
+        "A": "That the physical mask layout connectivity matches the logical electrical circuit schematic perfectly",
+        "B": "That the silicon wafer thickness complies with international shipping guidelines",
+        "C": "That all register file addresses are mapped to non-volatile ROM",
+        "D": "That the Verilog code adheres to naming conventions for clock signals"
+      }
+    },
+    {
+      "id": "VLSI-09",
+      "question": "In a CMOS inverter, why is the PMOS transistor typically designed with a wider channel (W/L ratio) than the NMOS transistor?",
+      "options": {
+        "A": "To reduce parasitic capacitance across gate terminals",
+        "B": "Because hole mobility in silicon is significantly lower than electron mobility, requiring wider PMOS for equal drive strength",
+        "C": "To prevent thermal latch-up between adjacent N-wells",
+        "D": "To ensure the PMOS transistor acts as an inductive choke filter"
+      }
+    },
+    {
+      "id": "VLSI-10",
+      "question": "What is Clock Skew in a synchronous digital integrated circuit?",
+      "options": {
+        "A": "The total number of clock cycles consumed by division arithmetic units",
+        "B": "The frequency modulation introduced by external spread-spectrum oscillators",
+        "C": "The difference in clock arrival times at different flip-flops across the chip due to wire delays and buffer variations",
+        "D": "The phase drift between primary and secondary supply voltage rails"
+      }
+    },
+    {
+      "id": "VLSI-11",
+      "question": "What does Clock Jitter refer to in high-speed digital systems?",
+      "options": {
+        "A": "The mechanical vibration of the semiconductor package during ultrasonic bonding",
+        "B": "The reduction in clock amplitude caused by resistive copper wire losses",
+        "C": "The routing congestion observed in multi-layer metal grids",
+        "D": "The variation in clock edge arrival time at a single point relative to an ideal periodic clock over successive cycles"
+      }
+    },
+    {
+      "id": "VLSI-12",
+      "question": "What is the primary role of Clock Tree Synthesis (CTS) during ASIC place and route?",
+      "options": {
+        "A": "Designing combinatorial multiplexers for arithmetic logic units",
+        "B": "Balancing clock distribution networks with buffers to minimize clock skew and latency across all sequential elements",
+        "C": "Synthesizing testbenches for functional verification coverage",
+        "D": "Converting VHDL packages into SystemVerilog interfaces"
+      }
+    },
+    {
+      "id": "VLSI-13",
+      "question": "What is a major advantage of an FPGA (Field-Programmable Gate Array) over a custom ASIC?",
+      "options": {
+        "A": "Lower unit manufacturing cost when producing hundreds of millions of units",
+        "B": "Higher maximum clock frequencies and zero static power leakage",
+        "C": "Reconfigurability in the field and zero non-recurring engineering (NRE) mask tooling costs",
+        "D": "Smaller physical silicon area per logic gate implementation"
+      }
+    },
+    {
+      "id": "VLSI-14",
+      "question": "What is the primary danger of parasitic SCR latch-up in bulk CMOS integrated circuits?",
+      "options": {
+        "A": "Premature erasure of non-volatile configuration memory cells",
+        "B": "Loss of antenna rule compliance during polysilicon etching",
+        "C": "Excessive clock jitter in digital delay-locked loops",
+        "D": "Sudden low-impedance short-circuit path between VDD and GND that can draw massive current and permanently destroy the chip"
+      }
+    },
+    {
+      "id": "VLSI-15",
+      "question": "What is Scan Chain insertion in Design for Testability (DFT)?",
+      "options": {
+        "A": "Using optical microscopes to scan finished silicon wafers for dust particles",
+        "B": "Routing power rails in parallel stripes across the top metal layers",
+        "C": "Scanning source code for syntax errors before synthesis compilation",
+        "D": "Connecting functional flip-flops into a long shift register during test mode to make internal state observable and controllable"
+      }
+    },
+    {
+      "id": "VLSI-16",
+      "question": "What does Moore Law empirically state regarding semiconductor progress?",
+      "options": {
+        "A": "Clock frequencies of microprocessors double every five years while voltages increase linearly",
+        "B": "The number of transistors on a microchip doubles approximately every two years with decreasing cost per transistor",
+        "C": "Software execution speed doubles every six months independently of hardware architecture",
+        "D": "Silicon wafer diameter doubles every decade without increasing manufacturing complexity"
+      }
+    },
+    {
+      "id": "VLSI-17",
+      "question": "In deep submicron CMOS technologies, which factor contributes most significantly to total power dissipation when the circuit is idle?",
+      "options": {
+        "A": "Combinatorial dynamic switching charging capacitance",
+        "B": "Short-circuit crowbar current during output transitions",
+        "C": "Subthreshold leakage and gate oxide tunneling currents",
+        "D": "Inductive ground bounce across bond wire leads"
+      }
+    },
+    {
+      "id": "VLSI-18",
+      "question": "What is the primary technique used to safely transfer multi-bit asynchronous signals across different Clock Domains (CDC)?",
+      "options": {
+        "A": "Connecting the clock nets together with an inverter buffer",
+        "B": "Using asynchronous FIFOs or Gray-coded pointer synchronization to prevent metastability and data corruption",
+        "C": "Running both clock trees at the exact same physical wire length without buffers",
+        "D": "Increasing the power supply voltage on the destination domain"
+      }
+    },
+    {
+      "id": "VLSI-19",
+      "question": "In physical design layout, what does the Antenna Effect (plasma-induced gate oxide damage) refer to?",
+      "options": {
+        "A": "Unintended broadcast of RF frequencies that violates FCC communication standards",
+        "B": "Attenuation of clock signals when passing near copper heatsinks",
+        "C": "Absorption of wireless cellular signals by ungrounded metal fill patterns",
+        "D": "Accumulation of static charge on long metal interconnects during manufacturing that discharges through and damages delicate gate oxides"
+      }
+    },
+    {
+      "id": "VLSI-20",
+      "question": "What does the term Standard Cell Library encompass in an ASIC synthesis flow?",
+      "options": {
+        "A": "A database of retail pricing tables for consumer electronic components",
+        "B": "A legal repository of patented HDL source code snippets for open-source projects",
+        "C": "A pre-designed, pre-characterized collection of low-level digital logic gates with timing, power, and layout views",
+        "D": "A cleanroom protocol specification for chemical vapor deposition equipment"
+      }
+    }
+  ],
+  "Python with Machine Learning": [
+    {
+      "id": "PYML-01",
+      "question": "In scikit-learn, what object encapsulates a sequence of data transformations followed by a final estimator into a unified object?",
+      "options": {
+        "A": "Pipeline",
+        "B": "GridSearchCV",
+        "C": "FeatureUnion",
+        "D": "ColumnTransformer"
+      }
+    },
+    {
+      "id": "PYML-02",
+      "question": "Which scikit-learn model selection class exhaustively searches across specified parameter values using cross-validation?",
+      "options": {
+        "A": "CrossValidator",
+        "B": "GridSearchCV",
+        "C": "RandomSplitter",
+        "D": "ModelTuner"
+      }
+    },
+    {
+      "id": "PYML-03",
+      "question": "In Python, which library function from joblib or pickle is commonly used to serialize and save a trained machine learning model to disk?",
+      "options": {
+        "A": "joblib.read()",
+        "B": "joblib.export_code()",
+        "C": "joblib.dump()",
+        "D": "joblib.commit()"
+      }
+    },
+    {
+      "id": "PYML-04",
+      "question": "Which scikit-learn metric function produces a summary table showing precision, recall, and F1-score for each class?",
+      "options": {
+        "A": "accuracy_score",
+        "B": "roc_auc_score",
+        "C": "confusion_matrix",
+        "D": "classification_report"
+      }
+    },
+    {
+      "id": "PYML-05",
+      "question": "In scikit-learn, which estimator is used for binary or multiclass classification via logistic sigmoid regression?",
+      "options": {
+        "A": "LogisticRegression",
+        "B": "LinearRegression",
+        "C": "RidgeClassifier",
+        "D": "ElasticNet"
+      }
+    },
+    {
+      "id": "PYML-06",
+      "question": "In Python, what is the role of the 'random_state' parameter across scikit-learn estimators and splitting functions?",
+      "options": {
+        "A": "To seed the operating system process scheduler",
+        "B": "To ensure reproducible outputs across repeated runs by seeding the pseudo-random generator",
+        "C": "To randomize the order of features during prediction",
+        "D": "To automatically split training batches into equal thread counts"
+      }
+    },
+    {
+      "id": "PYML-07",
+      "question": "Which transformer in scikit-learn applies one-hot encoding specifically to designated categorical columns while leaving numerical columns untouched?",
+      "options": {
+        "A": "StandardScaler",
+        "B": "LabelEncoder",
+        "C": "ColumnTransformer",
+        "D": "SimpleImputer"
+      }
+    },
+    {
+      "id": "PYML-08",
+      "question": "What popular gradient boosting Python library builds decision trees sequentially to minimize pseudo-residuals using second-order gradients?",
+      "options": {
+        "A": "Statsmodels",
+        "B": "Theano",
+        "C": "OpenCV",
+        "D": "XGBoost"
+      }
+    },
+    {
+      "id": "PYML-09",
+      "question": "In scikit-learn, which class imputes missing values in tabular datasets using strategies like mean, median, or most frequent?",
+      "options": {
+        "A": "SimpleImputer",
+        "B": "DataCleaner",
+        "C": "NullFiller",
+        "D": "MissingValueTransformer"
+      }
+    },
+    {
+      "id": "PYML-10",
+      "question": "What scikit-learn metric matrix tabulates true positives, false positives, true negatives, and false negatives?",
+      "options": {
+        "A": "Correlation Matrix",
+        "B": "Confusion Matrix",
+        "C": "Inertia Matrix",
+        "D": "Covariance Matrix"
+      }
+    },
+    {
+      "id": "PYML-11",
+      "question": "In Python machine learning workflows, why is it critical to fit scalers ONLY on training data before transforming test data?",
+      "options": {
+        "A": "Scalers crash if they encounter more than 1000 samples",
+        "B": "Test data cannot contain floating point values",
+        "C": "To prevent data leakage of test set distribution statistics into the training process",
+        "D": "Because scikit-learn strictly forbids evaluating unscaled targets"
+      }
+    },
+    {
+      "id": "PYML-12",
+      "question": "Which scikit-learn class implements Random Forest classification by constructing a multitude of decision trees?",
+      "options": {
+        "A": "DecisionTreeClassifier",
+        "B": "ExtraTreeRegressor",
+        "C": "VotingClassifier",
+        "D": "RandomForestClassifier"
+      }
+    },
+    {
+      "id": "PYML-13",
+      "question": "What is the primary difference between fit() and fit_transform() on a scikit-learn transformer?",
+      "options": {
+        "A": "fit() computes internal parameters; fit_transform() computes parameters and returns transformed data",
+        "B": "fit() runs on GPU while fit_transform() runs on CPU",
+        "C": "fit_transform() is used exclusively on test data",
+        "D": "fit() permanently deletes rows with missing values"
+      }
+    },
+    {
+      "id": "PYML-14",
+      "question": "In imbalanced-learn, what technique generates synthetic samples for minority classes along line segments joining nearest neighbors?",
+      "options": {
+        "A": "Random Majority Downsampling",
+        "B": "SMOTE (Synthetic Minority Over-sampling Technique)",
+        "C": "Adaboost Feature Selection",
+        "D": "One-Class SVM Filtering"
+      }
+    },
+    {
+      "id": "PYML-15",
+      "question": "Which scikit-learn algorithm implements Support Vector Classification with linear and non-linear kernels?",
+      "options": {
+        "A": "LinearRegression",
+        "B": "KMeans",
+        "C": "SVC",
+        "D": "SGDRegressor"
+      }
+    },
+    {
+      "id": "PYML-16",
+      "question": "In Python, which scikit-learn function calculates the area under the Receiver Operating Characteristic curve from prediction scores?",
+      "options": {
+        "A": "f1_score",
+        "B": "precision_score",
+        "C": "log_loss",
+        "D": "roc_auc_score"
+      }
+    },
+    {
+      "id": "PYML-17",
+      "question": "What does the 'n_jobs=-1' parameter indicate in scikit-learn models that support parallelism?",
+      "options": {
+        "A": "Utilize all available CPU cores for concurrent processing",
+        "B": "Disable all multi-threading and run sequentially",
+        "C": "Run the task on remote cloud instances automatically",
+        "D": "Suppress all terminal warning messages"
+      }
+    },
+    {
+      "id": "PYML-18",
+      "question": "In scikit-learn clustering, what attribute on a fitted KMeans model contains the coordinates of cluster centers?",
+      "options": {
+        "A": "model.labels_",
+        "B": "model.cluster_centers_",
+        "C": "model.inertia_",
+        "D": "model.n_iter_"
+      }
+    },
+    {
+      "id": "PYML-19",
+      "question": "Which linear model applies both L1 and L2 regularization penalties simultaneously?",
+      "options": {
+        "A": "Lasso Regression",
+        "B": "Ridge Regression",
+        "C": "ElasticNet",
+        "D": "Ordinary Least Squares"
+      }
+    },
+    {
+      "id": "PYML-20",
+      "question": "What is early stopping in gradient boosting and neural network training?",
+      "options": {
+        "A": "Terminating the server when available disk space falls below 10%",
+        "B": "Halting model training when the user presses Ctrl+C in terminal",
+        "C": "Stopping the training process when memory usage reaches 100%",
+        "D": "Halting model training when validation performance ceases to improve across consecutive epochs"
+      }
+    }
+  ],
+  "Human Resource": [
+    {
+      "id": "HR-01",
+      "question": "What is the primary distinction between recruitment and selection in Human Resource Management?",
+      "options": {
+        "A": "Recruitment is the process of generating a pool of qualified candidates, while selection is the process of evaluating and choosing the best candidate",
+        "B": "Recruitment deals with salary disbursement while selection deals with employee discipline",
+        "C": "Recruitment is managed by legal counsel while selection is handled by finance teams",
+        "D": "Recruitment is only performed for executive roles while selection is for entry-level roles"
+      }
+    },
+    {
+      "id": "HR-02",
+      "question": "What is a 360-degree performance appraisal method?",
+      "options": {
+        "A": "An annual review conducted exclusively by the company board of directors",
+        "B": "A performance evaluation gathering feedback from an employee peers, subordinates, supervisors, and self-assessment",
+        "C": "A test assessing an employee physical health and eye rotation vision",
+        "D": "A financial audit examining company travel and expense accounts"
+      }
+    },
+    {
+      "id": "HR-03",
+      "question": "What does the human resources metric employee turnover rate calculate?",
+      "options": {
+        "A": "The total revenue generated per full-time employee each fiscal year",
+        "B": "The average number of days required to complete mandatory cyber safety training",
+        "C": "The percentage of employees who leave an organization over a specified time period",
+        "D": "The ratio of male to female employees across leadership positions"
+      }
+    },
+    {
+      "id": "HR-04",
+      "question": "What is the main objective of conducting a Training Needs Analysis (TNA)?",
+      "options": {
+        "A": "To calculate tax withholdings on employee incentive stock options",
+        "B": "To negotiate lower pricing on conference center catering contracts",
+        "C": "To identify performance gaps that can be resolved through specific learning and skill development programs",
+        "D": "To schedule employee annual paid vacation dates across departments"
+      }
+    },
+    {
+      "id": "HR-05",
+      "question": "What does the acronym SMART stand for in employee goal setting?",
+      "options": {
+        "A": "Strategic, Managed, Actionable, Relevant, Timed",
+        "B": "Specific, Measurable, Achievable, Relevant, Time-bound",
+        "C": "Standardized, Monitored, Automated, Resilient, Transparent",
+        "D": "Synchronous, Measured, Adaptable, Rigorous, Tracked"
+      }
+    },
+    {
+      "id": "HR-06",
+      "question": "Which document defines the duties, responsibilities, reporting relationships, and working conditions of a role?",
+      "options": {
+        "A": "Job Specification",
+        "B": "Employee Timesheet",
+        "C": "Job Offer Letter",
+        "D": "Job Description"
+      }
+    },
+    {
+      "id": "HR-07",
+      "question": "What does a Job Specification primarily detail as opposed to a Job Description?",
+      "options": {
+        "A": "The required qualifications, skills, knowledge, and experience needed by a person to perform the role",
+        "B": "The organizational profit and loss targets for the fiscal year",
+        "C": "The physical floor plan of the office desk allocation",
+        "D": "The health insurance premiums deducted from gross salary"
+      }
+    },
+    {
+      "id": "HR-08",
+      "question": "In compensation management, what is the principle of internal equity?",
+      "options": {
+        "A": "Paying employees based on stock market fluctuations",
+        "B": "Ensuring employees with similar responsibilities and performance are compensated fairly relative to colleagues within the company",
+        "C": "Paying employees in company cryptocurrency tokens rather than cash",
+        "D": "Matching competitor salary offers regardless of internal grading scales"
+      }
+    },
+    {
+      "id": "HR-09",
+      "question": "What is an Employee Assistance Program (EAP)?",
+      "options": {
+        "A": "A mandatory overtime scheduling roster for manufacturing plant workers",
+        "B": "An automated software bot that sends daily inspirational email quotes",
+        "C": "A confidential work-based program providing professional support and counseling for personal or work-related issues",
+        "D": "A discount club for buying company branded merchandise"
+      }
+    },
+    {
+      "id": "HR-10",
+      "question": "What is the primary purpose of an exit interview when an employee resigns?",
+      "options": {
+        "A": "To legally prevent the employee from accepting offers at competing firms",
+        "B": "To renegotiate non-compete clauses and confiscate personal mobile phones",
+        "C": "To audit the employee personal tax returns from previous years",
+        "D": "To understand reasons for departure and gather candid feedback to improve organizational retention"
+      }
+    },
+    {
+      "id": "HR-11",
+      "question": "What is an Applicant Tracking System (ATS)?",
+      "options": {
+        "A": "A software application that manages the end-to-end recruitment process, from job postings to candidate screening and resumes",
+        "B": "A GPS tracker installed in company-owned sales fleet vehicles",
+        "C": "A biometric fingerprint scanner installed at office entrance turnstiles",
+        "D": "A payroll module calculating overtime tax rates for hourly workers"
+      }
+    },
+    {
+      "id": "HR-12",
+      "question": "In performance management, what does the halo effect refer to as a cognitive bias?",
+      "options": {
+        "A": "Evaluating an employee poorly based solely on a single recent mistake",
+        "B": "Allowing a positive impression of one specific trait or achievement to favorably influence the overall rating of an employee",
+        "C": "Rating all employees strictly as average to avoid internal workplace conflict",
+        "D": "Giving higher marks to employees who share identical cultural backgrounds"
+      }
+    },
+    {
+      "id": "HR-13",
+      "question": "What does an onboarding program aim to achieve during a new hire initial weeks?",
+      "options": {
+        "A": "Testing whether the new hire can endure unassisted high-stress emergencies without guidance",
+        "B": "Restricting the new hire access to internal communication channels for sixty days",
+        "C": "Integrating the new employee into the organizational culture, workflow tools, team dynamics, and compliance expectations",
+        "D": "Assessing how many sales leads the new employee can generate before formal training"
+      }
+    },
+    {
+      "id": "HR-14",
+      "question": "What is succession planning in strategic talent management?",
+      "options": {
+        "A": "Scheduling consecutive shifts across 24-hour customer support call centers",
+        "B": "Organizing annual team-building retreats in international resort locations",
+        "C": "Filing intellectual property patent paperwork with government agencies",
+        "D": "Identifying and developing internal employees with high potential to fill critical future leadership vacancies"
+      }
+    },
+    {
+      "id": "HR-15",
+      "question": "Under labor standards, what does the term constructive dismissal signify?",
+      "options": {
+        "A": "When an employer creates or permits intolerable working conditions that coerce an employee into resigning",
+        "B": "When an employee is promoted to a managerial tier with increased responsibilities",
+        "C": "When an employee voluntarily retires at the official retirement age with full pension",
+        "D": "When an employer dissolves an entire business unit due to financial bankruptcy"
+      }
+    },
+    {
+      "id": "HR-16",
+      "question": "What is the primary focus of Human Resource Information Systems (HRIS)?",
+      "options": {
+        "A": "Running deep learning computer vision algorithms for factory automation",
+        "B": "Centralizing and automating HR functions such as payroll, benefits administration, attendance, and employee records",
+        "C": "Managing public relations campaigns for product launch announcements",
+        "D": "Designing responsive user interfaces for consumer mobile applications"
+      }
+    },
+    {
+      "id": "HR-17",
+      "question": "What is emotional intelligence (EQ) in workplace leadership and team collaboration?",
+      "options": {
+        "A": "The score achieved on standard mathematical logic and spatial reasoning exams",
+        "B": "The ability to memorize extensive company policy manuals and employment contracts",
+        "C": "The capacity to recognize, understand, and constructively manage one own emotions and those of others",
+        "D": "The speed at which a manager responds to urgent slack messages outside business hours"
+      }
+    },
+    {
+      "id": "HR-18",
+      "question": "What does the HR term bench strength measure in organizational planning?",
+      "options": {
+        "A": "The physical weight-lifting capacity required for warehouse logistics staff",
+        "B": "The total number of empty office chairs in open-plan corporate work areas",
+        "C": "The battery lifespan of corporate laptops deployed to remote employees",
+        "D": "The capability and readiness of internal talent to step into key roles if current occupants depart"
+      }
+    },
+    {
+      "id": "HR-19",
+      "question": "What is the primary role of a non-disclosure agreement (NDA) signed during employment onboarding?",
+      "options": {
+        "A": "To protect proprietary company trade secrets, confidential client data, and business strategies from unauthorized disclosure",
+        "B": "To prohibit employees from ever joining labor unions or employee welfare associations",
+        "C": "To prevent employees from discussing their annual personal income tax returns with accountants",
+        "D": "To transfer employee personal vehicle ownership titles to the corporate leasing pool"
+      }
+    },
+    {
+      "id": "HR-20",
+      "question": "In conflict resolution, which approach focuses on finding a collaborative solution where both parties achieve their key objectives?",
+      "options": {
+        "A": "Avoidance approach",
+        "B": "Win-Win (Collaborative) approach",
+        "C": "Authoritative mandate approach",
+        "D": "Accommodation with surrender approach"
+      }
+    }
+  ],
+  "Data Analytics": [
+    {
+      "id": "DA-01",
+      "question": "What type of data analytics focuses on answering the question 'What happened in the past'?",
+      "options": {
+        "A": "Descriptive Analytics",
+        "B": "Predictive Analytics",
+        "C": "Prescriptive Analytics",
+        "D": "Diagnostic Analytics"
+      }
+    },
+    {
+      "id": "DA-02",
+      "question": "In SQL, which clause filters aggregated query results produced by a GROUP BY statement?",
+      "options": {
+        "A": "WHERE",
+        "B": "HAVING",
+        "C": "QUALIFY",
+        "D": "FILTER"
+      }
+    },
+    {
+      "id": "DA-03",
+      "question": "Which statistical chart displays the five-number summary: minimum, first quartile, median, third quartile, and maximum?",
+      "options": {
+        "A": "Scatter Plot",
+        "B": "Histogram",
+        "C": "Box and Whisker Plot",
+        "D": "Pareto Chart"
+      }
+    },
+    {
+      "id": "DA-04",
+      "question": "In relational data modeling, what is a surrogate key?",
+      "options": {
+        "A": "A foreign key that connects more than two tables simultaneously",
+        "B": "A key constructed by hashing personal identifying information",
+        "C": "A natural key derived directly from business domain attributes",
+        "D": "An artificially created unique identifier with no intrinsic business meaning"
+      }
+    },
+    {
+      "id": "DA-05",
+      "question": "What does the 80/20 Pareto Principle imply in business sales analytics?",
+      "options": {
+        "A": "Approximately 80% of outcomes or revenues frequently come from 20% of causes or customers",
+        "B": "Every dataset must contain at least 80% numeric and 20% string attributes",
+        "C": "Data cleaning accounts for exactly 80% of an analyst's total computational budget",
+        "D": "Analytic dashboards should display 80 charts on desktop and 20 on mobile"
+      }
+    },
+    {
+      "id": "DA-06",
+      "question": "In SQL, which join type returns all rows from the left table and only matched rows from the right table?",
+      "options": {
+        "A": "INNER JOIN",
+        "B": "LEFT OUTER JOIN",
+        "C": "FULL OUTER JOIN",
+        "D": "CROSS JOIN"
+      }
+    },
+    {
+      "id": "DA-07",
+      "question": "What is an analytical dashboard KPI primarily used for in an enterprise organization?",
+      "options": {
+        "A": "To compile database query execution plans into machine instructions",
+        "B": "To track and evaluate performance against critical business objectives",
+        "C": "To validate network bandwidth throughput across remote offices",
+        "D": "To automatically back up tabular databases to physical magnetic tape"
+      }
+    },
+    {
+      "id": "DA-08",
+      "question": "In data warehouse architecture, what characterizes a Star Schema?",
+      "options": {
+        "A": "A central fact table linked directly to multiple de-normalized dimension tables",
+        "B": "A completely normalized database schema with no foreign keys",
+        "C": "A single flat text file containing unstructured event logs",
+        "D": "A hierarchy where dimension tables are broken down into sub-dimensions"
+      }
+    },
+    {
+      "id": "DA-09",
+      "question": "Which data visualization is most effective for demonstrating part-to-whole proportions with few categories?",
+      "options": {
+        "A": "Time Series Line Graph",
+        "B": "Donut or Pie Chart",
+        "C": "Geospatial Heatmap",
+        "D": "Scatter Plot with Trendline"
+      }
+    },
+    {
+      "id": "DA-10",
+      "question": "In statistical analysis, what is the Interquartile Range (IQR)?",
+      "options": {
+        "A": "The difference between the maximum value and the minimum value",
+        "B": "The sum of the mean and standard deviation",
+        "C": "The difference between the 75th percentile (Q3) and the 25th percentile (Q1)",
+        "D": "The ratio of the sample standard error to the sample size"
+      }
+    },
+    {
+      "id": "DA-11",
+      "question": "What is the primary purpose of an ETL pipeline in business intelligence?",
+      "options": {
+        "A": "To encrypt local files before emailing them to clients",
+        "B": "To extract data from diverse sources, transform it into business logic, and load it into a destination warehouse",
+        "C": "To convert SQL databases into JavaScript web applications",
+        "D": "To schedule employee shift rosters across time zones"
+      }
+    },
+    {
+      "id": "DA-12",
+      "question": "In spreadsheet analysis, which function searches vertically for a specified value in the first column of a table and returns a value from another column?",
+      "options": {
+        "A": "INDEX_MATCH",
+        "B": "HLOOKUP",
+        "C": "SUMPRODUCT",
+        "D": "VLOOKUP"
+      }
+    },
+    {
+      "id": "DA-13",
+      "question": "What is cohort analysis frequently utilized for in customer retention analytics?",
+      "options": {
+        "A": "Tracking behavioral metrics of user groups that share common characteristics over time",
+        "B": "Measuring server memory usage during peak shopping hours",
+        "C": "Splitting database records across multiple SSD drives",
+        "D": "Encrypting credit card numbers in compliance with PCI standards"
+      }
+    },
+    {
+      "id": "DA-14",
+      "question": "In SQL, what is the effect of using the DISTINCT keyword in a SELECT statement?",
+      "options": {
+        "A": "Sorts the output rows in random order",
+        "B": "Eliminates duplicate rows from the query output",
+        "C": "Limits query execution to a maximum of 100 milliseconds",
+        "D": "Converts all numerical values into text strings"
+      }
+    },
+    {
+      "id": "DA-15",
+      "question": "Which metric calculates the percentage of customers who stop subscribing to or purchasing a service during a specified period?",
+      "options": {
+        "A": "Conversion Rate",
+        "B": "Net Promoter Score",
+        "C": "Churn Rate",
+        "D": "Customer Acquisition Cost"
+      }
+    },
+    {
+      "id": "DA-16",
+      "question": "In exploratory data analysis, what indicates a right-skewed (positively skewed) distribution?",
+      "options": {
+        "A": "The mean is typically greater than the median",
+        "B": "The mean and median are completely identical",
+        "C": "The distribution has two distinct equal peak modes",
+        "D": "The long tail of the distribution extends towards lower values"
+      }
+    },
+    {
+      "id": "DA-17",
+      "question": "In SQL window functions, which function assigns a unique sequential integer to rows starting from 1 within each partition?",
+      "options": {
+        "A": "RANK()",
+        "B": "ROW_NUMBER()",
+        "C": "DENSE_RANK()",
+        "D": "NTILE()"
+      }
+    },
+    {
+      "id": "DA-18",
+      "question": "What is a major danger of treating correlation as causation in analytics reporting?",
+      "options": {
+        "A": "It inflates the memory size of database tables",
+        "B": "It forces charts to render in black and white",
+        "C": "It leads to erroneous policy decisions by assuming one variable directly causes change in another",
+        "D": "It causes SQL syntax parsing exceptions in the database"
+      }
+    },
+    {
+      "id": "DA-19",
+      "question": "Which type of chart is ideal for visualizing relationship and correlation between two numerical variables across many records?",
+      "options": {
+        "A": "Stacked Bar Chart",
+        "B": "Pie Chart",
+        "C": "Gantt Chart",
+        "D": "Scatter Plot"
+      }
+    },
+    {
+      "id": "DA-20",
+      "question": "In time-series analytics, what is seasonality?",
+      "options": {
+        "A": "A predictable, repeating pattern or fluctuation occurring at regular calendar intervals",
+        "B": "An unexpected one-time server failure during data ingestion",
+        "C": "A steady long-term upward or downward movement spanning decades",
+        "D": "Random measurement error caused by sensor noise"
+      }
+    }
+  ],
+  "Digital Marketing": [
+    {
+      "id": "DM-01",
+      "question": "In Search Engine Optimization (SEO), what is the primary role of a canonical tag (rel=canonical)?",
+      "options": {
+        "A": "To indicate the preferred URL of a page and prevent duplicate content indexing issues",
+        "B": "To block search engine crawlers from indexing confidential company pages",
+        "C": "To automatically translate web page text into multiple international languages",
+        "D": "To track user mouse hover coordinates for paid ad networks"
+      }
+    },
+    {
+      "id": "DM-02",
+      "question": "What does Click-Through Rate (CTR) measure in digital advertising campaigns?",
+      "options": {
+        "A": "The percentage of users who make a purchase after seeing an advertisement",
+        "B": "The percentage of impressions that resulted in a click (clicks divided by impressions)",
+        "C": "The cost charged by an ad network for every 1000 page views",
+        "D": "The speed at which an advertising landing page loads on mobile devices"
+      }
+    },
+    {
+      "id": "DM-03",
+      "question": "In Google Ads, which factor directly influences the Ad Rank besides maximum bid amount?",
+      "options": {
+        "A": "The physical server room temperature of the advertiser",
+        "B": "The total number of employees listed on the company LinkedIn page",
+        "C": "Quality Score, which includes expected CTR, ad relevance, and landing page experience",
+        "D": "The programming language used to build the company website"
+      }
+    },
+    {
+      "id": "DM-04",
+      "question": "What does Cost Per Acquisition (CPA) calculate in performance marketing?",
+      "options": {
+        "A": "The total cost to acquire new domain names from a domain registrar",
+        "B": "The monthly subscription fee paid for marketing automation tools",
+        "C": "The total ad spend divided by the number of impressions received",
+        "D": "The total ad spend divided by the number of successful conversions or customer acquisitions"
+      }
+    },
+    {
+      "id": "DM-05",
+      "question": "Which file placed in the root directory instructs search engine web crawlers which URLs they can or cannot request?",
+      "options": {
+        "A": "robots.txt",
+        "B": "sitemap.xml",
+        "C": "manifest.json",
+        "D": "index.html"
+      }
+    },
+    {
+      "id": "DM-06",
+      "question": "What is the primary objective of A/B split testing in conversion rate optimization (CRO)?",
+      "options": {
+        "A": "To duplicate backend database clusters across two cloud regions",
+        "B": "To compare two versions of a webpage with one varying element to determine which yields higher conversions",
+        "C": "To split traffic equally between desktop and mobile native applications",
+        "D": "To verify whether an email server has valid DKIM and SPF records"
+      }
+    },
+    {
+      "id": "DM-07",
+      "question": "In Google Analytics 4 (GA4), how is data measurement primarily modeled?",
+      "options": {
+        "A": "Around page views and sessions exclusively",
+        "B": "Around server file system directory trees",
+        "C": "Around events and parameters capturing user interactions",
+        "D": "Around raw SQL table transaction logs"
+      }
+    },
+    {
+      "id": "DM-08",
+      "question": "What do UTM parameters appended to a marketing URL allow marketers to track?",
+      "options": {
+        "A": "The client GPU clock speed and memory bus width",
+        "B": "The specific operating system root certificate fingerprints",
+        "C": "The password hashes submitted during registration forms",
+        "D": "The traffic source, medium, campaign name, and content variation driving the visit"
+      }
+    },
+    {
+      "id": "DM-09",
+      "question": "What does the marketing funnel acronym AIDA stand for?",
+      "options": {
+        "A": "Attention, Interest, Desire, Action",
+        "B": "Analysis, Insight, Design, Architecture",
+        "C": "Audience, Interaction, Delivery, Assessment",
+        "D": "Acquisition, Indexing, Deployment, Automation"
+      }
+    },
+    {
+      "id": "DM-10",
+      "question": "In email marketing, what is a hard bounce?",
+      "options": {
+        "A": "An email delayed temporarily due to a full recipient inbox",
+        "B": "A permanent delivery failure caused by an invalid, non-existent, or blocked email address",
+        "C": "An email marked as spam by an automated sentiment filter",
+        "D": "An email opened on a mobile device instead of a desktop client"
+      }
+    },
+    {
+      "id": "DM-11",
+      "question": "What is retargeting (or remarketing) in digital marketing?",
+      "options": {
+        "A": "Deleting inactive subscriber contacts from a mailing list every six months",
+        "B": "Changing the target demographic keywords of a YouTube channel annually",
+        "C": "Serving targeted advertisements to users who have previously visited your website or app",
+        "D": "Migrating marketing assets from Facebook Ads to Google Ads"
+      }
+    },
+    {
+      "id": "DM-12",
+      "question": "In on-page SEO, why is the HTML title tag considered high priority?",
+      "options": {
+        "A": "It provides search engines and users with a concise summary of page topic and appears as the clickable search headline",
+        "B": "It is required to establish TLS handshake encryption with client browsers",
+        "C": "It is the only place where CSS animations can be registered",
+        "D": "It determines the server IP address during DNS resolution"
+      }
+    },
+    {
+      "id": "DM-13",
+      "question": "What does Return On Ad Spend (ROAS) calculate?",
+      "options": {
+        "A": "Total ad spend divided by total clicks received",
+        "B": "Gross revenue generated from advertising divided by the total advertising spend",
+        "C": "Net profit margin after subtracting overhead salaries",
+        "D": "The percentage of ad creative images approved by review teams"
+      }
+    },
+    {
+      "id": "DM-14",
+      "question": "Which organic marketing strategy focuses on creating, publishing, and distributing valuable, relevant material to attract a clearly defined audience?",
+      "options": {
+        "A": "Display banner bidding",
+        "B": "Pay-Per-Click search auctioning",
+        "C": "Content Marketing",
+        "D": "SMS bulk broadcasting"
+      }
+    },
+    {
+      "id": "DM-15",
+      "question": "In SEO, what is the significance of acquiring high-quality backlinks from authoritative domain sources?",
+      "options": {
+        "A": "They allow search engines to bypass paywalls on private corporate blogs",
+        "B": "They speed up database query execution times on the hosting server",
+        "C": "They guarantee immediate ranking as the number one result on Google for all keywords",
+        "D": "They signal trust, relevance, and authority to search engines, boosting organic search visibility"
+      }
+    },
+    {
+      "id": "DM-16",
+      "question": "What is the primary function of a Meta Description tag in HTML?",
+      "options": {
+        "A": "To provide a concise summary snippet displayed underneath the title in search engine results pages",
+        "B": "To instruct search bots to bypass all image compression checks",
+        "C": "To store database session identifiers in the browser cookie jar",
+        "D": "To define media queries for responsive mobile styling"
+      }
+    },
+    {
+      "id": "DM-17",
+      "question": "What is the key difference between Black Hat SEO and White Hat SEO?",
+      "options": {
+        "A": "Black Hat SEO focuses on mobile devices while White Hat SEO focuses on desktop platforms",
+        "B": "Black Hat SEO uses deceptive manipulative techniques violating search guidelines, while White Hat follows approved search engine best practices",
+        "C": "Black Hat SEO requires paid Google Ads while White Hat SEO is free",
+        "D": "Black Hat SEO is used for e-commerce sites while White Hat is used for non-profits"
+      }
+    },
+    {
+      "id": "DM-18",
+      "question": "In social media advertising, what is lookalike audience targeting?",
+      "options": {
+        "A": "Targeting people who have identical first and last names as current customers",
+        "B": "Targeting users with fake profile accounts created by automated bots",
+        "C": "Reaching new users whose demographics and online behaviors closely resemble your existing high-value customer base",
+        "D": "Targeting competitors executive employees with recruiting messages"
+      }
+    },
+    {
+      "id": "DM-19",
+      "question": "What does churn rate measure in subscription-based digital marketing?",
+      "options": {
+        "A": "The speed at which social media comments are responded to by moderators",
+        "B": "The total number of blog articles published within a 30-day window",
+        "C": "The cost per thousand ad impressions across third-party display networks",
+        "D": "The percentage of existing subscribers or customers who cancel or do not renew their service during a given period"
+      }
+    },
+    {
+      "id": "DM-20",
+      "question": "What is an influencer marketing disclosure requirement mandated by regulatory bodies like the FTC?",
+      "options": {
+        "A": "Influencers must clearly and conspicuously disclose material connections or sponsorships (such as using #ad or #sponsored)",
+        "B": "Influencers must hold an accredited marketing degree before promoting products",
+        "C": "Influencers must publish the brand source code alongside video reviews",
+        "D": "Influencers must remit fifty percent of review proceeds directly to consumers"
+      }
+    }
+  ],
+  "Internet of Things (IOT)": [
+    {
+      "id": "IOT-01",
+      "question": "Which lightweight publish-subscribe messaging protocol is widely used in IoT for constrained low-bandwidth networks?",
+      "options": {
+        "A": "MQTT",
+        "B": "SNMP",
+        "C": "SMTP",
+        "D": "FTP"
+      }
+    },
+    {
+      "id": "IOT-02",
+      "question": "What does Quality of Service level 1 (QoS 1) guarantee in MQTT communication?",
+      "options": {
+        "A": "Messages are delivered at most once with no confirmation",
+        "B": "Messages are delivered at least once with a PUBACK confirmation",
+        "C": "Messages are delivered exactly once via a four-step handshake",
+        "D": "Messages are broadcast to all connected devices simultaneously"
+      }
+    },
+    {
+      "id": "IOT-03",
+      "question": "Which wireless protocol is best suited for long-range, low-power telemetry transmission over several kilometers?",
+      "options": {
+        "A": "Near Field Communication (NFC)",
+        "B": "High-speed Wi-Fi 6E",
+        "C": "LoRaWAN",
+        "D": "Classic Bluetooth 2.1"
+      }
+    },
+    {
+      "id": "IOT-04",
+      "question": "What is the primary role of an IoT Gateway in a connected smart infrastructure?",
+      "options": {
+        "A": "Storing permanent relational databases for enterprise ERP systems",
+        "B": "Translating heterogeneous sensor protocols, aggregating data, and bridging local devices to the cloud",
+        "C": "Replacing all analog sensors with digital displays",
+        "D": "Providing alternating current wall power directly to battery sensors"
+      }
+    },
+    {
+      "id": "IOT-05",
+      "question": "Which sensor is specifically designed to detect human motion by measuring changes in infrared radiation?",
+      "options": {
+        "A": "Passive Infrared (PIR) sensor",
+        "B": "Thermocouple probe",
+        "C": "Photoresistor (LDR)",
+        "D": "Hall effect sensor"
+      }
+    },
+    {
+      "id": "IOT-06",
+      "question": "In Constrained Application Protocol (CoAP), which transport layer protocol is utilized instead of TCP?",
+      "options": {
+        "A": "ICMP",
+        "B": "UDP",
+        "C": "SCTP",
+        "D": "IGMP"
+      }
+    },
+    {
+      "id": "IOT-07",
+      "question": "What is the primary motivation for implementing Edge Computing in IoT deployments?",
+      "options": {
+        "A": "Increasing data egress fees paid to cloud providers",
+        "B": "Disabling all local sensor calibration routines",
+        "C": "Processing data near the source to reduce latency, save bandwidth, and enable real-time local decisions",
+        "D": "Replacing microcontroller firmware with interpreted browser JavaScript"
+      }
+    },
+    {
+      "id": "IOT-08",
+      "question": "In MQTT, what is a Last Will and Testament (LWT) message used for?",
+      "options": {
+        "A": "Upgrading client firmware over the air automatically",
+        "B": "Encrypting sensor readings with public key cryptography",
+        "C": "Renewing device battery warranty contracts online",
+        "D": "Notifying other subscribers when a client disconnects unexpectedly without sending a DISCONNECT packet"
+      }
+    },
+    {
+      "id": "IOT-09",
+      "question": "What does an Analog-to-Digital Converter (ADC) do in an IoT microcontroller circuit?",
+      "options": {
+        "A": "Converts continuous physical analog voltage signals into discrete digital numerical values",
+        "B": "Converts 230V AC mains supply into 3.3V DC power",
+        "C": "Converts Wi-Fi radio frequencies into audible acoustic tones",
+        "D": "Translates high-level C code into assembly machine code"
+      }
+    },
+    {
+      "id": "IOT-10",
+      "question": "Which microcontroller module features integrated Wi-Fi and Bluetooth connectivity and dual-core processing, making it ubiquitous in IoT prototyping?",
+      "options": {
+        "A": "PIC16F877A",
+        "B": "ESP32",
+        "C": "ATmega328P standalone",
+        "D": "Intel 8051"
+      }
+    },
+    {
+      "id": "IOT-11",
+      "question": "What is the key advantage of Bluetooth Low Energy (BLE) over standard Classic Bluetooth?",
+      "options": {
+        "A": "Higher audio streaming bitrate for studio microphones",
+        "B": "Greater transmission distance reaching over twenty kilometers",
+        "C": "Significantly reduced power consumption, allowing sensors to operate for years on coin-cell batteries",
+        "D": "Support for direct satellite uplink without cellular towers"
+      }
+    },
+    {
+      "id": "IOT-12",
+      "question": "In an IoT device fleet, what does Over-The-Air (OTA) programming enable engineers to do?",
+      "options": {
+        "A": "Transmit high-voltage electrical power wirelessly across the factory floor",
+        "B": "Charge device lithium-ion batteries using ambient radio waves",
+        "C": "Physically solder circuit components using aerial laser drones",
+        "D": "Update microcontroller firmware wirelessly across remote field devices without physical cable connections"
+      }
+    },
+    {
+      "id": "IOT-13",
+      "question": "Which communication topology connects every sensor node through intermediate peer nodes to extend network range and resilience?",
+      "options": {
+        "A": "Mesh topology",
+        "B": "Star topology",
+        "C": "Bus topology",
+        "D": "Ring topology"
+      }
+    },
+    {
+      "id": "IOT-14",
+      "question": "What does the MQTT broker do in an IoT publish-subscribe architecture?",
+      "options": {
+        "A": "Executes machine learning training jobs on raw video streams",
+        "B": "Receives all incoming messages, filters them by topic, and distributes them to subscribed clients",
+        "C": "Physically switches high-voltage electrical relays on local circuit boards",
+        "D": "Manufactures microchip wafers in cleanroom facilities"
+      }
+    },
+    {
+      "id": "IOT-15",
+      "question": "Which security protocol provides transport-layer encryption and authentication for secure MQTT communication (MQTTS)?",
+      "options": {
+        "A": "Telnet",
+        "B": "FTP",
+        "C": "TLS/SSL",
+        "D": "SNMPv1"
+      }
+    },
+    {
+      "id": "IOT-16",
+      "question": "What is an actuator in an IoT system?",
+      "options": {
+        "A": "A passive resistor that converts electrical energy into heat",
+        "B": "A software debugger used to set breakpoints in C firmware",
+        "C": "A database index that speeds up time-series telemetry lookups",
+        "D": "A hardware device that converts an electrical control signal into physical mechanical motion or action"
+      }
+    },
+    {
+      "id": "IOT-17",
+      "question": "Which low-power wireless standard based on IEEE 802.15.4 is commonly used for smart home automation mesh networks?",
+      "options": {
+        "A": "Zigbee",
+        "B": "Wi-Fi Direct",
+        "C": "NFC Type A",
+        "D": "Ethernet 100BASE-TX"
+      }
+    },
+    {
+      "id": "IOT-18",
+      "question": "What does the duty cycling technique accomplish in battery-powered IoT edge sensors?",
+      "options": {
+        "A": "Permanently overclocking the processor clock frequency",
+        "B": "Alternating between active and deep sleep states to minimize average power consumption",
+        "C": "Reversing electrical polarity across solar charging cells",
+        "D": "Formatting flash memory on every reboot cycle"
+      }
+    },
+    {
+      "id": "IOT-19",
+      "question": "What is a Digital Twin in IoT and industrial manufacturing?",
+      "options": {
+        "A": "A backup physical duplicate circuit board kept in warehouse storage",
+        "B": "A mirrored hard disk drive in a RAID array",
+        "C": "A dynamic virtual digital representation of a physical asset, system, or process updated via live telemetry",
+        "D": "A two-factor authentication key fob used by plant technicians"
+      }
+    },
+    {
+      "id": "IOT-20",
+      "question": "What is the primary security vulnerability of using hardcoded default credentials in IoT consumer devices?",
+      "options": {
+        "A": "It increases cellular data transmission latency",
+        "B": "It prevents devices from waking up from deep sleep mode",
+        "C": "It causes memory fragmentation in dynamic RAM heaps",
+        "D": "It allows attackers to scan and remotely compromise thousands of devices to assemble botnets like Mirai"
+      }
+    }
+  ],
+  "Embedded System": [
+    {
+      "id": "ES-01",
+      "question": "What is the fundamental architectural difference between a microcontroller and a microprocessor?",
+      "options": {
+        "A": "A microcontroller integrates CPU, RAM, ROM, and peripherals onto a single chip, whereas a microprocessor requires external memory and peripherals",
+        "B": "A microcontroller cannot execute compiled C code",
+        "C": "A microprocessor only operates with analog signals",
+        "D": "A microcontroller has infinite instruction cache memory"
+      }
+    },
+    {
+      "id": "ES-02",
+      "question": "In embedded hardware, what is the primary role of a Watchdog Timer (WDT)?",
+      "options": {
+        "A": "Measuring ambient operating room temperature",
+        "B": "Resetting the microcontroller automatically if the software enters an infinite loop or hangs",
+        "C": "Modulating audio frequencies for piezo buzzers",
+        "D": "Displaying real-time wall-clock time on liquid crystal displays"
+      }
+    },
+    {
+      "id": "ES-03",
+      "question": "Which serial communication bus uses two bidirectional lines called SDA (Serial Data) and SCL (Serial Clock)?",
+      "options": {
+        "A": "UART",
+        "B": "SPI",
+        "C": "I2C",
+        "D": "CAN"
+      }
+    },
+    {
+      "id": "ES-04",
+      "question": "What is an Interrupt Service Routine (ISR) in embedded programming?",
+      "options": {
+        "A": "A background operating system garbage collection daemon",
+        "B": "A compiler optimization phase that removes unused variables",
+        "C": "A hardware peripheral that regulates battery charging voltage",
+        "D": "A specialized callback function executed immediately in response to a hardware or software interrupt event"
+      }
+    },
+    {
+      "id": "ES-05",
+      "question": "In C programming for embedded systems, why is the volatile keyword applied to a variable?",
+      "options": {
+        "A": "To inform the compiler that the variable value can change unexpectedly outside the current code flow (such as by hardware or ISR)",
+        "B": "To allocate the variable in permanent flash memory instead of SRAM",
+        "C": "To prevent other source files from importing the variable",
+        "D": "To automatically encrypt the variable value against memory dump attacks"
+      }
+    },
+    {
+      "id": "ES-06",
+      "question": "Which serial protocol is synchronous, full-duplex, and uses four lines: MOSI, MISO, SCK, and SS/CS?",
+      "options": {
+        "A": "RS-232",
+        "B": "SPI",
+        "C": "I2C",
+        "D": "1-Wire"
+      }
+    },
+    {
+      "id": "ES-07",
+      "question": "In Real-Time Operating Systems (RTOS), what defines a hard real-time system?",
+      "options": {
+        "A": "Missing a task deadline results in catastrophic system failure or safety violation",
+        "B": "Tasks are guaranteed to finish before the end of the calendar day",
+        "C": "Execution speed can be throttled dynamically to conserve battery life",
+        "D": "Tasks are prioritized based on alphabetical order of function names"
+      }
+    },
+    {
+      "id": "ES-08",
+      "question": "What is Pulse Width Modulation (PWM) primarily used for in microcontroller applications?",
+      "options": {
+        "A": "Formatting data packets for Wi-Fi routers",
+        "B": "Controlling motor speed, LED brightness, or power delivery by varying the signal duty cycle",
+        "C": "Increasing the bit resolution of flash memory cells",
+        "D": "Synchronizing RTC clocks with GPS atomic standards"
+      }
+    },
+    {
+      "id": "ES-09",
+      "question": "What is the primary function of a Bootloader in an embedded system?",
+      "options": {
+        "A": "Formatting SD cards before first read operations",
+        "B": "Generating audio tones during system startup",
+        "C": "Initializing hardware registers and loading the main application firmware into memory upon system boot or reset",
+        "D": "Translating high-level Python code into assembly instructions at runtime"
+      }
+    },
+    {
+      "id": "ES-10",
+      "question": "In memory management, what is the fundamental difference between SRAM and DRAM?",
+      "options": {
+        "A": "SRAM requires periodic refresh cycles while DRAM retains data indefinitely without power",
+        "B": "SRAM stores data using capacitors while DRAM uses flip-flops",
+        "C": "SRAM is slower and denser than DRAM",
+        "D": "SRAM is faster and does not require periodic refreshing, whereas DRAM is denser and requires continuous refresh cycles"
+      }
+    },
+    {
+      "id": "ES-11",
+      "question": "What is a General Purpose Input/Output (GPIO) pin?",
+      "options": {
+        "A": "A pin whose electrical behavior (input or output, high or low) can be configured dynamically through software registers",
+        "B": "A dedicated pin used strictly for supplying 220V mains electricity",
+        "C": "A physical terminal used exclusively to connect external crystal oscillators",
+        "D": "An internal CPU register holding the program counter address"
+      }
+    },
+    {
+      "id": "ES-12",
+      "question": "What is the primary role of a pull-up resistor connected to a digital microcontroller input pin?",
+      "options": {
+        "A": "To amplify input voltage beyond the maximum CPU supply rating",
+        "B": "To ensure the input pin settles at a known high logic state when the circuit is open or floating",
+        "C": "To prevent electromagnetic interference from clock oscillators",
+        "D": "To step down alternating current to direct current"
+      }
+    },
+    {
+      "id": "ES-13",
+      "question": "In an RTOS, what does Priority Inversion describe?",
+      "options": {
+        "A": "An arithmetic overflow occurring inside high-priority floating-point math libraries",
+        "B": "A compiler flag that reverses the order of array indexing in memory",
+        "C": "A scenario where a high-priority task is blocked waiting for a shared resource held by a low-priority task",
+        "D": "A power-saving state where CPU cores run in reverse clock order"
+      }
+    },
+    {
+      "id": "ES-14",
+      "question": "Which communication standard is widely used in automotive embedded networks for robust, collision-free message arbitration?",
+      "options": {
+        "A": "Ethernet 10BASE-T",
+        "B": "USB 3.0",
+        "C": "Zigbee Pro",
+        "D": "Controller Area Network (CAN)"
+      }
+    },
+    {
+      "id": "ES-15",
+      "question": "What is Direct Memory Access (DMA) in microcontroller architectures?",
+      "options": {
+        "A": "A feature that allows hardware peripherals to transfer data directly to and from memory without involving the CPU",
+        "B": "A software debugger technique for reading CPU registers over JTAG",
+        "C": "A memory protection mechanism that disables RAM writes during interrupts",
+        "D": "An optical interface connecting flash memory to display drivers"
+      }
+    },
+    {
+      "id": "ES-16",
+      "question": "Why should an Interrupt Service Routine (ISR) be kept as short and fast as possible?",
+      "options": {
+        "A": "Because lengthy ISRs waste flash storage space permanently",
+        "B": "To prevent delaying or blocking other time-critical interrupts and maintain system responsiveness",
+        "C": "Because microcontrollers automatically erase SRAM if an ISR runs for more than ten instructions",
+        "D": "To allow the CPU clock to cool down during interrupt handling"
+      }
+    },
+    {
+      "id": "ES-17",
+      "question": "Which hardware interface is universally used for on-chip debugging, flash programming, and boundary scan testing in microcontrollers?",
+      "options": {
+        "A": "VGA connector",
+        "B": "Parallel ATA bus",
+        "C": "JTAG or SWD",
+        "D": "PS/2 keyboard port"
+      }
+    },
+    {
+      "id": "ES-18",
+      "question": "In digital circuit design, what does switch debouncing prevent?",
+      "options": {
+        "A": "Overheating of external pull-down resistors",
+        "B": "Capacitive discharge into analog ground planes",
+        "C": "Microcontroller clock frequency drifting",
+        "D": "False multiple trigger events caused by the mechanical contact bounce of a physical switch"
+      }
+    },
+    {
+      "id": "ES-19",
+      "question": "What distinguishes the Harvard architecture from the von Neumann architecture?",
+      "options": {
+        "A": "Harvard uses physically separate storage and signal pathways for instructions and data, whereas von Neumann shares memory and bus for both",
+        "B": "Harvard requires 64-bit instruction words while von Neumann requires 8-bit registers",
+        "C": "Harvard systems cannot execute recursive functions",
+        "D": "Harvard architecture is used exclusively in quantum supercomputers"
+      }
+    },
+    {
+      "id": "ES-20",
+      "question": "What is a major advantage of using FreeRTOS in an embedded commercial application?",
+      "options": {
+        "A": "It eliminates the need for microcontroller hardware testing",
+        "B": "It provides deterministic preemptive scheduling, lightweight memory footprint, and modular task management",
+        "C": "It automatically writes device driver C code for any connected sensor",
+        "D": "It allows 8-bit microcontrollers to run web browser user interfaces"
+      }
+    }
+  ],
+  "Hybrid Electric Vehicles": [
+    {
+      "id": "HEV-01",
+      "question": "In a Series Hybrid Electric Vehicle powertrain architecture, how is the internal combustion engine (ICE) utilized?",
+      "options": {
+        "A": "The ICE has no mechanical connection to the wheels and operates solely to drive an electric generator that charges the battery or powers the traction motor",
+        "B": "The ICE drives the wheels directly through a conventional multi-gear mechanical transmission",
+        "C": "The ICE only operates when the vehicle is in reverse gear",
+        "D": "The ICE is powered by hydrogen fuel cells rather than fossil fuels"
+      }
+    },
+    {
+      "id": "HEV-02",
+      "question": "What is regenerative braking in hybrid and electric vehicle powertrains?",
+      "options": {
+        "A": "Applying hydraulic brake pads with high pressure to generate friction heat",
+        "B": "Using the electric traction motor as a generator during deceleration to recover kinetic energy and charge the high-voltage battery",
+        "C": "Reversing the combustion engine rotation to slow down the vehicle wheels",
+        "D": "Deploying aerodynamic flaps from the vehicle roof during emergency stops"
+      }
+    },
+    {
+      "id": "HEV-03",
+      "question": "What does State of Charge (SoC) represent in an electric vehicle battery management system?",
+      "options": {
+        "A": "The percentage of available battery capacity remaining relative to its total rated capacity",
+        "B": "The physical temperature in degrees Celsius of the center battery cell",
+        "C": "The total number of charging cycles the battery pack has completed over its lifetime",
+        "D": "The electrical resistance of the high-voltage isolation safety switch"
+      }
+    },
+    {
+      "id": "HEV-04",
+      "question": "What does State of Health (SoH) measure in automotive traction battery diagnostics?",
+      "options": {
+        "A": "The current battery condition and maximum retainable capacity compared to its original nominal capacity when brand new",
+        "B": "The instantaneous voltage drop under heavy acceleration",
+        "C": "The cabin air quality index measured near passenger seats",
+        "D": "The coolant fluid pressure inside the inverter radiator loop"
+      }
+    },
+    {
+      "id": "HEV-05",
+      "question": "What is the critical role of a Battery Management System (BMS) in a hybrid or electric vehicle?",
+      "options": {
+        "A": "Controlling the touch screen multimedia dashboard display",
+        "B": "Regulating automatic windshield wiper speeds during rainstorms",
+        "C": "Monitoring cell voltages, balancing cells, tracking temperature, and protecting against overcharging and thermal runaway",
+        "D": "Negotiating toll booth wireless transponder payments"
+      }
+    },
+    {
+      "id": "HEV-06",
+      "question": "Why is cell balancing essential across multi-cell lithium-ion battery packs?",
+      "options": {
+        "A": "To physically distribute the mechanical weight evenly over vehicle axles",
+        "B": "To allow the battery pack to operate without an emergency disconnect fuse",
+        "C": "To ensure all cells maintain equal charge levels, preventing weak cells from over-discharging and strong cells from over-charging",
+        "D": "To convert all DC electrical current into single-phase alternating current"
+      }
+    },
+    {
+      "id": "HEV-07",
+      "question": "Which type of electric motor is most widely adopted for modern EV traction due to its high power density, efficiency, and compact size?",
+      "options": {
+        "A": "Single-phase shaded-pole AC induction motor",
+        "B": "Brushed DC series-wound motor",
+        "C": "Permanent Magnet Synchronous Motor (PMSM)",
+        "D": "Variable reluctance stepping motor"
+      }
+    },
+    {
+      "id": "HEV-08",
+      "question": "In an electric vehicle powertrain, what is the primary function of the traction Inverter?",
+      "options": {
+        "A": "To step down 400V DC to 12V DC for auxiliary headlights and radios",
+        "B": "To convert high-voltage DC electricity from the battery into variable-frequency AC electricity to drive the traction motor",
+        "C": "To mechanically disconnect the differential gears when coasting downhill",
+        "D": "To pump liquid coolant through the cabin air conditioning condenser"
+      }
+    },
+    {
+      "id": "HEV-09",
+      "question": "What is the primary role of the DC-DC converter in a hybrid or electric vehicle?",
+      "options": {
+        "A": "Translating CAN bus data packets into Ethernet automotive diagnostics",
+        "B": "Regenerating hydraulic fluid pressure for antilock braking systems",
+        "C": "Compressing air for pneumatic suspension leveling springs",
+        "D": "Stepping down the high-voltage traction pack to standard 12V/14V to power vehicle electronics and charge the auxiliary 12V battery"
+      }
+    },
+    {
+      "id": "HEV-10",
+      "question": "What distinguishes a Plug-in Hybrid Electric Vehicle (PHEV) from a conventional Hybrid Electric Vehicle (HEV)?",
+      "options": {
+        "A": "PHEVs do not contain any internal combustion engine",
+        "B": "PHEVs have larger battery packs that can be recharged from an external electrical grid outlet and provide significant pure electric driving range",
+        "C": "PHEVs only operate when connected to overhead catenary wires",
+        "D": "PHEVs must be fueled exclusively with compressed natural gas"
+      }
+    },
+    {
+      "id": "HEV-11",
+      "question": "What is thermal runaway in lithium-ion battery technology?",
+      "options": {
+        "A": "The normal warming of the battery pack during slow overnight Level 1 AC charging",
+        "B": "The activation of passenger cabin heating elements during sub-zero winter temperatures",
+        "C": "The rapid evaporation of windshield washer fluid on heated windshield glass",
+        "D": "An uncontrollable exothermic self-heating reaction where internal cell temperature escalates rapidly, potentially causing fire or venting"
+      }
+    },
+    {
+      "id": "HEV-12",
+      "question": "In a Parallel Hybrid Electric Vehicle, how can propulsive torque be delivered to the driven wheels?",
+      "options": {
+        "A": "Only the electric motor can deliver torque while the engine runs an auxiliary generator",
+        "B": "Only the engine delivers torque while the electric motor operates the power steering pump",
+        "C": "Both the internal combustion engine and the electric motor can deliver torque directly to the wheels either independently or together",
+        "D": "Torque is delivered through hydraulic fluid lines without mechanical driveshafts"
+      }
+    },
+    {
+      "id": "HEV-13",
+      "question": "Which lithium-ion chemistry is renowned for its superior thermal stability, safety profile, long cycle life, and lower raw material cost despite lower energy density?",
+      "options": {
+        "A": "Lithium Iron Phosphate (LFP / LiFePO4)",
+        "B": "Lithium Cobalt Oxide (LCO)",
+        "C": "Lithium Nickel Cobalt Aluminum Oxide (NCA)",
+        "D": "Lithium Manganese Oxide (LMO)"
+      }
+    },
+    {
+      "id": "HEV-14",
+      "question": "What is the purpose of an interlock circuit (HVIL - High Voltage Interlock Loop) in an electric vehicle?",
+      "options": {
+        "A": "To lock vehicle passenger doors automatically when driving above fifteen miles per hour",
+        "B": "To prevent the driver from selecting reverse gear while cruising on highways",
+        "C": "To lock the steering wheel column when the vehicle is parked on an incline",
+        "D": "To detect if any high-voltage connector is loose or disconnected and instantly de-energize the high-voltage system to protect service personnel"
+      }
+    },
+    {
+      "id": "HEV-15",
+      "question": "What does the term C-rate denote in battery charging and discharging specifications?",
+      "options": {
+        "A": "The carbon footprint generated per kilowatt-hour of cell manufacturing",
+        "B": "A normalized measure of the current at which a battery is charged or discharged relative to its maximum capacity",
+        "C": "The maximum operating temperature in degrees Celsius before cooling activates",
+        "D": "The dollar cost per individual cylindrical cell produced"
+      }
+    },
+    {
+      "id": "HEV-16",
+      "question": "In a series-parallel (power-split) hybrid like the Toyota Prius, what component mechanically splits engine power between the wheels and a generator?",
+      "options": {
+        "A": "A torque converter automatic transmission",
+        "B": "A planetary (epicyclic) gear set",
+        "C": "A dry multi-plate racing clutch",
+        "D": "A hydraulic viscous coupling"
+      }
+    },
+    {
+      "id": "HEV-17",
+      "question": "What is the primary role of a pre-charge circuit in an electric vehicle high-voltage electrical architecture?",
+      "options": {
+        "A": "Warming the passenger cabin seats before the driver enters the vehicle",
+        "B": "Charging the 12V auxiliary lead-acid battery before starting the engine",
+        "C": "Slowly charging the inverter DC-link capacitor bank through a current-limiting resistor before main contactors close to prevent damaging inrush currents",
+        "D": "Testing home wall outlet AC grounding resistance before beginning charging"
+      }
+    },
+    {
+      "id": "HEV-18",
+      "question": "Why are liquid cooling systems commonly preferred over passive air cooling for modern EV high-power fast-charging battery packs?",
+      "options": {
+        "A": "Liquid coolant eliminates the need for electrical isolation fuses",
+        "B": "Liquid cooling reduces the total curb weight of the battery enclosure by half",
+        "C": "Liquid coolant acts as an electrolyte in case internal pouch cells rupture",
+        "D": "Liquid cooling provides significantly higher heat transfer coefficients, maintaining uniform cell temperatures and preventing localized hot spots under high current"
+      }
+    },
+    {
+      "id": "HEV-19",
+      "question": "What does depth of discharge (DoD) signify in battery usage guidelines?",
+      "options": {
+        "A": "The physical depth in centimeters of the battery pack mounted below the vehicle floorboard",
+        "B": "The maximum underwater wading depth the vehicle can navigate safely",
+        "C": "The percentage of battery capacity that has been discharged relative to its overall capacity",
+        "D": "The number of hours needed to fully discharge a cell using resistive load banks"
+      }
+    },
+    {
+      "id": "HEV-20",
+      "question": "What is an electric vehicle creep function designed to simulate for driver ergonomics?",
+      "options": {
+        "A": "The automatic lowering of vehicle suspension height during highway cruising",
+        "B": "The warning sound emitted to pedestrians when moving below 30 km/h",
+        "C": "The gradual reduction in motor power when battery SoC drops below five percent",
+        "D": "The gradual forward movement of a traditional automatic transmission vehicle when the brake pedal is released at idle"
+      }
+    }
+  ],
+  "App Development": [
+    {
+      "id": "AD-01",
+      "question": "In Android application architecture, which component represents a single screen with a user interface?",
+      "options": {
+        "A": "Activity",
+        "B": "BroadcastReceiver",
+        "C": "ContentProvider",
+        "D": "Service"
+      }
+    },
+    {
+      "id": "AD-02",
+      "question": "In iOS development using UIKit, which lifecycle method is called immediately after a view controller has loaded its view into memory?",
+      "options": {
+        "A": "viewWillAppear",
+        "B": "viewDidLoad",
+        "C": "viewDidAppear",
+        "D": "viewWillDisappear"
+      }
+    },
+    {
+      "id": "AD-03",
+      "question": "What is the primary role of Flutter widget tree in cross-platform development?",
+      "options": {
+        "A": "Compiling native Java bytecode directly into Swift code",
+        "B": "Managing backend database tables and migration files",
+        "C": "Describing the user interface structure declaratively as a hierarchy of immutable widgets",
+        "D": "Configuring push notification certificates for the Apple App Store"
+      }
+    },
+    {
+      "id": "AD-04",
+      "question": "In React Native, how do JavaScript code and native platform components communicate across thread boundaries?",
+      "options": {
+        "A": "Direct shared memory pointers without serialization",
+        "B": "Asynchronous JSON message passing through the React Native bridge or JSI",
+        "C": "Writing temporary XML files to local disk storage",
+        "D": "Periodic HTTP REST polling over localhost ports"
+      }
+    },
+    {
+      "id": "AD-05",
+      "question": "Which local storage solution in Android provides an abstraction layer over SQLite for robust database management?",
+      "options": {
+        "A": "Shared Preferences",
+        "B": "DataStore",
+        "C": "Room Persistence Library",
+        "D": "Proto DataStore"
+      }
+    },
+    {
+      "id": "AD-06",
+      "question": "What happens on Android when an application performs a long-running network request on the main UI thread?",
+      "options": {
+        "A": "The operating system automatically moves the task to an idle CPU core",
+        "B": "The request succeeds faster because the UI thread has highest priority",
+        "C": "The operating system skips SSL certificate checks",
+        "D": "A NetworkOnMainThreadException is thrown and the app freezes or crashes with an ANR"
+      }
+    },
+    {
+      "id": "AD-07",
+      "question": "In modern mobile development, what is the core architectural principle of Model-View-ViewModel (MVVM)?",
+      "options": {
+        "A": "Separating UI presentation from business logic where the ViewModel exposes observable state to the View",
+        "B": "Embedding database SQL queries directly into UI layout XML files",
+        "C": "Combining the network client and UI views into a single unified class",
+        "D": "Requiring every button click to trigger an immediate server reboot"
+      }
+    },
+    {
+      "id": "AD-08",
+      "question": "What is the purpose of declaring runtime permissions in mobile operating systems?",
+      "options": {
+        "A": "To increase application download speed from app stores",
+        "B": "To prompt the user for consent before accessing sensitive resources like camera or location",
+        "C": "To allow the app to bypass antivirus scanner checks",
+        "D": "To grant third-party apps read access to root system files"
+      }
+    },
+    {
+      "id": "AD-09",
+      "question": "Which mechanism allows mobile apps to receive and display notifications even when the app is killed or running in the background?",
+      "options": {
+        "A": "Continuous background socket polling on the main UI thread",
+        "B": "Local cron timers scheduled inside the app memory space",
+        "C": "Push Notification Services like Firebase Cloud Messaging (FCM) or Apple Push Notification service (APNs)",
+        "D": "Periodic Bluetooth advertising broadcasts"
+      }
+    },
+    {
+      "id": "AD-10",
+      "question": "In Android Gradle builds, what is the role of ProGuard or R8?",
+      "options": {
+        "A": "Translating Java source files into Objective-C headers",
+        "B": "Downloading third-party audio and video assets",
+        "C": "Generating mock API responses for staging tests",
+        "D": "Shrinking, optimizing, and obfuscating bytecode to reduce APK size and deter reverse engineering"
+      }
+    },
+    {
+      "id": "AD-11",
+      "question": "What is deep linking in mobile application development?",
+      "options": {
+        "A": "A URL mechanism that opens a specific screen or resource directly inside the installed mobile app",
+        "B": "Linking multiple local SQLite databases together using foreign keys",
+        "C": "Chaining asynchronous HTTP requests in a promise waterfall",
+        "D": "Connecting a phone directly to a laptop using a USB debugging cable"
+      }
+    },
+    {
+      "id": "AD-12",
+      "question": "In iOS development with Swift, what is the purpose of the weak keyword on a delegate reference?",
+      "options": {
+        "A": "To downgrade network request security to plain HTTP",
+        "B": "To prevent strong reference cycles and avoid memory leaks",
+        "C": "To allow the delegate to be invoked from background threads only",
+        "D": "To disable compiler type safety warnings for that variable"
+      }
+    },
+    {
+      "id": "AD-13",
+      "question": "What is the primary benefit of using Jetpack Compose or SwiftUI compared to traditional XML or storyboard layouts?",
+      "options": {
+        "A": "They eliminate the need to write unit tests for mobile applications",
+        "B": "They require manual view hierarchy inflation and explicit tag lookups",
+        "C": "They offer declarative UI paradigms where views react automatically to underlying state changes",
+        "D": "They allow mobile applications to run without operating system permissions"
+      }
+    },
+    {
+      "id": "AD-14",
+      "question": "Which tool is commonly used to inspect network traffic, view logs, and profile memory allocations during Android app development?",
+      "options": {
+        "A": "Android Studio Profiler and Logcat",
+        "B": "Xcode Instruments",
+        "C": "Wireshark packet capture exclusively",
+        "D": "Git blame utility"
+      }
+    },
+    {
+      "id": "AD-15",
+      "question": "What is an Application Not Responding (ANR) error in Android?",
+      "options": {
+        "A": "An error triggered when the device loses cellular connection",
+        "B": "A dialog shown when the main UI thread is blocked for more than 5 seconds without handling input events",
+        "C": "A warning emitted when an APK contains unsigned native libraries",
+        "D": "A notification indicating that the user device storage is 100 percent full"
+      }
+    },
+    {
+      "id": "AD-16",
+      "question": "In mobile caching strategies, what does cache-then-network pattern accomplish?",
+      "options": {
+        "A": "It permanently disables network access to save user mobile data",
+        "B": "It clears all local storage every time the app opens",
+        "C": "It displays cached data immediately for fast load times and then updates the UI once fresh network data arrives",
+        "D": "It sends requests to the server twice to ensure consistency"
+      }
+    },
+    {
+      "id": "AD-17",
+      "question": "What is an Android Keystore used for during production deployment?",
+      "options": {
+        "A": "Storing downloaded user assets like images and videos",
+        "B": "Managing database migration scripts for SQLite",
+        "C": "Hosting public web URLs for app store listings",
+        "D": "Securely storing cryptographic keys used to digitally sign the APK or Android App Bundle"
+      }
+    },
+    {
+      "id": "AD-18",
+      "question": "Which component in Android allows apps to share structured data securely with other applications?",
+      "options": {
+        "A": "ContentProvider",
+        "B": "BroadcastReceiver",
+        "C": "ForegroundService",
+        "D": "JobScheduler"
+      }
+    },
+    {
+      "id": "AD-19",
+      "question": "What is the primary function of an Intent in Android?",
+      "options": {
+        "A": "To compile C++ code into shared object libraries",
+        "B": "An asynchronous messaging object used to request an action from another app component",
+        "C": "To format JSON payloads returned from RESTful backends",
+        "D": "To define layout animations using CSS syntax"
+      }
+    },
+    {
+      "id": "AD-20",
+      "question": "What is the primary difference between a Hot Reload and a Full Restart in Flutter or React Native development?",
+      "options": {
+        "A": "Hot Reload compiles the native C++ engine while Full Restart clears Git commits",
+        "B": "Hot Reload deletes app user preferences while Full Restart keeps device cache",
+        "C": "Hot Reload injects updated code into the running VM without losing current app state, while Full Restart reloads the entire app from scratch",
+        "D": "Hot Reload only works on physical iOS hardware while Full Restart works on emulators"
+      }
+    }
+  ],
+  "Agriculture Domains": [
+    {
+      "id": "AG-01",
+      "question": "What is the primary objective of Precision Agriculture compared to conventional broadcast farming?",
+      "options": {
+        "A": "Applying farm inputs (water, fertilizer, pesticides) at variable rates based on spatial and temporal field variability to maximize efficiency and reduce waste",
+        "B": "Planting only a single crop variety across entire continents",
+        "C": "Eliminating the use of digital sensors and tractors in farming",
+        "D": "Relying strictly on historical rainfall averages without live weather forecasts"
+      }
+    },
+    {
+      "id": "AG-02",
+      "question": "In remote sensing for agriculture, what does the Normalized Difference Vegetation Index (NDVI) measure?",
+      "options": {
+        "A": "The market price fluctuation of grain commodities on futures exchanges",
+        "B": "Plant health and canopy vigor by calculating the ratio between reflected near-infrared and red light absorption by chlorophyll",
+        "C": "The concentration of dissolved salts in sub-surface irrigation runoff",
+        "D": "The mechanical compaction of soil beneath tractor wheel ruts"
+      }
+    },
+    {
+      "id": "AG-03",
+      "question": "Which irrigation technique delivers water directly to the plant root zone through emitters, achieving the highest water-use efficiency (up to 95 percent)?",
+      "options": {
+        "A": "Flood or furrow irrigation",
+        "B": "Center pivot overhead irrigation",
+        "C": "Drip (micro) irrigation",
+        "D": "Wild flooding basin irrigation"
+      }
+    },
+    {
+      "id": "AG-04",
+      "question": "What are the three primary macronutrients required for healthy plant growth represented by the acronym N-P-K?",
+      "options": {
+        "A": "Nickel, Platinum, Krypton",
+        "B": "Sodium, Phosphorus, Calcium",
+        "C": "Nitrogen, Potassium, Carbon",
+        "D": "Nitrogen, Phosphorus, Potassium"
+      }
+    },
+    {
+      "id": "AG-05",
+      "question": "What is Integrated Pest Management (IPM)?",
+      "options": {
+        "A": "An ecosystem-based strategy that combines biological control, cultural practices, habitat manipulation, and targeted chemical use to manage pests below economic damage levels",
+        "B": "Spraying chemical insecticides across all fields at fixed weekly calendar intervals regardless of pest presence",
+        "C": "Relying solely on genetically modified synthetic chemical poisons",
+        "D": "Allowing pests to destroy entire harvests to promote natural wildlife biodiversity"
+      }
+    },
+    {
+      "id": "AG-06",
+      "question": "What agronomic benefit does rotating cereal crops with leguminous plants (such as soybeans, chickpeas, or alfalfa) provide to the soil?",
+      "options": {
+        "A": "Increasing soil compaction to prevent root growth",
+        "B": "Biological nitrogen fixation through symbiotic Rhizobium bacteria in root nodules, replenishing soil fertility",
+        "C": "Lowering groundwater levels by absorbing excess aquifer storage",
+        "D": "Preventing soil earthworms from colonizing topsoil"
+      }
+    },
+    {
+      "id": "AG-07",
+      "question": "What does soil pH measure, and why is an optimal range (typically 6.0 to 7.0) crucial for crop cultivation?",
+      "options": {
+        "A": "The percentage of sand grains relative to organic matter",
+        "B": "The depth of topsoil before bedrock is encountered",
+        "C": "The acidity or alkalinity of the soil, which directly governs the bioavailability and solubility of essential plant nutrients",
+        "D": "The rate at which soil absorbs solar ultraviolet radiation"
+      }
+    },
+    {
+      "id": "AG-08",
+      "question": "What is fertigation in modern crop production?",
+      "options": {
+        "A": "Applying organic compost using aerial crop dusting airplanes",
+        "B": "Flooding fields with recycled industrial wastewater",
+        "C": "Measuring soil electrical conductivity with handheld electrodes",
+        "D": "The simultaneous application of water-soluble fertilizers dissolved into an automated drip or sprinkler irrigation system"
+      }
+    },
+    {
+      "id": "AG-09",
+      "question": "Which soilless cultivation method suspends plant roots in an enclosed chamber and periodically mists them with a nutrient-rich aqueous solution?",
+      "options": {
+        "A": "Aeroponics",
+        "B": "Aquaponics with fish stocking",
+        "C": "Deep Water Culture (DWC)",
+        "D": "Nutrient Film Technique (NFT)"
+      }
+    },
+    {
+      "id": "AG-10",
+      "question": "What is Cation Exchange Capacity (CEC) in soil science?",
+      "options": {
+        "A": "The total volume of pore space occupied by air inside dry clay",
+        "B": "A measure of the soil capacity to hold and exchange positively charged nutrient ions (like calcium, magnesium, potassium), indicating inherent soil fertility",
+        "C": "The rate at which earthworms digest organic compost per hectare",
+        "D": "The speed of subterranean groundwater lateral seepage"
+      }
+    },
+    {
+      "id": "AG-11",
+      "question": "In post-harvest technology, what is the primary purpose of precooling freshly harvested fruits and vegetables?",
+      "options": {
+        "A": "Freezing produce solid to prevent surface bruising during export shipping",
+        "B": "Destroying plant cellular wall structures to accelerate fruit softening",
+        "C": "Rapidly removing field heat to reduce metabolic respiration rates, inhibit pathogen growth, and extend shelf life",
+        "D": "Bleaching fruit skins to enhance uniform market coloration"
+      }
+    },
+    {
+      "id": "AG-12",
+      "question": "What does Variable Rate Technology (VRT) in precision agricultural machinery accomplish?",
+      "options": {
+        "A": "Varying tractor engine RPM based on operator radio volume",
+        "B": "Changing the combine harvester blade angle every thirty seconds",
+        "C": "Altering tire inflation pressure to match steering wheel turn velocity",
+        "D": "Using GPS and prescription maps to automatically modulate seed density, fertilizer dosage, or pesticide volume across specific field zones"
+      }
+    },
+    {
+      "id": "AG-13",
+      "question": "What is Green Manuring in sustainable agronomy?",
+      "options": {
+        "A": "Growing specific quick-growing crops and plowing them into the soil while still green to enhance organic matter, nitrogen, and soil structure",
+        "B": "Painting farm tractors green to prevent rust corrosion",
+        "C": "Applying green copper sulfate spray to neutralize fungal spores",
+        "D": "Adding crushed green glass bottles to sandy soil to improve drainage"
+      }
+    },
+    {
+      "id": "AG-14",
+      "question": "In greenhouse climate control, what does Vapor Pressure Deficit (VPD) represent?",
+      "options": {
+        "A": "The financial cost of propane used in greenhouse winter heating boilers",
+        "B": "The difference between the pressure exerted by water vapor inside the leaf saturated air and the vapor pressure of the surrounding atmosphere, driving plant transpiration",
+        "C": "The volume of carbon dioxide absorbed by plants during nighttime respiration",
+        "D": "The air pressure difference between the indoor greenhouse and outside storm winds"
+      }
+    },
+    {
+      "id": "AG-15",
+      "question": "What is the primary ecological risk associated with excessive agricultural runoff carrying high concentrations of nitrogen and phosphorus into lakes and rivers?",
+      "options": {
+        "A": "Depletion of atmospheric ozone layers above rural communities",
+        "B": "Acidification of regional rainwater precipitation",
+        "C": "Eutrophication, leading to dense algal blooms, oxygen depletion (hypoxia), and widespread aquatic life mortality",
+        "D": "Sudden tectonic land subsidence near river estuaries"
+      }
+    },
+    {
+      "id": "AG-16",
+      "question": "What does conservation tillage (including no-till and minimum tillage) primarily aim to achieve?",
+      "options": {
+        "A": "Completely turning over the top thirty centimeters of soil twice a year",
+        "B": "Burning crop residue to sterilize weed seeds",
+        "C": "Compacting the soil surface to resist rainfall penetration",
+        "D": "Minimizing soil disruption and leaving crop residues on the surface to prevent soil erosion, retain moisture, and improve organic matter"
+      }
+    },
+    {
+      "id": "AG-17",
+      "question": "What is an agricultural drone primarily utilized for in modern smart farming operations?",
+      "options": {
+        "A": "Aerial crop health multispectral monitoring, weed mapping, and precision spot-spraying of inputs",
+        "B": "Transporting heavy 50 kg grain sacks from field to warehouse",
+        "C": "Digging irrigation drainage ditches along field boundaries",
+        "D": "Directly harvesting ripe root tubers from underground soil"
+      }
+    },
+    {
+      "id": "AG-18",
+      "question": "Which plant hormone is commonly known as the ripening hormone and is commercially used to initiate uniform fruit ripening during transport?",
+      "options": {
+        "A": "Gibberellic Acid",
+        "B": "Ethylene",
+        "C": "Cytokinin",
+        "D": "Abscisic Acid"
+      }
+    },
+    {
+      "id": "AG-19",
+      "question": "What is biological pest control in crop management?",
+      "options": {
+        "A": "Using synthetic organophosphate chemical sprays to exterminate all insects",
+        "B": "Applying nuclear radiation to farmland to eliminate bacteria",
+        "C": "The deliberate use of natural predators, parasitoids, or pathogens (such as ladybugs against aphids or Bacillus thuringiensis against larvae) to suppress pest populations",
+        "D": "Setting up electrified wire fences around field perimeters"
+      }
+    },
+    {
+      "id": "AG-20",
+      "question": "What soil property is determined by the relative proportion of sand, silt, and clay particles as illustrated on the USDA Soil Texture Triangle?",
+      "options": {
+        "A": "Soil fertility rating",
+        "B": "Soil microbial biomass",
+        "C": "Soil magnetic susceptibility",
+        "D": "Soil texture"
+      }
+    }
+  ],
+  "Auto CAD, SketchUp, Revit": [
+    {
+      "id": "ASR-01",
+      "question": "What is the core paradigm of Building Information Modeling (BIM) as implemented in Autodesk Revit?",
+      "options": {
+        "A": "An intelligent, database-driven 3D modeling approach where elements carry real-world parametric data and updates reflect across all views, plans, and schedules simultaneously",
+        "B": "Drawing 2D vector wireframe lines without metadata on separate paper layers",
+        "C": "Rendering photo-realistic video walkthroughs using GPU ray tracing exclusively",
+        "D": "Converting architectural hand sketches into scanned PDF documents"
+      }
+    },
+    {
+      "id": "ASR-02",
+      "question": "In Autodesk Revit, what are the three primary categories of component Families?",
+      "options": {
+        "A": "Structural, Architectural, and Mechanical families",
+        "B": "System Families, Loadable (Component) Families, and In-Place Families",
+        "C": "2D Families, 3D Families, and 4D Phasing families",
+        "D": "Residential, Commercial, and Industrial families"
+      }
+    },
+    {
+      "id": "ASR-03",
+      "question": "In Trimble SketchUp, what is the signature tool used to extrude 2D planar faces into 3D volumetric forms?",
+      "options": {
+        "A": "Tape Measure tool",
+        "B": "Offset tool",
+        "C": "Push/Pull tool",
+        "D": "Follow Me tool"
+      }
+    },
+    {
+      "id": "ASR-04",
+      "question": "In SketchUp modeling, what is the critical difference between creating a Group and creating a Component?",
+      "options": {
+        "A": "Groups can be textured while Components can only be rendered in grayscale",
+        "B": "Groups are saved to 3D Warehouse while Components remain local",
+        "C": "Groups cannot be rotated while Components can rotate freely",
+        "D": "Editing one instance of a Component automatically updates all other instances throughout the model, whereas Groups are independent copies"
+      }
+    },
+    {
+      "id": "ASR-05",
+      "question": "In BIM project workflows, what does Level of Development (LOD) define?",
+      "options": {
+        "A": "The degree to which the element geometry and associated information have been thought through and can be relied upon by project stakeholders (from LOD 100 conceptual to LOD 500 as-built)",
+        "B": "The salary level and years of experience of the CAD draftsperson",
+        "C": "The physical floor height of a high-rise building structure",
+        "D": "The maximum number of polygons allowed in a real-time game engine"
+      }
+    },
+    {
+      "id": "ASR-06",
+      "question": "In Trimble SketchUp, which specialized tool revolves or extrudes a 2D profile along a predefined 3D path, commonly used for molding and pipes?",
+      "options": {
+        "A": "Rotate tool",
+        "B": "Follow Me tool",
+        "C": "Scale tool",
+        "D": "Walkthrough tool"
+      }
+    },
+    {
+      "id": "ASR-07",
+      "question": "In Revit, what is the primary role of a Schedule?",
+      "options": {
+        "A": "A calendar showing employee daily work shifts on construction sites",
+        "B": "A gantt chart tracking concrete drying durations across weather seasons",
+        "C": "A tabular display of extracted model data and quantities (such as doors, windows, and concrete volume) that dynamically updates with model changes",
+        "D": "A contract detailing architect hourly billing rates"
+      }
+    },
+    {
+      "id": "ASR-08",
+      "question": "What does Clash Detection achieve in multi-disciplinary BIM coordination (Navisworks / Revit)?",
+      "options": {
+        "A": "Detecting font mismatches between architectural title blocks",
+        "B": "Checking whether two contractors are registered under identical company names",
+        "C": "Identifying stylistic discrepancies between exterior paint swatches",
+        "D": "Identifying spatial geometric conflicts where different building systems occupy the same physical space (such as HVAC ducts passing through structural beams)"
+      }
+    },
+    {
+      "id": "ASR-09",
+      "question": "In Autodesk Revit, how are Levels defined in a building model?",
+      "options": {
+        "A": "Infinite horizontal reference planes from which level-hosted elements like floors, ceilings, and roofs derive their vertical position",
+        "B": "Categorical security clearance permissions granted to project managers",
+        "C": "The resolution quality setting for cloud rendering passes",
+        "D": "The number of nested sub-groups inside a complex wall assembly"
+      }
+    },
+    {
+      "id": "ASR-10",
+      "question": "In SketchUp, what causes the phenomenon known as sticky geometry?",
+      "options": {
+        "A": "Excessive application of glossy reflection materials to surfaces",
+        "B": "Raw ungrouped edges and faces automatically sticking to and merging with other intersecting loose geometry",
+        "C": "Corrupted graphics card driver textures causing mouse lag",
+        "D": "Saving models with high polygon tree assets from 3D Warehouse"
+      }
+    },
+    {
+      "id": "ASR-11",
+      "question": "In architectural AutoCAD, what is the standard purpose of Viewports inside a Paper Space sheet layout?",
+      "options": {
+        "A": "Displaying live webcam video feeds from the construction site",
+        "B": "Converting 2D floor plans into animated MP4 videos",
+        "C": "Windows that look into Model Space, allowing views to be displayed at specific standard architectural scales like 1:50 or 1:100",
+        "D": "Blocking unauthorized users from printing copyrighted drawings"
+      }
+    },
+    {
+      "id": "ASR-12",
+      "question": "In Autodesk Revit, what is the difference between a Type Parameter and an Instance Parameter?",
+      "options": {
+        "A": "Type parameters are only for doors while instance parameters are only for walls",
+        "B": "Type parameters require an internet connection while instance parameters work offline",
+        "C": "Type parameters are numerical while instance parameters must be text",
+        "D": "Changing a Type Parameter affects every element of that family type across the entire project, while changing an Instance Parameter affects only the selected individual element"
+      }
+    },
+    {
+      "id": "ASR-13",
+      "question": "What is Trimble SketchUp LayOut primarily used for in professional architectural workflows?",
+      "options": {
+        "A": "Creating multi-page construction documents, presentation boards, and scaled drawings linked directly to the 3D SketchUp model",
+        "B": "Simulating thermodynamic solar radiation on glazed curtain walls",
+        "C": "Writing Ruby scripts for generative algorithmic parametric facades",
+        "D": "Calculating acoustic reverberation times in concert auditoriums"
+      }
+    },
+    {
+      "id": "ASR-14",
+      "question": "In Autodesk Revit, what is the function of the Worksharing feature in central models?",
+      "options": {
+        "A": "Distributing social media marketing renderings to public clients",
+        "B": "Enabling multiple team members to work concurrently on the same building model using local copies synchronized with a central file",
+        "C": "Splitting software licensing fees across multiple architectural firms",
+        "D": "Sharing workstation GPU cores over local Wi-Fi networks"
+      }
+    },
+    {
+      "id": "ASR-15",
+      "question": "What does an Underlay setting allow a Revit draftsperson to do in a floor plan view?",
+      "options": {
+        "A": "Permanently delete basement foundation walls from structural calculations",
+        "B": "Export CAD DWG files directly to CNC laser cutters",
+        "C": "Display another level (such as the floor below or ceiling above) in halftone to assist with alignment and coordination",
+        "D": "Generate photorealistic raytraced shadows under furniture items"
+      }
+    },
+    {
+      "id": "ASR-16",
+      "question": "In SketchUp, which feature allows you to save specific camera perspectives, layer visibilities, styles, and shadow settings for quick presentation transitions?",
+      "options": {
+        "A": "Materials panel",
+        "B": "Model Info window",
+        "C": "Entity Info tray",
+        "D": "Scenes"
+      }
+    },
+    {
+      "id": "ASR-17",
+      "question": "In architectural AutoCAD drafting, why is following the standard AIA (American Institute of Architects) Layer Naming Guideline recommended?",
+      "options": {
+        "A": "It provides a clear, universally recognized discipline and element hierarchy (e.g. A-WALL, A-DOOR, E-POWR) that ensures consistency across consultant teams",
+        "B": "It prevents AutoCAD from crashing when drawing curved spline geometry",
+        "C": "It encrypts DWG files against reverse-engineering by competitors",
+        "D": "It forces drawings to render in metric millimeters automatically"
+      }
+    },
+    {
+      "id": "ASR-18",
+      "question": "In Autodesk Revit, what is the role of a Curtain Wall element?",
+      "options": {
+        "A": "A decorative fabric drapery hung across conference room windows",
+        "B": "An exterior non-structural building envelope wall consisting of an interlocking grid of mullions and glazed or solid panels",
+        "C": "A temporary plastic dust barrier erected during site demolition",
+        "D": "A heavy reinforced concrete retaining wall resisting lateral earth pressure"
+      }
+    },
+    {
+      "id": "ASR-19",
+      "question": "What is the primary role of the Section Box tool in Revit 3D views?",
+      "options": {
+        "A": "Boxing up drawing sheets for archival zip compression",
+        "B": "Calculating structural wind shear loads on exterior columns",
+        "C": "Clipping the 3D model with an adjustable bounding box to isolate and inspect interior building sections and details",
+        "D": "Generating bill of materials tables for HVAC equipment"
+      }
+    },
+    {
+      "id": "ASR-20",
+      "question": "In SketchUp, which tool measures distances, creates temporary guideline construction lines, and scales the entire model proportionally?",
+      "options": {
+        "A": "Protractor tool",
+        "B": "Dimension tool",
+        "C": "Walk tool",
+        "D": "Tape Measure tool"
+      }
+    }
+  ]
+}

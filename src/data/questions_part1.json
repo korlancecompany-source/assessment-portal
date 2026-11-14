@@ -1,0 +1,406 @@
+{
+  "Full Stack Web Development": [
+    {
+      "id": "FSWD-01",
+      "question": "Which React hook is used to perform side effects in function components?",
+      "options": {
+        "A": "useState",
+        "B": "useRef",
+        "C": "useEffect",
+        "D": "useMemo"
+      }
+    },
+    {
+      "id": "FSWD-02",
+      "question": "What does the HTTP status code 404 indicate?",
+      "options": {
+        "A": "Internal server error",
+        "B": "Resource not found",
+        "C": "Unauthorized access",
+        "D": "Bad request"
+      }
+    },
+    {
+      "id": "FSWD-03",
+      "question": "In JavaScript, what does `Promise.all()` return?",
+      "options": {
+        "A": "The first promise that resolves",
+        "B": "A promise that rejects immediately if any input promise rejects",
+        "C": "A promise that resolves when all input promises resolve, or rejects if any rejects",
+        "D": "A promise that always resolves, even if some inputs reject"
+      }
+    },
+    {
+      "id": "FSWD-04",
+      "question": "Which CSS property is used to define the direction of flex items in a flex container?",
+      "options": {
+        "A": "flex-wrap",
+        "B": "align-items",
+        "C": "justify-content",
+        "D": "flex-direction"
+      }
+    },
+    {
+      "id": "FSWD-05",
+      "question": "In Node.js, which module system is used natively without any transpilation?",
+      "options": {
+        "A": "AMD",
+        "B": "CommonJS (require/module.exports)",
+        "C": "UMD",
+        "D": "SystemJS"
+      }
+    },
+    {
+      "id": "FSWD-06",
+      "question": "Which HTML5 semantic element is most appropriate for the main navigation links of a website?",
+      "options": {
+        "A": "<header>",
+        "B": "<aside>",
+        "C": "<nav>",
+        "D": "<section>"
+      }
+    },
+    {
+      "id": "FSWD-07",
+      "question": "In JavaScript ES6+, what is a closure?",
+      "options": {
+        "A": "A function that returns a promise",
+        "B": "A function bundled with references to its surrounding lexical scope",
+        "C": "An immediately invoked function expression (IIFE)",
+        "D": "A method that stops event propagation"
+      }
+    },
+    {
+      "id": "FSWD-08",
+      "question": "What is the correct HTTP method to use when updating a resource partially (not replacing it entirely)?",
+      "options": {
+        "A": "PUT",
+        "B": "POST",
+        "C": "DELETE",
+        "D": "PATCH"
+      }
+    },
+    {
+      "id": "FSWD-09",
+      "question": "Which React hook should you use to memoize an expensive computation so it only re-runs when its dependencies change?",
+      "options": {
+        "A": "useCallback",
+        "B": "useReducer",
+        "C": "useMemo",
+        "D": "useEffect"
+      }
+    },
+    {
+      "id": "FSWD-10",
+      "question": "In Express.js, which method is used to register middleware that runs for every incoming request?",
+      "options": {
+        "A": "app.get()",
+        "B": "app.use()",
+        "C": "app.listen()",
+        "D": "app.set()"
+      }
+    },
+    {
+      "id": "FSWD-11",
+      "question": "What command is used to create a new Git branch and switch to it in a single step?",
+      "options": {
+        "A": "git branch new-branch",
+        "B": "git merge new-branch",
+        "C": "git checkout -b new-branch",
+        "D": "git commit -b new-branch"
+      }
+    },
+    {
+      "id": "FSWD-12",
+      "question": "Which field in `package.json` lists packages required only during development (e.g., test runners, bundlers)?",
+      "options": {
+        "A": "peerDependencies",
+        "B": "devDependencies",
+        "C": "optionalDependencies",
+        "D": "dependencies"
+      }
+    },
+    {
+      "id": "FSWD-13",
+      "question": "In CSS Grid, which property defines both the number and size of columns in a grid container?",
+      "options": {
+        "A": "grid-template-rows",
+        "B": "grid-auto-columns",
+        "C": "grid-column-gap",
+        "D": "grid-template-columns"
+      }
+    },
+    {
+      "id": "FSWD-14",
+      "question": "What is the main advantage of NoSQL databases like MongoDB over relational SQL databases?",
+      "options": {
+        "A": "They always provide stronger ACID guarantees",
+        "B": "They require a strict, predefined schema",
+        "C": "They scale horizontally more easily and handle unstructured data flexibly",
+        "D": "They support complex JOIN operations natively better than SQL"
+      }
+    },
+    {
+      "id": "FSWD-15",
+      "question": "In JavaScript, which of the following correctly defines an arrow function that takes two parameters and returns their sum?",
+      "options": {
+        "A": "function (a, b) => a + b",
+        "B": "(a, b) => a + b",
+        "C": "=> (a, b) { return a + b; }",
+        "D": "arrow (a, b) { return a + b; }"
+      }
+    },
+    {
+      "id": "FSWD-16",
+      "question": "In a RESTful API, which HTTP status code should be returned when a new resource is successfully created?",
+      "options": {
+        "A": "200 OK",
+        "B": "204 No Content",
+        "C": "400 Bad Request",
+        "D": "201 Created"
+      }
+    },
+    {
+      "id": "FSWD-17",
+      "question": "What does the `useCallback` hook in React do?",
+      "options": {
+        "A": "It caches the result of a computation between renders",
+        "B": "It returns a memoized version of a callback function that only changes if dependencies change",
+        "C": "It subscribes to a context value",
+        "D": "It triggers a re-render when called"
+      }
+    },
+    {
+      "id": "FSWD-18",
+      "question": "Which of the following describes the Node.js event loop correctly?",
+      "options": {
+        "A": "Node.js uses multiple threads to handle each request synchronously",
+        "B": "Node.js blocks I/O until each operation completes before moving on",
+        "C": "Node.js uses a single-threaded, non-blocking event loop to handle asynchronous operations",
+        "D": "Node.js spawns a new process for every incoming connection"
+      }
+    },
+    {
+      "id": "FSWD-19",
+      "question": "In async/await JavaScript, what does the `await` keyword do?",
+      "options": {
+        "A": "It converts a callback-based function into a promise",
+        "B": "It pauses execution of the async function until the awaited promise settles",
+        "C": "It immediately resolves a pending promise",
+        "D": "It throws an error if the promise rejects"
+      }
+    },
+    {
+      "id": "FSWD-20",
+      "question": "In React, what is the correct way to pass data from a parent component to a child component?",
+      "options": {
+        "A": "Using the React context API only",
+        "B": "By directly modifying the child component's state",
+        "C": "Via props",
+        "D": "Using the useEffect hook"
+      }
+    }
+  ],
+  "Python with Data Science": [
+    {
+      "id": "PYDS-01",
+      "question": "Which Pandas function is used to read a CSV file into a DataFrame?",
+      "options": {
+        "A": "pd.load_csv()",
+        "B": "pd.open_csv()",
+        "C": "pd.read_csv()",
+        "D": "pd.import_csv()"
+      }
+    },
+    {
+      "id": "PYDS-02",
+      "question": "In NumPy, what does broadcasting allow you to do?",
+      "options": {
+        "A": "Send array data over a network socket",
+        "B": "Perform element-wise operations on arrays of different but compatible shapes without explicit looping",
+        "C": "Duplicate an array across multiple CPU cores",
+        "D": "Convert arrays from one dtype to another automatically"
+      }
+    },
+    {
+      "id": "PYDS-03",
+      "question": "Which Python construct creates a list using an inline expression without writing an explicit for loop?",
+      "options": {
+        "A": "Lambda expression",
+        "B": "Generator expression",
+        "C": "List comprehension",
+        "D": "Dictionary comprehension"
+      }
+    },
+    {
+      "id": "PYDS-04",
+      "question": "In Pandas, which method returns a grouped object to allow aggregate functions like mean() or sum() on subsets?",
+      "options": {
+        "A": "df.pivot()",
+        "B": "df.merge()",
+        "C": "df.apply()",
+        "D": "df.groupby()"
+      }
+    },
+    {
+      "id": "PYDS-05",
+      "question": "In Scikit-learn, which function is used to split a dataset into training and testing subsets?",
+      "options": {
+        "A": "train_test_split()",
+        "B": "split_dataset()",
+        "C": "cross_val_score()",
+        "D": "fit_transform()"
+      }
+    },
+    {
+      "id": "PYDS-06",
+      "question": "What is a Python generator?",
+      "options": {
+        "A": "A class that creates random numbers",
+        "B": "A function that uses `yield` to produce values lazily, one at a time",
+        "C": "A decorator that caches function results",
+        "D": "A built-in that creates NumPy arrays"
+      }
+    },
+    {
+      "id": "PYDS-07",
+      "question": "Which Pandas method is used to handle missing values by filling them with a specified value?",
+      "options": {
+        "A": "df.dropna()",
+        "B": "df.fillna()",
+        "C": "df.replace()",
+        "D": "df.interpolate()"
+      }
+    },
+    {
+      "id": "PYDS-08",
+      "question": "In NumPy, what does the following slice return for array `a = np.arange(10)`: `a[2:8:2]`?",
+      "options": {
+        "A": "[2, 3, 4, 5, 6, 7]",
+        "B": "[2, 4, 6]",
+        "C": "[2, 4, 6, 8]",
+        "D": "[3, 5, 7]"
+      }
+    },
+    {
+      "id": "PYDS-09",
+      "question": "Which Matplotlib function is used to display a plot in a Jupyter notebook or script?",
+      "options": {
+        "A": "plt.draw()",
+        "B": "plt.render()",
+        "C": "plt.show()",
+        "D": "plt.output()"
+      }
+    },
+    {
+      "id": "PYDS-10",
+      "question": "In Scikit-learn, after calling `model.fit(X_train, y_train)`, which method generates predictions on new data?",
+      "options": {
+        "A": "model.score()",
+        "B": "model.transform()",
+        "C": "model.evaluate()",
+        "D": "model.predict()"
+      }
+    },
+    {
+      "id": "PYDS-11",
+      "question": "What is a Python decorator?",
+      "options": {
+        "A": "A special comment that documents a function",
+        "B": "A function that takes another function as input and extends its behavior without modifying it",
+        "C": "A class method that overrides __init__",
+        "D": "A NumPy utility that applies transformations to arrays"
+      }
+    },
+    {
+      "id": "PYDS-12",
+      "question": "Which statistical measure is most resistant to outliers when describing the center of a dataset?",
+      "options": {
+        "A": "Mean",
+        "B": "Standard deviation",
+        "C": "Median",
+        "D": "Variance"
+      }
+    },
+    {
+      "id": "PYDS-13",
+      "question": "In Pandas, which method merges two DataFrames similarly to SQL JOIN operations?",
+      "options": {
+        "A": "pd.concat()",
+        "B": "pd.merge()",
+        "C": "pd.join_frames()",
+        "D": "pd.append()"
+      }
+    },
+    {
+      "id": "PYDS-14",
+      "question": "Which Scikit-learn preprocessing class scales features so they have zero mean and unit variance?",
+      "options": {
+        "A": "MinMaxScaler",
+        "B": "RobustScaler",
+        "C": "Normalizer",
+        "D": "StandardScaler"
+      }
+    },
+    {
+      "id": "PYDS-15",
+      "question": "In a Python dictionary, what does `dict.get(key, default)` return when `key` is not found?",
+      "options": {
+        "A": "None always",
+        "B": "It raises a KeyError",
+        "C": "The value of `default`",
+        "D": "An empty dictionary"
+      }
+    },
+    {
+      "id": "PYDS-16",
+      "question": "Which Matplotlib function creates a histogram to visualize the distribution of a dataset?",
+      "options": {
+        "A": "plt.bar()",
+        "B": "plt.scatter()",
+        "C": "plt.hist()",
+        "D": "plt.boxplot()"
+      }
+    },
+    {
+      "id": "PYDS-17",
+      "question": "In NumPy, what does `np.dot(A, B)` compute when A and B are 2D arrays?",
+      "options": {
+        "A": "Element-wise product of A and B",
+        "B": "Matrix multiplication of A and B",
+        "C": "The cross product of A and B",
+        "D": "The Hadamard product of A and B"
+      }
+    },
+    {
+      "id": "PYDS-18",
+      "question": "In Pandas, what does `df.pivot_table(values='sales', index='region', aggfunc='sum')` produce?",
+      "options": {
+        "A": "A scatter plot of sales by region",
+        "B": "A new DataFrame summarizing total sales grouped by region",
+        "C": "A sorted list of sales values",
+        "D": "A merged DataFrame from two sales tables"
+      }
+    },
+    {
+      "id": "PYDS-19",
+      "question": "Which Scikit-learn algorithm is a non-parametric classification method that classifies data based on the majority class of its nearest neighbors?",
+      "options": {
+        "A": "LinearRegression",
+        "B": "KNeighborsClassifier",
+        "C": "DecisionTreeClassifier",
+        "D": "LogisticRegression"
+      }
+    },
+    {
+      "id": "PYDS-20",
+      "question": "In a Jupyter Notebook, which magic command runs a shell command directly from a code cell?",
+      "options": {
+        "A": "%%python",
+        "B": "%run",
+        "C": "!command",
+        "D": "%shell"
+      }
+    }
+  ]
+}
