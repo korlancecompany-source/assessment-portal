@@ -17,6 +17,22 @@ var PORTAL_CONFIG = {
   NOTIFICATION_EMAIL: 'kishore31122k4@gmail.com',
 
   /**
+   * Courses that have a mandatory coding round after MCQ.
+   * For these courses, the final email is sent after the coding round completes.
+   */
+  CODING_ROUND_COURSES: [
+    "Full Stack Web Development",
+    "Data Science",
+    "Artificial Intelligence & Machine Learning (AIML)",
+    "Python with Data Science",
+    "Python with Machine Learning",
+    "Data Analytics",
+    "App Development",
+    "Internet of Things (IOT)",
+    "Embedded System"
+  ],
+
+  /**
    * When true, the same email address cannot submit for the same course twice.
    * The check is case-insensitive.
    */
@@ -255,11 +271,21 @@ function doPost(e) {
       }
     }
 
-    // Send instant email notification to admin with student details & resume
-    try {
-      sendAdminNotification(payload, score, TOTAL, resumeBlob, fileUrl);
-    } catch (mailErr) {
-      Logger.log('Admin notification email error: ' + mailErr.toString());
+    // Check if this domain has a coding round:
+    var hasCodingRound = isCodingCourse(payload.course);
+    var isViolation = String(payload.submissionType) === 'Auto - Violation';
+
+    // If NO coding round, or if candidate was auto-submitted for violation (disqualified):
+    // Send the final notification email immediately!
+    // If the domain has a coding round, withhold the email until the coding round finishes.
+    if (!hasCodingRound || isViolation) {
+      try {
+        sendAdminNotification(payload, score, TOTAL, resumeBlob, fileUrl);
+      } catch (mailErr) {
+        Logger.log('Admin notification email error: ' + mailErr.toString());
+      }
+    } else {
+      Logger.log('Candidate in coding domain "' + payload.course + '". Final email will be sent upon coding round completion.');
     }
 
     return jsonResponse({ ok: true });
@@ -394,6 +420,13 @@ function handleCodingResult(payload) {
     }
   }
 
+  // Send full combined assessment email (MCQ + Coding + Resume)
+  try {
+    sendCompleteAssessmentNotification(payload);
+  } catch (cMailErr) {
+    Logger.log('Coding completion email error: ' + cMailErr.toString());
+  }
+
   return jsonResponse({ ok: true });
 }
 
@@ -421,6 +454,55 @@ function handleCodingPending(payload) {
     String(payload.code),
     String(payload.reason || 'Pending Execution')
   ]);
+
+  // Also log into CodingResults tab so marks & test case passes are recorded
+  var crSheet = ss.getSheetByName('CodingResults');
+  if (!crSheet) {
+    crSheet = ss.insertSheet('CodingResults');
+    crSheet.appendRow([
+      'Timestamp', 'Name', 'Email', 'Phone', 'Course', 'Language',
+      'Test Cases Passed', 'Total Test Cases', 'Coding Marks', 'Max Marks',
+      'Submission Type', 'Warnings'
+    ]);
+    crSheet.setFrozenRows(1);
+  }
+
+  crSheet.appendRow([
+    new Date(),
+    String(payload.name).trim(),
+    String(payload.email).trim(),
+    String(payload.phone || '').trim(),
+    String(payload.course).trim(),
+    String(payload.language).trim(),
+    Number(payload.testCasesPassed) || 0,
+    Number(payload.totalTestCases) || 5,
+    Number(payload.codingMarks) || 0,
+    Number(payload.maxMarks) || 10,
+    String(payload.submissionType || 'Manual'),
+    Number(payload.warnings) || 0,
+  ]);
+
+  // Update CodingSessions status to 'Completed'
+  var sessionsSheet = ss.getSheetByName('CodingSessions');
+  if (sessionsSheet) {
+    var sessionsData = sessionsSheet.getDataRange().getValues();
+    var email = String(payload.email).toLowerCase().trim();
+    var course = String(payload.course).trim();
+    for (var s = 1; s < sessionsData.length; s++) {
+      if (String(sessionsData[s][0]).toLowerCase().trim() === email &&
+          String(sessionsData[s][1]).trim() === course) {
+        sessionsSheet.getRange(s + 1, 5).setValue('Completed');
+        break;
+      }
+    }
+  }
+
+  // Send full combined assessment email (MCQ + Coding + Resume)
+  try {
+    sendCompleteAssessmentNotification(payload);
+  } catch (cMailErr) {
+    Logger.log('Coding completion email error: ' + cMailErr.toString());
+  }
 
   return jsonResponse({ ok: true, pending: true });
 }
@@ -509,6 +591,171 @@ function sendAdminNotification(payload, score, total, resumeBlob, fileUrl) {
     subject: subject,
     htmlBody: htmlBody,
     name: 'Student Test Portal'
+  };
+
+  if (resumeBlob) {
+    mailOptions.attachments = [resumeBlob];
+  }
+
+  MailApp.sendEmail(mailOptions);
+}
+
+// ------------------------------------------------------------
+// Helper: checks if a course requires a coding round
+// ------------------------------------------------------------
+function isCodingCourse(course) {
+  if (!course) return false;
+  var list = PORTAL_CONFIG.CODING_ROUND_COURSES || [];
+  var target = String(course).toLowerCase().trim();
+  for (var i = 0; i < list.length; i++) {
+    if (String(list[i]).toLowerCase().trim() === target) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// ------------------------------------------------------------
+// Combined Complete Assessment Notification (MCQ + Coding + Resume)
+// ------------------------------------------------------------
+function sendCompleteAssessmentNotification(payload) {
+  var recipient = PORTAL_CONFIG.NOTIFICATION_EMAIL;
+  if (!recipient || String(recipient).trim() === '') return;
+
+  var candidateName = String(payload.name || 'Candidate').trim();
+  var courseName = String(payload.course || '').trim();
+  var candidateEmail = String(payload.email || '').toLowerCase().trim();
+  var candidatePhone = String(payload.phone || '').trim();
+
+  var ss = getSS();
+
+  // 1. Look up student's MCQ result from Results tab
+  var mcqScore = 0;
+  var mcqTotal = 20;
+  var mcqAnswered = 0;
+  var mcqTimeTaken = 0;
+  var mcqSubmissionType = 'Completed';
+  var resumeInfo = '';
+  var resumeDriveUrl = '';
+  var resumeBlob = null;
+
+  var resultsSheet = ss.getSheetByName('Results');
+  if (resultsSheet) {
+    var data = resultsSheet.getDataRange().getValues();
+    for (var r = data.length - 1; r >= 1; r--) {
+      var rEmail = String(data[r][2]).toLowerCase().trim();
+      var rCourse = String(data[r][4]).trim();
+      if (rEmail === candidateEmail && rCourse === courseName) {
+        mcqScore = Number(data[r][5]) || 0;
+        mcqTotal = Number(data[r][6]) || 20;
+        mcqAnswered = Number(data[r][7]) || 0;
+        mcqTimeTaken = Number(data[r][8]) || 0;
+        mcqSubmissionType = String(data[r][9] || 'Completed');
+        resumeInfo = String(data[r][12] || '');
+        if (!candidatePhone && data[r][3]) candidatePhone = String(data[r][3]).trim();
+        break;
+      }
+    }
+  }
+
+  // 2. Resolve resume file and link from Drive if available
+  if (resumeInfo) {
+    var urlMatch = resumeInfo.match(/https:\/\/[^\s",]+/);
+    if (urlMatch) {
+      resumeDriveUrl = urlMatch[0];
+      try {
+        var idMatch = resumeDriveUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
+        if (idMatch && idMatch[1]) {
+          var driveFile = DriveApp.getFileById(idMatch[1]);
+          resumeBlob = driveFile.getBlob();
+        }
+      } catch (fErr) {
+        Logger.log('Drive resume fetch error: ' + fErr.toString());
+      }
+    }
+  }
+
+  // 3. Coding details
+  var codingLanguage = String(payload.language || 'Python 3').trim();
+  var codingPassed = Number(payload.testCasesPassed) || 0;
+  var codingTotal = Number(payload.totalTestCases) || 5;
+  var codingMarks = Number(payload.codingMarks) || 0;
+  var codingMaxMarks = Number(payload.maxMarks) || 10;
+  var codingSubmissionType = String(payload.submissionType || 'Manual');
+  var submittedCode = String(payload.code || '').trim();
+
+  // 4. Combined calculations
+  var totalScore = mcqScore + codingMarks;
+  var totalPossible = mcqTotal + codingMaxMarks;
+  var percentage = Math.round((totalScore / totalPossible) * 100);
+
+  var mcqMin = Math.floor(mcqTimeTaken / 60);
+  var mcqSec = mcqTimeTaken % 60;
+  var mcqTimeStr = mcqMin + 'm ' + mcqSec + 's';
+
+  var resumeDisplay = 'None uploaded';
+  if (resumeDriveUrl) {
+    resumeDisplay = '<a href="' + resumeDriveUrl + '" style="color: #6d28d9; font-weight: bold; text-decoration: underline;">📄 View Resume in Google Drive</a>';
+  } else if (resumeInfo) {
+    resumeDisplay = escapeHtml(resumeInfo);
+  }
+
+  var subject = '🎓 Complete Assessment: ' + candidateName + ' — Total ' + totalScore + '/' + totalPossible + ' (' + courseName + ')';
+
+  var htmlBody = 
+    '<div style="font-family: Arial, Helvetica, sans-serif; max-width: 650px; margin: 0 auto; padding: 24px; border: 1px solid #e5e7eb; border-radius: 12px; background-color: #ffffff; color: #1f2937;">' +
+      '<div style="border-bottom: 2px solid #7c3aed; padding-bottom: 14px; margin-bottom: 20px;">' +
+        '<h2 style="color: #6d28d9; margin: 0; font-size: 22px;">🎓 Korlance Assessment Portal</h2>' +
+        '<p style="color: #4b5563; font-size: 13px; margin: 4px 0 0 0; font-weight: 500;">Complete Candidate Assessment: <strong>MCQ + Coding Round</strong></p>' +
+      '</div>' +
+
+      '<div style="background-color: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 10px; padding: 16px; margin-bottom: 22px; text-align: center;">' +
+        '<span style="font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; color: #6d28d9;">Combined Total Score</span>' +
+        '<div style="font-size: 28px; font-weight: 800; color: #5b21b6; margin-top: 4px;">' + totalScore + ' / ' + totalPossible + ' Marks (' + percentage + '%)</div>' +
+      '</div>' +
+
+      '<h3 style="color: #374151; font-size: 15px; margin: 0 0 10px 0; border-bottom: 1px solid #e5e7eb; padding-bottom: 6px;">👤 Candidate Information</h3>' +
+      '<table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 20px;">' +
+        '<tr style="background-color: #f9fafb;"><td style="padding: 8px 10px; font-weight: bold; width: 32%; color: #4b5563;">Name</td><td style="padding: 8px 10px; font-weight: bold; color: #111827;">' + escapeHtml(candidateName) + '</td></tr>' +
+        '<tr><td style="padding: 8px 10px; font-weight: bold; color: #4b5563;">Email</td><td style="padding: 8px 10px;"><a href="mailto:' + escapeHtml(candidateEmail) + '" style="color: #2563eb; text-decoration: none;">' + escapeHtml(candidateEmail) + '</a></td></tr>' +
+        '<tr style="background-color: #f9fafb;"><td style="padding: 8px 10px; font-weight: bold; color: #4b5563;">Phone</td><td style="padding: 8px 10px;"><a href="tel:' + escapeHtml(candidatePhone) + '" style="color: #2563eb; text-decoration: none;">' + escapeHtml(candidatePhone) + '</a></td></tr>' +
+        '<tr><td style="padding: 8px 10px; font-weight: bold; color: #4b5563;">Course Domain</td><td style="padding: 8px 10px; font-weight: bold; color: #6d28d9;">' + escapeHtml(courseName) + '</td></tr>' +
+        '<tr style="background-color: #f9fafb;"><td style="padding: 8px 10px; font-weight: bold; color: #4b5563;">Resume</td><td style="padding: 8px 10px;">' + resumeDisplay + '</td></tr>' +
+      '</table>' +
+
+      '<h3 style="color: #374151; font-size: 15px; margin: 0 0 10px 0; border-bottom: 1px solid #e5e7eb; padding-bottom: 6px;">📋 Round 1: MCQ Assessment</h3>' +
+      '<table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 20px;">' +
+        '<tr style="background-color: #f9fafb;"><td style="padding: 8px 10px; font-weight: bold; width: 32%; color: #4b5563;">MCQ Score</td><td style="padding: 8px 10px; font-weight: bold; color: #059669; font-size: 15px;">' + mcqScore + ' / ' + mcqTotal + '</td></tr>' +
+        '<tr><td style="padding: 8px 10px; font-weight: bold; color: #4b5563;">Questions Answered</td><td style="padding: 8px 10px;">' + mcqAnswered + ' / ' + mcqTotal + ' questions</td></tr>' +
+        '<tr style="background-color: #f9fafb;"><td style="padding: 8px 10px; font-weight: bold; color: #4b5563;">Time Taken</td><td style="padding: 8px 10px;">' + mcqTimeStr + '</td></tr>' +
+        '<tr><td style="padding: 8px 10px; font-weight: bold; color: #4b5563;">Submission Type</td><td style="padding: 8px 10px;">' + escapeHtml(mcqSubmissionType) + '</td></tr>' +
+      '</table>' +
+
+      '<h3 style="color: #374151; font-size: 15px; margin: 0 0 10px 0; border-bottom: 1px solid #e5e7eb; padding-bottom: 6px;">💻 Round 2: Coding Assessment</h3>' +
+      '<table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 16px;">' +
+        '<tr style="background-color: #f9fafb;"><td style="padding: 8px 10px; font-weight: bold; width: 32%; color: #4b5563;">Coding Marks</td><td style="padding: 8px 10px; font-weight: bold; color: #059669; font-size: 15px;">' + codingMarks + ' / ' + codingMaxMarks + ' Marks</td></tr>' +
+        '<tr><td style="padding: 8px 10px; font-weight: bold; color: #4b5563;">Test Cases Passed</td><td style="padding: 8px 10px; font-weight: bold;">' + codingPassed + ' / ' + codingTotal + ' Passed</td></tr>' +
+        '<tr style="background-color: #f9fafb;"><td style="padding: 8px 10px; font-weight: bold; color: #4b5563;">Language</td><td style="padding: 8px 10px; font-weight: 600;">' + escapeHtml(codingLanguage) + '</td></tr>' +
+        '<tr><td style="padding: 8px 10px; font-weight: bold; color: #4b5563;">Submission Type</td><td style="padding: 8px 10px;">' + escapeHtml(codingSubmissionType) + '</td></tr>' +
+      '</table>' +
+
+      (submittedCode ? (
+        '<div style="margin-bottom: 22px;">' +
+          '<span style="font-size: 12px; font-weight: bold; color: #4b5563; text-transform: uppercase;">Submitted Source Code (' + escapeHtml(codingLanguage) + '):</span>' +
+          '<pre style="background-color: #0f172a; color: #f8fafc; padding: 14px; border-radius: 8px; font-size: 12px; overflow-x: auto; white-space: pre-wrap; font-family: Consolas, Monaco, monospace; margin-top: 6px; max-height: 350px;">' + escapeHtml(submittedCode) + '</pre>' +
+        '</div>'
+      ) : '<p style="font-size: 13px; color: #6b7280; font-style: italic; margin-bottom: 20px;">No code draft submitted.</p>') +
+
+      (resumeBlob ? '<div style="background-color: #ecfdf5; border-left: 4px solid #10b981; padding: 12px; margin-bottom: 20px; font-size: 13px; color: #065f46;">📎 <strong>Candidate resume is attached to this email</strong> for instant review.</div>' : '') +
+
+      '<p style="font-size: 12px; color: #9ca3af; text-align: center; margin: 20px 0 0 0;">This email was sent automatically by Korlance Student Test Portal via Google Apps Script.</p>' +
+    '</div>';
+
+  var mailOptions = {
+    to: recipient,
+    subject: subject,
+    htmlBody: htmlBody,
+    name: 'Korlance Assessment Portal'
   };
 
   if (resumeBlob) {

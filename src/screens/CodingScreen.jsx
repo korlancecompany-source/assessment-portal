@@ -317,6 +317,10 @@ export default function CodingScreen({
 
       // If backend API was unreachable (e.g. on static GitHub Pages), post directly to Google Apps Script
       if (!apiSubmitted && CONFIG.APPS_SCRIPT_URL) {
+        const passedCount = testCasesResults.filter((t) => t.passed).length
+        const totalCount = testCasesResults.length || CONFIG.TEST_CASES_PER_QUESTION || 5
+        const marks = Math.round((passedCount / totalCount) * (CONFIG.CODING_MAX_MARKS || 10) * 10) / 10
+
         try {
           await fetch(CONFIG.APPS_SCRIPT_URL, {
             method: 'POST',
@@ -330,6 +334,12 @@ export default function CodingScreen({
               course: studentInfo.course,
               language: selectedLanguage,
               code: currentCode,
+              submissionType,
+              testCasesPassed: passedCount,
+              totalTestCases: totalCount,
+              codingMarks: marks,
+              maxMarks: CONFIG.CODING_MAX_MARKS || 10,
+              warnings: currentWarnings,
               reason: 'Direct client submission from portal',
             }),
           })
