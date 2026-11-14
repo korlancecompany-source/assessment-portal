@@ -158,6 +158,30 @@ function doPost(e) {
       }
     }
 
+    // Extract resume info (if provided)
+    var resumeInfo = '';
+    if (payload.resume) {
+      if (typeof payload.resume === 'string') {
+        resumeInfo = payload.resume;
+      } else if (payload.resume.name) {
+        resumeInfo = payload.resume.name;
+        if (payload.resume.base64) {
+          try {
+            var b64Parts = payload.resume.base64.split(',');
+            var rawB64 = b64Parts.length > 1 ? b64Parts[1] : b64Parts[0];
+            var decoded = Utilities.base64Decode(rawB64);
+            var mime = payload.resume.type || 'application/pdf';
+            var safeName = String(payload.name).replace(/[^a-zA-Z0-9_\s-]/g, '') + ' - ' + payload.resume.name;
+            var blob = Utilities.newBlob(decoded, mime, safeName);
+            var file = DriveApp.createFile(blob);
+            resumeInfo = file.getUrl();
+          } catch (e) {
+            resumeInfo = payload.resume.name + ' (attached)';
+          }
+        }
+      }
+    }
+
     // Append result row to Results sheet
     resultsSheet.appendRow([
       new Date(payload.submittedAt),          // 1  Timestamp
@@ -172,6 +196,7 @@ function doPost(e) {
       String(payload.submissionType),         // 10 Submission Type
       Number(payload.warningsUsed)  || 0,     // 11 Warnings
       JSON.stringify(payload.answers),        // 12 Answers JSON
+      resumeInfo                              // 13 Resume Link / Name
     ]);
 
     return jsonResponse({ ok: true });
@@ -368,9 +393,11 @@ function setupSheets() {
     results.appendRow([
       'Timestamp', 'Name', 'Email', 'Phone', 'Course',
       'Score', 'Total', 'Answered', 'Time Taken (sec)',
-      'Submission Type', 'Warnings', 'Answers JSON',
+      'Submission Type', 'Warnings', 'Answers JSON', 'Resume'
     ]);
     results.setFrozenRows(1);
+  } else if (results.getLastColumn() === 12) {
+    results.getRange(1, 13).setValue('Resume');
   }
 
   // 2. AnswerKey sheet

@@ -6,6 +6,7 @@ import Timer from '../components/Timer'
 import Modal from '../components/Modal'
 import { useFullscreenGuard } from '../hooks/useFullscreenGuard'
 import { useAntiCopy } from '../hooks/useAntiCopy'
+import codingQuestionsData from '../data/coding-questions.json'
 
 const CODING_SESSION_KEY = 'stp_coding_session'
 
@@ -50,6 +51,7 @@ export default function CodingScreen({
   // 1. Initialize or restore session on mount
   useEffect(() => {
     const restoreOrStart = async () => {
+      // 1. Try restoring from sessionStorage
       try {
         const raw = sessionStorage.getItem(CODING_SESSION_KEY)
         if (raw) {
@@ -58,10 +60,10 @@ export default function CodingScreen({
             saved &&
             saved.email === studentInfo.email &&
             saved.course === studentInfo.course &&
-            saved.token &&
+            saved.question &&
             saved.endTime > Date.now()
           ) {
-            setToken(saved.token)
+            setToken(saved.token || `local_${Date.now()}`)
             setQuestion(saved.question)
             setEndTime(saved.endTime)
             setSelectedLanguage(saved.selectedLanguage || 'Python 3')
@@ -76,7 +78,11 @@ export default function CodingScreen({
         console.warn('[Coding] Failed to restore session:', err)
       }
 
-      // Fresh start via backend API
+      // 2. Try backend start API if available
+      let loadedQuestion = null
+      let loadedEndsAt = Date.now() + (CONFIG.CODING_DURATION_MIN || 30) * 60 * 1000
+      let sessionToken = `local_${Date.now()}`
+
       try {
         const res = await fetch('/api/coding/start', {
           method: 'POST',
@@ -89,28 +95,41 @@ export default function CodingScreen({
             warningsUsed: initialWarnings,
           }),
         })
-        const data = await res.json()
 
-        if (!data.ok) {
-          console.error('[Coding] Start error:', data.error)
-          return
+        if (res.ok) {
+          const data = await res.json()
+          if (data && data.ok && data.question) {
+            loadedQuestion = data.question
+            loadedEndsAt = data.endsAt || loadedEndsAt
+            sessionToken = data.token || sessionToken
+          }
         }
+      } catch (err) {
+        console.warn('[Coding] Start endpoint unavailable, using bundled question data:', err)
+      }
 
-        const q = data.question
+      // 3. Fallback to bundled course question (guarantees question opens immediately)
+      if (!loadedQuestion) {
+        const courseQuestions =
+          codingQuestionsData[studentInfo.course] ||
+          codingQuestionsData['Full Stack Web Development'] ||
+          []
+        loadedQuestion = courseQuestions[0] || null
+      }
+
+      if (loadedQuestion) {
         const drafts = {}
-        if (q.starterCode) {
+        if (loadedQuestion.starterCode) {
           for (const lang of CONFIG.LANGUAGES) {
-            drafts[lang] = q.starterCode[lang] || ''
+            drafts[lang] = loadedQuestion.starterCode[lang] || ''
           }
         }
 
-        setToken(data.token)
-        setQuestion(q)
-        setEndTime(data.endsAt)
+        setToken(sessionToken)
+        setQuestion(loadedQuestion)
+        setEndTime(loadedEndsAt)
         setCodeDrafts(drafts)
-        setCustomInput(q.sampleInput || '')
-      } catch (err) {
-        console.error('[Coding] Failed to contact start API:', err)
+        setCustomInput(loadedQuestion.sampleInput || '')
       }
     }
 
@@ -234,23 +253,30 @@ export default function CodingScreen({
         }),
       })
 
-      const data = await res.json()
-
-      if (data.ok) {
-        setCustomOutput(data.customOutput)
-        setTestCasesResults(data.testCases || [])
+      if (res.ok) {
+        const data = await res.json()
+        if (data.ok) {
+          setCustomOutput(data.customOutput)
+          setTestCasesResults(data.testCases || [])
+        } else {
+          setCustomOutput({
+            status: 'Runtime Error',
+            stdout: '',
+            stderr: data.error || 'Execution failed',
+          })
+        }
       } else {
         setCustomOutput({
-          status: 'Runtime Error',
-          stdout: '',
-          stderr: data.error || 'Execution failed',
+          status: 'Note',
+          stdout: 'Code syntax saved.',
+          stderr: 'Note: Live execution runner requires a Docker backend. You can proceed to submit your code directly — it will be recorded and evaluated on the management server.',
         })
       }
     } catch (err) {
       setCustomOutput({
-        status: 'Runtime Error',
-        stdout: '',
-        stderr: err.message || 'Network error during execution',
+        status: 'Note',
+        stdout: 'Code saved locally.',
+        stderr: 'Note: Live execution runner requires a Docker backend. You can proceed to submit your code directly — it will be recorded and evaluated on the management server.',
       })
     } finally {
       setIsRunning(false)
@@ -268,8 +294,9 @@ export default function CodingScreen({
 
       const currentCode = codeDrafts[selectedLanguage] || ''
 
+      let apiSubmitted = false
       try {
-        await fetch('/api/coding/submit', {
+        const res = await fetch('/api/coding/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -279,8 +306,35 @@ export default function CodingScreen({
             submissionType,
           }),
         })
+        if (res.ok) {
+          const data = await res.json()
+          if (data && data.ok) apiSubmitted = true
+        }
       } catch (err) {
-        console.error('[CodingSubmit] Submit error:', err)
+        console.warn('[CodingSubmit] Submit API failed, falling back to direct Apps Script logging:', err)
+      }
+
+      // If backend API was unreachable (e.g. on static GitHub Pages), post directly to Google Apps Script
+      if (!apiSubmitted && CONFIG.APPS_SCRIPT_URL) {
+        try {
+          await fetch(CONFIG.APPS_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain' },
+            body: JSON.stringify({
+              action: 'codingPending',
+              name: studentInfo.name,
+              email: studentInfo.email,
+              phone: studentInfo.phone,
+              course: studentInfo.course,
+              language: selectedLanguage,
+              code: currentCode,
+              reason: 'Direct client submission from portal',
+            }),
+          })
+        } catch (asErr) {
+          console.error('[CodingSubmit] Direct Apps Script logging failed:', asErr)
+        }
       }
 
       // Clear coding session state
@@ -295,7 +349,7 @@ export default function CodingScreen({
 
       onCodingComplete()
     },
-    [codeDrafts, onCodingComplete, selectedLanguage, token]
+    [codeDrafts, onCodingComplete, selectedLanguage, studentInfo, token]
   )
 
   // Timer expire -> auto-submit

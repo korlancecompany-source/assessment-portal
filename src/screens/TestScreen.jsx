@@ -120,6 +120,7 @@ export default function TestScreen({ studentInfo, onTestComplete }) {
         email: studentInfo.email,
         phone: studentInfo.phone,
         course: studentInfo.course,
+        resume: studentInfo.resume || null,
         answers, // { [questionId]: "A" | "B" | "C" | "D" }
         answeredCount: Object.values(answers).filter(Boolean).length,
         timeTakenSec,
