@@ -16,10 +16,10 @@ const INSTRUCTIONS = [
 export default function InstructionsScreen({ studentInfo, onStartTest }) {
   const [agreed, setAgreed] = useState(false)
 
-  const handleStart = async () => {
+  const handleStart = () => {
     if (!document.fullscreenElement) {
       try {
-        await document.documentElement.requestFullscreen()
+        document.documentElement.requestFullscreen?.().catch?.(() => {})
       } catch (e) {}
     }
     onStartTest()

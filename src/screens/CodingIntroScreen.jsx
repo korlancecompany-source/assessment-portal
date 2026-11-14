@@ -4,13 +4,11 @@ import Button from '../components/Button'
 export default function CodingIntroScreen({ studentInfo, warningsUsed = 0, onStartCoding }) {
   const [agreed, setAgreed] = useState(false)
 
-  const handleStart = async () => {
+  const handleStart = () => {
     if (!document.fullscreenElement) {
       try {
-        await document.documentElement.requestFullscreen()
-      } catch (e) {
-        // proceed anyway
-      }
+        document.documentElement.requestFullscreen?.().catch?.(() => {})
+      } catch (e) {}
     }
     onStartCoding()
   }

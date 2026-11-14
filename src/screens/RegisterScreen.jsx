@@ -119,7 +119,7 @@ export default function RegisterScreen({ onRegistered }) {
     }
 
     try {
-      await document.documentElement.requestFullscreen()
+      document.documentElement.requestFullscreen?.().catch?.(() => {})
     } catch (e) {
       // proceed anyway
     }
